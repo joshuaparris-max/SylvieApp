@@ -14,6 +14,7 @@ import PuzzlePlay from './games/PuzzlePlay'
 import StoryCorner from './games/StoryCorner'
 import TrampolineSwingBreak from './games/TrampolineSwingBreak'
 import SortingTruck from './games/SortingTruck'
+import GameIdeas from './pages/GameIdeas'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="sorting-truck" element={<SortingTruck />} />
             <Route path="trampoline-swing-break" element={<TrampolineSwingBreak />} />
             <Route path="story-corner" element={<StoryCorner />} />
+            <Route path="game-ideas" element={<GameIdeas />} />
             <Route path="parent-settings" element={<ParentSettings />} />
             <Route path="calm-down" element={<CalmDown />} />
             <Route path="*" element={<Navigate to="/" replace />} />

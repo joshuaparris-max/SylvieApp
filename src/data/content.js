@@ -81,6 +81,13 @@ export const homeSections = [
     parentCue: 'Ask: what happened first, next, and last?',
   },
   {
+    title: 'Game Ideas',
+    path: '/game-ideas',
+    icon: 'settings',
+    tone: 'cloud',
+    summary: 'Explore upcoming SylvieApp game ideas and gentle new play themes.',
+  },
+  {
     title: 'Parent Settings',
     path: '/parent-settings',
     icon: 'settings',
@@ -88,6 +95,69 @@ export const homeSections = [
     summary: 'Grown-up settings, saved drawings, messages, and reset controls.',
     why: 'Keeps adult controls separate from child play and supports local-only family review.',
     parentCue: 'Use this area to tune session timing and saved creations.',
+  },
+]
+
+export const gameIdeas = [
+  { title: 'Fairy friend', description: 'Tiny wings, flowers, stars, and gentle magic.' },
+  { title: 'Cozy harvest farm', description: 'Seeds, crops, chickens, lambs, ducks, and warm little fields.' },
+  { title: 'Rosy piglet pal', description: 'A cheerful original piglet for soft pretend-play stories.' },
+  { title: 'Blue puppy pal', description: 'A playful original puppy with kind eyes and floppy ears.' },
+  { title: 'Ocean voyager princess', description: 'Shells, waves, courage, and sea-breeze adventure.' },
+  { title: 'Ice castle sisters', description: 'Snowy gowns, warm hearts, and a shining ice castle.' },
+  { title: 'Book-loving princess', description: 'Stories, kindness, golden dresses, and a cozy library.' },
+  { title: 'Kind mermaid', description: 'A gentle sea friend with shells, bubbles, and ocean songs.' },
+  { title: 'Polka-dot mouse friend', description: 'Round ears, a star scarf, and sweet dress-up fun.' },
+  { title: 'Friendly sorting truck', description: 'A helpful original truck for recycling, compost, and rubbish.' },
+  { title: 'Colouring table', description: 'Big crayons, simple pages, and saved drawings.' },
+  { title: 'Garden swing', description: 'A calm swing under a soft rainbow sky.' },
+  { title: 'Trampoline jumps', description: 'Gentle jumping, movement breaks, and happy balance.' },
+  { title: 'Dress-up shoes', description: 'Sparkly shoes, capes, crowns, and imagination.' },
+  { title: 'Magic wands', description: 'Original wands that sparkle most for kindness.' },
+  { title: 'Puzzle pieces', description: 'Matching, missing pieces, and picture puzzles.' },
+  { title: 'Block tower', description: 'Big colourful blocks for towers and tiny buildings.' },
+]
+
+export const featureIdeas = [
+  {
+    title: 'Magic Story Builder',
+    description: 'Choose characters, settings, and gentle actions to create a short story.',
+  },
+  {
+    title: 'Calm Craft Studio',
+    description: 'Make digital cards, stickers, and glittery frames with soft tools.',
+  },
+  {
+    title: 'Friendship Garden Expansion',
+    description: 'Unlock new garden zones with gentle mini-challenges.',
+  },
+  {
+    title: 'Relaxing Rhythm Game',
+    description: 'Tap soothing beats in slow mode with a gentle reward system.',
+  },
+  {
+    title: 'Puzzle Adventure Map',
+    description: 'Unlock new story locations as puzzles are completed.',
+  },
+  {
+    title: 'Dress-Up Party Mode',
+    description: 'Add background scenes, themes, seasonal outfits, and photo booth fun.',
+  },
+  {
+    title: 'Animal Care Farm Helper',
+    description: 'Feed, groom, and care for more farm animals with a pet diary.',
+  },
+  {
+    title: 'Quiet Focus Challenges',
+    description: 'Short breathing, stretching, and observation activities.',
+  },
+  {
+    title: 'Treasure Hunt Explorer',
+    description: 'Find hidden stars and items across gentle game screens.',
+  },
+  {
+    title: 'Parent Dashboard Upgrades',
+    description: 'Track progress, star history, and custom encouragement themes.',
   },
 ]
 
