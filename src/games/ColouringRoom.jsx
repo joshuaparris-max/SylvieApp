@@ -35,9 +35,17 @@ export default function ColouringRoom() {
   const [historyStacks, setHistoryStacks] = useState({})
   const isPaintingRef = useRef(false)
   const lastPaintedCellRef = useRef(null)
-
   const currentDrawing = useMemo(
-    () => drawings[pageId] || blankPage(),
+    () => {
+      const safeDrawings =
+        drawings && typeof drawings === 'object' && !Array.isArray(drawings)
+          ? drawings
+          : {}
+      return Array.isArray(safeDrawings[pageId]) &&
+        safeDrawings[pageId].length === cellCount
+        ? safeDrawings[pageId]
+        : blankPage()
+    },
     [drawings, pageId],
   )
   const outlines = lineArt[pageId] || []
@@ -46,10 +54,18 @@ export default function ColouringRoom() {
     if (!Number.isInteger(index) || index < 0 || index >= cellCount) return
 
     setDrawings((current) => {
-      const page = current[pageId] || blankPage()
+      const currentDrawings =
+        current && typeof current === 'object' && !Array.isArray(current)
+          ? current
+          : {}
+      const page =
+        Array.isArray(currentDrawings[pageId]) &&
+        currentDrawings[pageId].length === cellCount
+          ? currentDrawings[pageId]
+          : blankPage()
       const nextPage = [...page]
       nextPage[index] = isErasing ? '' : selectedColor
-      return { ...current, [pageId]: nextPage }
+      return { ...currentDrawings, [pageId]: nextPage }
     })
   }
 
@@ -67,7 +83,7 @@ export default function ColouringRoom() {
 
     // snapshot current drawing for undo (one snapshot per pointerdown)
     setHistoryStacks((current) => {
-      const pageStack = current[pageId] ? [...current[pageId]] : []
+      const pageStack = Array.isArray(current[pageId]) ? [...current[pageId]] : []
       pageStack.push(currentDrawing)
       // limit history depth
       if (pageStack.length > 20) pageStack.shift()
@@ -78,8 +94,12 @@ export default function ColouringRoom() {
     lastPaintedCellRef.current = null
     setIsPainting(true)
 
-    if (event.currentTarget.setPointerCapture) {
-      event.currentTarget.setPointerCapture(event.pointerId)
+    try {
+      if (event.currentTarget.setPointerCapture) {
+        event.currentTarget.setPointerCapture(event.pointerId)
+      }
+    } catch {
+      // Some synthetic/browser events cannot be captured; painting still works.
     }
 
     paintIfNeeded(index)
@@ -113,22 +133,35 @@ export default function ColouringRoom() {
   }
 
   const clearPage = () => {
-    setDrawings((current) => ({ ...current, [pageId]: blankPage() }))
+    setDrawings((current) => ({
+      ...(current && typeof current === 'object' && !Array.isArray(current)
+        ? current
+        : {}),
+      [pageId]: blankPage(),
+    }))
     setHistoryStacks((current) => ({ ...current, [pageId]: [] }))
   }
 
   const undo = () => {
     setHistoryStacks((current) => {
-      const pageStack = current[pageId] ? [...current[pageId]] : []
+      const pageStack = Array.isArray(current[pageId]) ? [...current[pageId]] : []
       if (pageStack.length === 0) return current
       const last = pageStack.pop()
-      setDrawings((d) => ({ ...d, [pageId]: last }))
+      setDrawings((d) => ({
+        ...(d && typeof d === 'object' && !Array.isArray(d) ? d : {}),
+        [pageId]: last,
+      }))
       return { ...current, [pageId]: pageStack }
     })
   }
 
   const saveDrawing = () => {
-    setDrawings((current) => ({ ...current, [pageId]: currentDrawing }))
+    setDrawings((current) => ({
+      ...(current && typeof current === 'object' && !Array.isArray(current)
+        ? current
+        : {}),
+      [pageId]: currentDrawing,
+    }))
     awardStars(1, 'Drawing saved.')
   }
 
@@ -175,7 +208,10 @@ export default function ColouringRoom() {
                   key={page.id}
                   type="button"
                   className={`choice-chip ${pageId === page.id ? 'selected' : ''}`}
-                  onClick={() => setPageId(page.id)}
+                  onPointerDown={(event) => {
+                    event.preventDefault()
+                    setPageId(page.id)
+                  }}
                 >
                   {page.name}
                 </button>
@@ -194,7 +230,8 @@ export default function ColouringRoom() {
                     selectedColor === color && !isErasing ? 'selected' : ''
                   } touch-target`}
                   style={{ background: color }}
-                  onClick={() => {
+                  onPointerDown={(event) => {
+                    event.preventDefault()
                     setSelectedColor(color)
                     setIsErasing(false)
                   }}
@@ -240,6 +277,7 @@ export default function ColouringRoom() {
             onPointerMove={handlePointerMove}
             onPointerUp={stopPainting}
             onPointerCancel={stopPainting}
+            onPointerLeave={stopPainting}
           >
             {currentDrawing.map((color, index) => (
               <button
