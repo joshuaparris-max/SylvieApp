@@ -22,7 +22,7 @@ export default function AppShell() {
   return (
     <div className={`app-bg min-h-screen ${settings.visualMode === 'playful' ? 'mode-playful' : 'mode-calm'}`}>
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-3 py-4 sm:px-5 lg:px-6">
-        <header className="mb-4 rounded-lg border border-white/80 bg-white/90 p-3 shadow-soft backdrop-blur">
+        <header className="sticky top-0 z-30 mb-4 rounded-lg border border-white/80 bg-white/90 p-3 shadow-soft backdrop-blur backdrop-saturate-150">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link to="/" className="group flex items-center gap-3" aria-label="Go to home">
               <span className="grid h-12 w-12 place-items-center rounded-lg bg-rose-100 text-xl font-black text-rose-700 shadow-sm">

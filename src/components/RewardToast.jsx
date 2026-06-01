@@ -11,7 +11,9 @@ export default function RewardToast() {
       role="status"
       aria-live="polite"
     >
-      {reward.amount > 0 ? `+${reward.amount} star. ` : ''}
+      {reward.amount > 0
+        ? `+${reward.amount} star${reward.amount === 1 ? '' : 's'}. `
+        : ''}
       {reward.reason}
     </div>
   )

@@ -93,6 +93,16 @@ export default function PuzzlePlay() {
   const [matched, setMatched] = useState({})
   const [selectedPiece, setSelectedPiece] = useState(null)
   const [message, setMessage] = useState('Choose a piece, then choose its home.')
+  const safeProgress = {
+    ...defaultProgress,
+    ...progress,
+    completed: Array.isArray(progress?.completed) ? progress.completed : [],
+    picture:
+      progress?.picture && typeof progress.picture === 'object'
+        ? progress.picture
+        : {},
+    missingFound: Boolean(progress?.missingFound),
+  }
 
   const game = matchingGames.find((item) => item.id === gameId) || matchingGames[0]
 
@@ -104,10 +114,14 @@ export default function PuzzlePlay() {
   }
 
   const completePuzzle = (id, reason) => {
-    if (progress.completed.includes(id)) return
+    if (safeProgress.completed.includes(id)) return
     setProgress((current) => ({
+      ...defaultProgress,
       ...current,
-      completed: [...current.completed, id],
+      completed: [
+        ...(Array.isArray(current?.completed) ? current.completed : []),
+        id,
+      ],
     }))
     awardStars(1, reason)
   }
@@ -135,7 +149,7 @@ export default function PuzzlePlay() {
       return
     }
 
-    const nextPicture = { ...progress.picture, [slotId]: pieceId }
+    const nextPicture = { ...safeProgress.picture, [slotId]: pieceId }
     setProgress((current) => ({ ...current, picture: nextPicture }))
     setSelectedPiece(null)
     setMessage('The picture is growing.')
@@ -146,6 +160,11 @@ export default function PuzzlePlay() {
   }
 
   const findMissing = (choiceId) => {
+    if (safeProgress.missingFound) {
+      setMessage('The missing piece is already found.')
+      return
+    }
+
     if (choiceId !== 'door') {
       setMessage('Look for the piece that finishes the castle.')
       return
@@ -182,7 +201,7 @@ export default function PuzzlePlay() {
           <section className="rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft">
             <h2 className="panel-title">Progress</h2>
             <p className="text-sm leading-6 text-slate-600">
-              Completed puzzles: {progress.completed.length}
+              Completed puzzles: {safeProgress.completed.length}
             </p>
           </section>
         </div>
@@ -201,6 +220,7 @@ export default function PuzzlePlay() {
                     } ${matched[item.id] ? 'matched' : ''}`}
                     onClick={() => setSelected(item)}
                     disabled={Boolean(matched[item.id])}
+                    aria-pressed={selected?.id === item.id}
                   >
                     {item.label}
                   </button>
@@ -213,6 +233,8 @@ export default function PuzzlePlay() {
                     type="button"
                     className="puzzle-home"
                     onClick={() => chooseRight(item.id)}
+                    disabled={!selected}
+                    aria-disabled={!selected}
                   >
                     {item.label}
                   </button>
@@ -238,6 +260,7 @@ export default function PuzzlePlay() {
                       event.dataTransfer.setData('text/plain', piece.id)
                       setSelectedPiece(piece.id)
                     }}
+                    aria-pressed={selectedPiece === piece.id}
                   >
                     {piece.label}
                   </button>
@@ -255,8 +278,11 @@ export default function PuzzlePlay() {
                       event.preventDefault()
                       placePicturePiece(event.dataTransfer.getData('text/plain'), slot.id)
                     }}
+                    aria-pressed={safeProgress.picture[slot.id] === slot.id}
                   >
-                    {progress.picture[slot.id] ? slot.label : 'Drop here'}
+                    {safeProgress.picture[slot.id]
+                      ? `${slot.label} placed`
+                      : 'Drop here'}
                   </button>
                 ))}
               </div>
@@ -267,7 +293,7 @@ export default function PuzzlePlay() {
             <h2 className="panel-title">Find the missing piece</h2>
             <div className="missing-scene" aria-hidden="true">
               <span className="missing-castle" />
-              <span className={progress.missingFound ? 'missing-door found' : 'missing-door'} />
+              <span className={safeProgress.missingFound ? 'missing-door found' : 'missing-door'} />
             </div>
             <div className="mt-3 grid gap-2 sm:grid-cols-3">
               {missingChoices.map((choice) => (

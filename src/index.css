@@ -112,6 +112,19 @@ select:focus-visible {
   color: white;
 }
 
+button:disabled,
+button[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-calm:disabled,
+.btn-warning:disabled {
+  box-shadow: none;
+}
+
 .label-text {
   display: block;
   font-size: 0.875rem;
@@ -471,7 +484,7 @@ select:focus-visible {
   color: #b45309;
   font-size: 2rem;
   font-weight: 950;
-  animation: float 3.4s ease-in-out infinite;
+  box-shadow: 0 8px 18px rgba(180, 83, 9, 0.18);
 }
 
 .garden-star.collected {

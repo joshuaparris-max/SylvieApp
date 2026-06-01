@@ -133,13 +133,21 @@ export default function ColouringRoom() {
   }
 
   const clearPage = () => {
+    if (currentDrawing.some(Boolean)) {
+      setHistoryStacks((current) => {
+        const pageStack = Array.isArray(current[pageId]) ? [...current[pageId]] : []
+        pageStack.push(currentDrawing)
+        if (pageStack.length > 20) pageStack.shift()
+        return { ...current, [pageId]: pageStack }
+      })
+    }
+
     setDrawings((current) => ({
       ...(current && typeof current === 'object' && !Array.isArray(current)
         ? current
         : {}),
       [pageId]: blankPage(),
     }))
-    setHistoryStacks((current) => ({ ...current, [pageId]: [] }))
   }
 
   const undo = () => {
@@ -162,7 +170,8 @@ export default function ColouringRoom() {
         : {}),
       [pageId]: currentDrawing,
     }))
-    awardStars(1, 'Drawing saved.')
+    const pageHasColor = currentDrawing.some(Boolean)
+    awardStars(pageHasColor ? 1 : 0, pageHasColor ? 'Drawing saved.' : 'Page saved.')
   }
 
   const downloadDrawing = () => {
@@ -199,7 +208,7 @@ export default function ColouringRoom() {
       </PageHeader>
 
       <section className="grid gap-4 lg:grid-cols-[0.75fr_1.25fr]">
-        <div className="space-y-4">
+        <div className="order-2 space-y-4 lg:order-1">
           <section className="rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft">
             <h2 className="panel-title">Page</h2>
             <div className="grid grid-cols-2 gap-2">
@@ -208,6 +217,7 @@ export default function ColouringRoom() {
                   key={page.id}
                   type="button"
                   className={`choice-chip ${pageId === page.id ? 'selected' : ''}`}
+                  aria-pressed={pageId === page.id}
                   onPointerDown={(event) => {
                     event.preventDefault()
                     setPageId(page.id)
@@ -236,6 +246,7 @@ export default function ColouringRoom() {
                     setIsErasing(false)
                   }}
                   aria-label={`Choose colour ${color}`}
+                  aria-pressed={selectedColor === color && !isErasing}
                 />
               ))}
             </div>
@@ -244,6 +255,8 @@ export default function ColouringRoom() {
                 type="button"
                 className={`btn-secondary ${isErasing ? 'ring-2 ring-slate-700' : ''}`}
                 onClick={() => setIsErasing(true)}
+                aria-pressed={isErasing}
+                aria-label="Choose eraser"
               >
                 Eraser
               </button>
@@ -268,7 +281,7 @@ export default function ColouringRoom() {
           </section>
         </div>
 
-        <section className="rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft">
+        <section className="order-1 rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft lg:order-2">
           <div
             className="coloring-grid"
             aria-label={`${pageId} colouring page`}
