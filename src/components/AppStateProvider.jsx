@@ -20,7 +20,24 @@ export default function AppStateProvider({ children }) {
   const rewardTimer = useRef(null)
 
   const mergedSettings = useMemo(
-    () => ({ ...defaultSettings, ...settings }),
+    () => ({
+      ...defaultSettings,
+      ...settings,
+      passcode: String(settings?.passcode || defaultSettings.passcode),
+      soundsEnabled: Boolean(settings?.soundsEnabled),
+      visualMode: settings?.visualMode === 'playful' ? 'playful' : 'calm',
+      movementBreakMinutes: [10, 20, 30].includes(
+        Number(settings?.movementBreakMinutes),
+      )
+        ? Number(settings.movementBreakMinutes)
+        : defaultSettings.movementBreakMinutes,
+      customEncouragements: Array.isArray(settings?.customEncouragements)
+        ? settings.customEncouragements
+        : defaultSettings.customEncouragements,
+      customStoryPrompts: Array.isArray(settings?.customStoryPrompts)
+        ? settings.customStoryPrompts
+        : defaultSettings.customStoryPrompts,
+    }),
     [settings],
   )
 

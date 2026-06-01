@@ -15,6 +15,7 @@ function randomItem(values) {
 export default function PrincessDressUp() {
   const { awardStars } = useAppState()
   const [outfit, setOutfit] = useLocalStorage(STORAGE_KEYS.outfit, defaultOutfit)
+  const safeOutfit = { ...defaultOutfit, ...outfit }
 
   const updateOutfit = (part, value) => {
     setOutfit((current) => ({ ...current, [part]: value }))
@@ -55,7 +56,7 @@ export default function PrincessDressUp() {
             <span className="preview-wand" />
           </div>
           <div className="mt-4 grid gap-2 text-sm text-slate-700">
-            {Object.entries(outfit)
+            {Object.entries(safeOutfit)
               .filter(([key]) => key !== 'savedAt')
               .map(([key, value]) => (
                 <p key={key} className="rounded-lg bg-white px-3 py-2">
@@ -87,7 +88,7 @@ export default function PrincessDressUp() {
                     key={value}
                     type="button"
                     className={`choice-chip ${
-                      outfit[part] === value ? 'selected' : ''
+                      safeOutfit[part] === value ? 'selected' : ''
                     }`}
                     onClick={() => updateOutfit(part, value)}
                   >

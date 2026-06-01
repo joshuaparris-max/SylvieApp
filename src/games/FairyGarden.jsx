@@ -34,6 +34,13 @@ export default function FairyGarden() {
     defaultGarden,
   )
   const [sparkles, setSparkles] = useState([])
+  const safeGarden = {
+    ...defaultGarden,
+    ...garden,
+    bloomed: Array.isArray(garden?.bloomed) ? garden.bloomed : [],
+    collected: Array.isArray(garden?.collected) ? garden.collected : [],
+    lastMessage: garden?.lastMessage || defaultGarden.lastMessage,
+  }
 
   const allMessages = useMemo(
     () => [...encouragements, ...settings.customEncouragements],
@@ -46,15 +53,16 @@ export default function FairyGarden() {
 
   const nextMessage = (offset = 0) =>
     allMessages[
-      (garden.bloomed.length + garden.collected.length + offset) %
+      (safeGarden.bloomed.length + safeGarden.collected.length + offset) %
         allMessages.length
     ] || encouragements[0]
 
   const bloomFlower = (flowerId) => {
-    const alreadyBloomed = garden.bloomed.includes(flowerId)
+    const alreadyBloomed = safeGarden.bloomed.includes(flowerId)
     setGarden((current) => ({
+      ...defaultGarden,
       ...current,
-      bloomed: alreadyBloomed ? current.bloomed : [...current.bloomed, flowerId],
+      bloomed: alreadyBloomed ? safeGarden.bloomed : [...safeGarden.bloomed, flowerId],
       lastMessage: nextMessage(1),
     }))
     showSparkles(flowerId)
@@ -62,10 +70,11 @@ export default function FairyGarden() {
   }
 
   const collectStar = (starId) => {
-    if (garden.collected.includes(starId)) return
+    if (safeGarden.collected.includes(starId)) return
     setGarden((current) => ({
+      ...defaultGarden,
       ...current,
-      collected: [...current.collected, starId],
+      collected: [...safeGarden.collected, starId],
       lastMessage: nextMessage(2),
     }))
     awardStars(1, 'A soft garden star joined Sylvie.')
@@ -74,7 +83,7 @@ export default function FairyGarden() {
   return (
     <div>
       <PageHeader title="Fairy Garden" eyebrow="Bloom and sparkle">
-        <p>{garden.lastMessage}</p>
+        <p>{safeGarden.lastMessage}</p>
       </PageHeader>
 
       <section className="garden-stage" aria-label="Interactive fairy garden">
@@ -88,7 +97,7 @@ export default function FairyGarden() {
             type="button"
             aria-label="Collect garden star"
             className={`garden-star ${
-              garden.collected.includes(star.id) ? 'collected' : ''
+              safeGarden.collected.includes(star.id) ? 'collected' : ''
             }`}
             style={{ left: star.left, top: star.top }}
             onClick={() => collectStar(star.id)}
@@ -102,7 +111,7 @@ export default function FairyGarden() {
             key={flower.id}
             type="button"
             className={`garden-flower ${
-              garden.bloomed.includes(flower.id) ? 'bloomed' : ''
+              safeGarden.bloomed.includes(flower.id) ? 'bloomed' : ''
             }`}
             style={{ left: flower.left, top: flower.top }}
             onClick={() => bloomFlower(flower.id)}

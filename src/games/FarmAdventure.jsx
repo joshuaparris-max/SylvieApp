@@ -15,16 +15,38 @@ const defaultFarm = {
 export default function FarmAdventure() {
   const { stars, awardStars } = useAppState()
   const [farm, setFarm] = useLocalStorage(STORAGE_KEYS.farm, defaultFarm)
+  const safeFarm = {
+    ...defaultFarm,
+    ...farm,
+    selectedCrop: crops.some((crop) => crop.id === farm?.selectedCrop)
+      ? farm.selectedCrop
+      : defaultFarm.selectedCrop,
+    plots: Array.isArray(farm?.plots)
+      ? [...farm.plots, ...defaultFarm.plots]
+          .slice(0, defaultFarm.plots.length)
+          .map((plot) => ({
+            crop: crops.some((crop) => crop.id === plot?.crop) ? plot.crop : null,
+            stage: Math.min(3, Math.max(0, Number(plot?.stage || 0))),
+          }))
+      : defaultFarm.plots,
+    basket: farm?.basket && typeof farm.basket === 'object' ? farm.basket : {},
+    fedAnimals:
+      farm?.fedAnimals && typeof farm.fedAnimals === 'object'
+        ? farm.fedAnimals
+        : {},
+    decorations: Array.isArray(farm?.decorations) ? farm.decorations : [],
+  }
 
-  const selectedCrop = crops.find((crop) => crop.id === farm.selectedCrop) || crops[0]
+  const selectedCrop = crops.find((crop) => crop.id === safeFarm.selectedCrop) || crops[0]
 
   const updatePlot = (index) => {
-    const plot = farm.plots[index]
+    const plot = safeFarm.plots[index]
 
     if (!plot.crop) {
       setFarm((current) => ({
+        ...defaultFarm,
         ...current,
-        plots: current.plots.map((item, itemIndex) =>
+        plots: safeFarm.plots.map((item, itemIndex) =>
           itemIndex === index ? { crop: selectedCrop.id, stage: 1 } : item,
         ),
       }))
@@ -33,8 +55,9 @@ export default function FarmAdventure() {
 
     if (plot.stage < 3) {
       setFarm((current) => ({
+        ...defaultFarm,
         ...current,
-        plots: current.plots.map((item, itemIndex) =>
+        plots: safeFarm.plots.map((item, itemIndex) =>
           itemIndex === index ? { ...item, stage: item.stage + 1 } : item,
         ),
       }))
@@ -42,13 +65,14 @@ export default function FarmAdventure() {
     }
 
     setFarm((current) => ({
+      ...defaultFarm,
       ...current,
-      plots: current.plots.map((item, itemIndex) =>
+      plots: safeFarm.plots.map((item, itemIndex) =>
         itemIndex === index ? { crop: null, stage: 0 } : item,
       ),
       basket: {
-        ...current.basket,
-        [plot.crop]: Number(current.basket[plot.crop] || 0) + 1,
+        ...safeFarm.basket,
+        [plot.crop]: Number(safeFarm.basket[plot.crop] || 0) + 1,
       },
     }))
     awardStars(1, 'A gentle harvest was gathered.')
@@ -56,20 +80,22 @@ export default function FarmAdventure() {
 
   const feedAnimal = (animalId) => {
     setFarm((current) => ({
+      ...defaultFarm,
       ...current,
       fedAnimals: {
-        ...current.fedAnimals,
-        [animalId]: Number(current.fedAnimals[animalId] || 0) + 1,
+        ...safeFarm.fedAnimals,
+        [animalId]: Number(safeFarm.fedAnimals[animalId] || 0) + 1,
       },
     }))
     awardStars(1, 'An animal was cared for.')
   }
 
   const addDecoration = (decoration) => {
-    if (stars < decoration.stars || farm.decorations.includes(decoration.id)) return
+    if (stars < decoration.stars || safeFarm.decorations.includes(decoration.id)) return
     setFarm((current) => ({
+      ...defaultFarm,
       ...current,
-      decorations: [...current.decorations, decoration.id],
+      decorations: [...safeFarm.decorations, decoration.id],
     }))
     awardStars(1, `${decoration.name} joined the farm.`)
   }
@@ -88,7 +114,7 @@ export default function FarmAdventure() {
                 key={crop.id}
                 type="button"
                 className={`choice-chip ${
-                  farm.selectedCrop === crop.id ? 'selected' : ''
+                  safeFarm.selectedCrop === crop.id ? 'selected' : ''
                 }`}
                 onClick={() => setFarm((current) => ({ ...current, selectedCrop: crop.id }))}
               >
@@ -103,7 +129,7 @@ export default function FarmAdventure() {
           </div>
 
           <div className="farm-grid" aria-label="Farm plots">
-            {farm.plots.map((plot, index) => {
+            {safeFarm.plots.map((plot, index) => {
               const crop = crops.find((item) => item.id === plot.crop)
               return (
                 <button
@@ -150,7 +176,7 @@ export default function FarmAdventure() {
                     </span>
                   </span>
                   <span className="ml-auto font-black">
-                    {farm.fedAnimals[animal.id] || 0}
+                    {safeFarm.fedAnimals[animal.id] || 0}
                   </span>
                 </button>
               ))}
@@ -168,7 +194,7 @@ export default function FarmAdventure() {
                     aria-hidden="true"
                   />
                   <p className="mt-2 text-sm font-bold text-slate-700">
-                    {farm.basket[crop.id] || 0}
+                    {safeFarm.basket[crop.id] || 0}
                   </p>
                 </div>
               ))}
@@ -179,7 +205,7 @@ export default function FarmAdventure() {
 
       <section className="mt-4 grid gap-3 sm:grid-cols-3">
         {farmDecorations.map((decoration) => {
-          const placed = farm.decorations.includes(decoration.id)
+          const placed = safeFarm.decorations.includes(decoration.id)
           const unlocked = stars >= decoration.stars
           return (
             <button
