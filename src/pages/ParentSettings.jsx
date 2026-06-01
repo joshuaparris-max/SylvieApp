@@ -1,103 +1,193 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
+import PageHeader from '../components/PageHeader'
 import ParentGate from '../components/ParentGate'
-import PageCard from '../components/PageCard'
+import { coloringPages } from '../data/content'
+import { useAppState } from '../hooks/useAppState'
+import { useLocalStorage } from '../hooks/useLocalStorage'
+import { STORAGE_KEYS } from '../utils/storage'
 
-export default function ParentSettings({ parentSettings, setParentSettings, setStars }) {
-  const [unlocked, setUnlocked] = useState(false)
-  const [messageText, setMessageText] = useState(parentSettings.customMessage)
-  const [storyPrompt, setStoryPrompt] = useState(parentSettings.customStoryPrompt)
+export default function ParentSettings() {
+  const { settings, updateSettings, resetProgress } = useAppState()
+  const [drawings, setDrawings] = useLocalStorage(STORAGE_KEYS.drawings, {})
+  const [newMessage, setNewMessage] = useState('')
+  const [newStoryPrompt, setNewStoryPrompt] = useState('')
 
-  const handleSave = () => {
-    setParentSettings((prev) => ({
-      ...prev,
-      customMessage: messageText,
-      customStoryPrompt: storyPrompt,
-    }))
+  const savedDrawingNames = useMemo(
+    () =>
+      coloringPages.filter(
+        (page) => Array.isArray(drawings[page.id]) && drawings[page.id].some(Boolean),
+      ),
+    [drawings],
+  )
+
+  const addMessage = (event) => {
+    event.preventDefault()
+    const trimmed = newMessage.trim()
+    if (!trimmed) return
+    updateSettings({
+      customEncouragements: [...settings.customEncouragements, trimmed].slice(-8),
+    })
+    setNewMessage('')
   }
 
-  const resetProgress = () => {
-    setStars(0)
-    window.localStorage.removeItem('sylvieapp-farm')
-    window.localStorage.removeItem('sylvieapp-fairy')
-    window.localStorage.removeItem('sylvieapp-outfit')
-    window.localStorage.removeItem('sylvieapp-drawing')
-    window.localStorage.removeItem('sylvieapp-builder')
-    window.localStorage.removeItem('sylvieapp-sort')
-    window.localStorage.removeItem('sylvieapp-puzzle-progress')
-    setUnlocked(false)
-    alert('Progress has been reset. SylvieApp is ready for fresh play.')
+  const addStoryPrompt = (event) => {
+    event.preventDefault()
+    const trimmed = newStoryPrompt.trim()
+    if (!trimmed) return
+    updateSettings({
+      customStoryPrompts: [...settings.customStoryPrompts, trimmed].slice(-6),
+    })
+    setNewStoryPrompt('')
+  }
+
+  const removeDrawing = (id) => {
+    setDrawings((current) => {
+      const next = { ...current }
+      delete next[id]
+      return next
+    })
   }
 
   return (
-    <div className="space-y-6 pb-10">
-      {!unlocked ? (
-        <ParentGate passcode={parentSettings.passcode} onUnlock={() => setUnlocked(true)} />
-      ) : (
-        <PageCard title="Parent Settings" subtitle="Gentle controls for Sylvie’s safe play world." icon="🔒">
-          <div className="space-y-6 rounded-[2rem] border border-white/80 bg-white/90 p-5 shadow-soft">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block rounded-3xl border border-slate-200 bg-slate-50 p-4">
-                <span className="text-sm font-medium text-slate-700">Sound mode</span>
-                <select
-                  value={parentSettings.soundsOn ? 'on' : 'off'}
-                  onChange={(event) => setParentSettings((prev) => ({ ...prev, soundsOn: event.target.value === 'on' }))}
-                  className="mt-3 w-full rounded-3xl border border-slate-300 bg-white px-4 py-3 outline-none"
-                >
-                  <option value="off">Off</option>
-                  <option value="on">On</option>
-                </select>
-              </label>
-              <label className="block rounded-3xl border border-slate-200 bg-slate-50 p-4">
-                <span className="text-sm font-medium text-slate-700">Display mode</span>
-                <select
-                  value={parentSettings.mode}
-                  onChange={(event) => setParentSettings((prev) => ({ ...prev, mode: event.target.value }))}
-                  className="mt-3 w-full rounded-3xl border border-slate-300 bg-white px-4 py-3 outline-none"
-                >
-                  <option value="calm">Calm</option>
-                  <option value="playful">Playful</option>
-                </select>
-              </label>
-            </div>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
-              <label className="block text-sm font-medium text-slate-700">Custom encouragement message</label>
-              <textarea
-                value={messageText}
-                onChange={(event) => setMessageText(event.target.value)}
-                className="mt-3 w-full rounded-3xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none"
+    <div>
+      <PageHeader title="Parent Settings" eyebrow="Grown-up area">
+        <p>Local settings only. No login, ads, purchases, or child-facing links.</p>
+      </PageHeader>
+
+      <ParentGate>
+        <div className="grid gap-4 lg:grid-cols-2">
+          <section className="settings-panel">
+            <h2 className="panel-title">Calm controls</h2>
+            <label className="toggle-row">
+              <span>Sounds</span>
+              <input
+                type="checkbox"
+                checked={settings.soundsEnabled}
+                onChange={(event) =>
+                  updateSettings({ soundsEnabled: event.target.checked })
+                }
               />
+            </label>
+            <div className="mt-4">
+              <p className="label-text">Visual mode</p>
+              <div className="segmented">
+                {['calm', 'playful'].map((mode) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => updateSettings({ visualMode: mode })}
+                    className={settings.visualMode === mode ? 'active' : ''}
+                  >
+                    {mode}
+                  </button>
+                ))}
+              </div>
             </div>
-            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
-              <label className="block text-sm font-medium text-slate-700">Custom story prompt</label>
-              <textarea
-                value={storyPrompt}
-                onChange={(event) => setStoryPrompt(event.target.value)}
-                className="mt-3 w-full rounded-3xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none"
+            <div className="mt-4">
+              <label className="label-text" htmlFor="movement">
+                Movement reminders
+              </label>
+              <select
+                id="movement"
+                className="input-field mt-2"
+                value={settings.movementBreakMinutes}
+                onChange={(event) =>
+                  updateSettings({ movementBreakMinutes: Number(event.target.value) })
+                }
+              >
+                <option value={10}>Every 10 minutes</option>
+                <option value={20}>Every 20 minutes</option>
+                <option value={30}>Every 30 minutes</option>
+              </select>
+            </div>
+          </section>
+
+          <section className="settings-panel">
+            <h2 className="panel-title">Passcode</h2>
+            <label className="label-text" htmlFor="new-passcode">
+              Parent passcode
+            </label>
+            <input
+              id="new-passcode"
+              className="input-field mt-2"
+              value={settings.passcode}
+              onChange={(event) => updateSettings({ passcode: event.target.value })}
+            />
+            <button type="button" className="btn-warning mt-5 w-full" onClick={resetProgress}>
+              Reset saved progress
+            </button>
+          </section>
+
+          <section className="settings-panel">
+            <h2 className="panel-title">Encouragement messages</h2>
+            <form onSubmit={addMessage} className="flex flex-col gap-2 sm:flex-row">
+              <input
+                className="input-field flex-1"
+                value={newMessage}
+                onChange={(event) => setNewMessage(event.target.value)}
+                placeholder="Add a kind message"
               />
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <button
-                type="button"
-                onClick={handleSave}
-                className="rounded-full bg-violet-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-violet-600"
-              >
-                Save settings
+              <button type="submit" className="btn-primary">
+                Add
               </button>
-              <button
-                type="button"
-                onClick={resetProgress}
-                className="rounded-full bg-pastel-pink px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-pastel-pink/90"
-              >
-                Reset progress
+            </form>
+            <ul className="mt-4 space-y-2">
+              {settings.customEncouragements.map((message) => (
+                <li key={message} className="rounded-lg bg-rose-50 px-3 py-2 text-sm text-slate-700">
+                  {message}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="settings-panel">
+            <h2 className="panel-title">Custom story prompts</h2>
+            <form onSubmit={addStoryPrompt} className="flex flex-col gap-2 sm:flex-row">
+              <input
+                className="input-field flex-1"
+                value={newStoryPrompt}
+                onChange={(event) => setNewStoryPrompt(event.target.value)}
+                placeholder="Add a gentle story idea"
+              />
+              <button type="submit" className="btn-primary">
+                Add
               </button>
-            </div>
-            <div className="rounded-3xl bg-slate-50 p-4 text-sm text-slate-600">
-              <p>Movement break reminders: {parentSettings.movementBreakMinutes} minutes</p>
-              <p className="mt-2">To change this setting, update the code in Parent Settings or add a new control.</p>
-            </div>
-          </div>
-        </PageCard>
-      )}
+            </form>
+            <ul className="mt-4 space-y-2">
+              {settings.customStoryPrompts.map((prompt) => (
+                <li key={prompt} className="rounded-lg bg-sky-50 px-3 py-2 text-sm text-slate-700">
+                  {prompt}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="settings-panel lg:col-span-2">
+            <h2 className="panel-title">Saved drawings</h2>
+            {savedDrawingNames.length ? (
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                {savedDrawingNames.map((page) => (
+                  <div
+                    key={page.id}
+                    className="flex items-center justify-between gap-3 rounded-lg bg-white px-3 py-2"
+                  >
+                    <span className="font-bold text-slate-700">{page.name}</span>
+                    <button
+                      type="button"
+                      className="btn-secondary"
+                      onClick={() => removeDrawing(page.id)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm text-slate-600">No saved drawings yet.</p>
+            )}
+          </section>
+        </div>
+      </ParentGate>
     </div>
   )
 }

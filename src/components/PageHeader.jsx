@@ -1,8 +1,25 @@
-export default function PageHeader({ title, subtitle }) {
+import { Link } from 'react-router-dom'
+
+export default function PageHeader({ title, eyebrow, children }) {
   return (
-    <div className="mb-6 rounded-3xl border border-white/80 bg-white/80 p-6 shadow-soft backdrop-blur">
-      <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">{title}</h1>
-      <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">{subtitle}</p>
-    </div>
+    <section className="mb-5 rounded-lg border border-white/80 bg-white/85 p-5 shadow-soft backdrop-blur">
+      <Link
+        to="/"
+        className="mb-4 inline-flex min-h-11 items-center rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm"
+      >
+        Home
+      </Link>
+      <p className="text-xs font-bold uppercase tracking-[0.24em] text-slate-500">
+        {eyebrow}
+      </p>
+      <h1 className="mt-2 text-3xl font-black text-slate-950 sm:text-4xl">
+        {title}
+      </h1>
+      {children ? (
+        <div className="mt-3 max-w-3xl text-base leading-7 text-slate-700">
+          {children}
+        </div>
+      ) : null}
+    </section>
   )
 }

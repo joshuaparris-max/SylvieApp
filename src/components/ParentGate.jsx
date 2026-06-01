@@ -1,43 +1,47 @@
 import { useState } from 'react'
+import { useAppState } from '../hooks/useAppState'
 
-export default function ParentGate({ passcode, onUnlock }) {
-  const [code, setCode] = useState('')
-  const [error, setError] = useState('')
+export default function ParentGate({ children }) {
+  const { settings } = useAppState()
+  const [entered, setEntered] = useState(false)
+  const [passcode, setPasscode] = useState('')
+  const [message, setMessage] = useState('')
 
-  const handleSubmit = (event) => {
+  const submit = (event) => {
     event.preventDefault()
-    if (code === passcode) {
-      setError('')
-      onUnlock()
-    } else {
-      setError('Incorrect code. Try again.')
+    if (passcode === settings.passcode) {
+      setEntered(true)
+      setMessage('')
+      return
     }
+    setMessage('That passcode did not match.')
   }
 
+  if (entered) return children
+
   return (
-    <div className="rounded-[2rem] border border-white/80 bg-white/90 p-6 shadow-soft backdrop-blur-sm">
-      <h2 className="text-xl font-semibold text-slate-900">Parent passcode</h2>
-      <p className="mt-2 text-sm text-slate-600">Enter the code to manage SylvieApp settings.</p>
-      <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-        <label className="block text-sm font-medium text-slate-700">
-          Passcode
-          <input
-            type="password"
-            inputMode="numeric"
-            value={code}
-            onChange={(event) => setCode(event.target.value)}
-            className="mt-2 w-full rounded-3xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-violet-300"
-            aria-label="Parent passcode"
-          />
-        </label>
-        {error && <p className="text-sm text-red-600">{error}</p>}
-        <button
-          type="submit"
-          className="inline-flex rounded-full bg-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-violet-600"
-        >
-          Unlock Settings
-        </button>
-      </form>
-    </div>
+    <form
+      onSubmit={submit}
+      className="mx-auto max-w-lg rounded-lg border border-white/80 bg-white/90 p-5 shadow-soft"
+    >
+      <label className="block text-sm font-bold text-slate-700" htmlFor="passcode">
+        Parent passcode
+      </label>
+      <input
+        id="passcode"
+        value={passcode}
+        onChange={(event) => setPasscode(event.target.value)}
+        className="mt-2 min-h-12 w-full rounded-lg border border-slate-300 px-4 text-lg font-bold text-slate-900"
+        inputMode="numeric"
+        aria-describedby="passcode-help"
+      />
+      <p id="passcode-help" className="mt-2 text-sm text-slate-600">
+        Default passcode is 2468.
+      </p>
+      {message ? <p className="mt-3 text-sm font-bold text-rose-700">{message}</p> : null}
+      <button type="submit" className="btn-primary mt-4 w-full">
+        Open settings
+      </button>
+    </form>
   )
 }
