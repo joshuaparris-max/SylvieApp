@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import { coloringPages, palette } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
@@ -32,6 +32,8 @@ export default function ColouringRoom() {
   const [isErasing, setIsErasing] = useState(false)
   const [isPainting, setIsPainting] = useState(false)
   const [drawings, setDrawings] = useLocalStorage(STORAGE_KEYS.drawings, {})
+  const isPaintingRef = useRef(false)
+  const lastPaintedCellRef = useRef(null)
 
   const currentDrawing = useMemo(
     () => drawings[pageId] || blankPage(),
@@ -40,6 +42,8 @@ export default function ColouringRoom() {
   const outlines = lineArt[pageId] || []
 
   const paintCell = (index) => {
+    if (!Number.isInteger(index) || index < 0 || index >= cellCount) return
+
     setDrawings((current) => {
       const page = current[pageId] || blankPage()
       const nextPage = [...page]
@@ -48,11 +52,54 @@ export default function ColouringRoom() {
     })
   }
 
+  const getCellIndexFromPoint = (event) => {
+    const element = document.elementFromPoint(event.clientX, event.clientY)
+    const cell = element?.closest('[data-cell-index]')
+    if (!cell) return null
+    return Number(cell.dataset.cellIndex)
+  }
+
+  const startPainting = (event) => {
+    event.preventDefault()
+    const index = getCellIndexFromPoint(event)
+    if (index === null) return
+
+    isPaintingRef.current = true
+    lastPaintedCellRef.current = null
+    setIsPainting(true)
+
+    if (event.currentTarget.setPointerCapture) {
+      event.currentTarget.setPointerCapture(event.pointerId)
+    }
+
+    paintIfNeeded(index)
+  }
+
+  const stopPainting = (event) => {
+    isPaintingRef.current = false
+    lastPaintedCellRef.current = null
+    setIsPainting(false)
+
+    if (
+      event?.currentTarget?.hasPointerCapture?.(event.pointerId) &&
+      event.currentTarget.releasePointerCapture
+    ) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }
+
+  const paintIfNeeded = (index) => {
+    if (lastPaintedCellRef.current === index) return
+    lastPaintedCellRef.current = index
+    paintCell(index)
+  }
+
   const handlePointerMove = (event) => {
-    if (!isPainting) return
-    const cell = event.target.closest('[data-cell-index]')
-    if (!cell) return
-    paintCell(Number(cell.dataset.cellIndex))
+    if (!isPaintingRef.current) return
+    event.preventDefault()
+    const index = getCellIndexFromPoint(event)
+    if (index === null) return
+    paintIfNeeded(index)
   }
 
   const clearPage = () => {
@@ -92,7 +139,7 @@ export default function ColouringRoom() {
   }
 
   return (
-    <div onPointerUp={() => setIsPainting(false)}>
+    <div onPointerUp={stopPainting} onPointerCancel={stopPainting}>
       <PageHeader title="Colouring Room" eyebrow="Paint and save">
         <p>Big colours and original simple pages for quiet creative play.</p>
       </PageHeader>
@@ -124,7 +171,7 @@ export default function ColouringRoom() {
                   type="button"
                   className={`color-swatch ${
                     selectedColor === color && !isErasing ? 'selected' : ''
-                  }`}
+                  } touch-target`}
                   style={{ background: color }}
                   onClick={() => {
                     setSelectedColor(color)
@@ -159,10 +206,11 @@ export default function ColouringRoom() {
           <div
             className="coloring-grid"
             aria-label={`${pageId} colouring page`}
-            onPointerLeave={() => setIsPainting(false)}
+            data-painting={isPainting ? 'true' : 'false'}
+            onPointerDown={startPainting}
             onPointerMove={handlePointerMove}
-            onPointerUp={() => setIsPainting(false)}
-            onPointerCancel={() => setIsPainting(false)}
+            onPointerUp={stopPainting}
+            onPointerCancel={stopPainting}
           >
             {currentDrawing.map((color, index) => (
               <button
@@ -171,14 +219,6 @@ export default function ColouringRoom() {
                 data-cell-index={index}
                 className={`color-cell ${outlines.includes(index) ? 'outline-cell' : ''}`}
                 style={{ backgroundColor: color || '#ffffff' }}
-                onPointerDown={(event) => {
-                  event.currentTarget.setPointerCapture(event.pointerId)
-                  setIsPainting(true)
-                  paintCell(index)
-                }}
-                onPointerEnter={() => {
-                  if (isPainting) paintCell(index)
-                }}
                 aria-label={`Colouring cell ${index + 1}`}
               />
             ))}

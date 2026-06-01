@@ -23,18 +23,22 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overscroll-behavior-y: contain;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
 a,
 input,
 select {
-  min-height: 44px;
+  min-height: 48px;
 }
 
 button,
 a {
   touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 button:focus-visible,
@@ -283,7 +287,7 @@ select:focus-visible {
 
 .section-card {
   display: block;
-  min-height: 190px;
+  min-height: 196px;
   border: 1px solid rgba(255, 255, 255, 0.84);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.88);
@@ -341,7 +345,7 @@ select:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px;
+  min-height: 60px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   background: white;
@@ -418,7 +422,7 @@ select:focus-visible {
   z-index: 2;
   display: grid;
   width: 64px;
-  height: 92px;
+  height: 104px;
   place-items: end center;
   border: 0;
   background: transparent;
@@ -458,8 +462,8 @@ select:focus-visible {
   position: absolute;
   z-index: 3;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   place-items: center;
   border: 0;
   border-radius: 8px;
@@ -504,7 +508,7 @@ select:focus-visible {
 
 .farm-plot {
   display: flex;
-  min-height: 138px;
+  min-height: 150px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -548,7 +552,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-height: 72px;
+  min-height: 76px;
   border: 1px solid #d9f99d;
   border-radius: 8px;
   background: #f7fee7;
@@ -684,7 +688,7 @@ select:focus-visible {
 .color-swatch,
 .block-swatch {
   width: 100%;
-  min-height: 52px;
+  min-height: 64px;
   border: 2px solid rgba(15, 23, 42, 0.16);
   border-radius: 8px;
 }
@@ -705,11 +709,28 @@ select:focus-visible {
   border-radius: 8px;
   background: white;
   touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .color-cell {
   min-height: 0;
   border: 1px solid #e2e8f0;
+  aspect-ratio: 1 / 1;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Utility for larger touch targets */
+.touch-target {
+  min-height: 60px !important;
+  min-width: 60px !important;
+  padding: 0.6rem !important;
+}
+
+.coloring-grid[data-painting="true"] .color-cell {
+  cursor: crosshair;
 }
 
 .outline-cell {
@@ -726,7 +747,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 62px;
+  min-height: 68px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   background: white;
@@ -837,6 +858,7 @@ select:focus-visible {
   min-height: 0;
   border: 1px solid #dbe4ef;
   background: transparent;
+  touch-action: manipulation;
 }
 
 .placed-block {
