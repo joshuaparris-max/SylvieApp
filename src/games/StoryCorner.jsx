@@ -17,6 +17,11 @@ export default function StoryCorner() {
   )
   const [storyId, setStoryId] = useState(stories[0].id)
   const [nodeId, setNodeId] = useState('start')
+  const safeStoryState = {
+    ...defaultStoryState,
+    ...storyState,
+    completed: Array.isArray(storyState?.completed) ? storyState.completed : [],
+  }
 
   const story = stories.find((item) => item.id === storyId) || stories[0]
   const node = story.nodes[nodeId] || story.nodes.start
@@ -32,10 +37,14 @@ export default function StoryCorner() {
   }
 
   const finishStory = () => {
-    if (!storyState.completed.includes(story.id)) {
+    if (!safeStoryState.completed.includes(story.id)) {
       setStoryState((current) => ({
+        ...defaultStoryState,
         ...current,
-        completed: [...current.completed, story.id],
+        completed: [
+          ...(Array.isArray(current?.completed) ? current.completed : []),
+          story.id,
+        ],
       }))
       awardStars(1, 'Story finished with kindness.')
     }
@@ -44,10 +53,14 @@ export default function StoryCorner() {
 
   const completeCustomPrompt = (prompt) => {
     const id = `custom:${prompt}`
-    if (storyState.completed.includes(id)) return
+    if (safeStoryState.completed.includes(id)) return
     setStoryState((current) => ({
+      ...defaultStoryState,
       ...current,
-      completed: [...current.completed, id],
+      completed: [
+        ...(Array.isArray(current?.completed) ? current.completed : []),
+        id,
+      ],
     }))
     awardStars(1, 'Custom story shared.')
   }

@@ -7,30 +7,74 @@ import { STORAGE_KEYS } from '../utils/storage'
 const colors = ['#ef476f', '#ffd166', '#06d6a0', '#118ab2', '#8b5cf6']
 const gridSize = 8
 
+function createBlock(index, color) {
+  const x = index % gridSize
+  const y = Math.floor(index / gridSize)
+  return {
+    id: globalThis.crypto?.randomUUID?.() || `${Date.now()}-${index}`,
+    x,
+    y,
+    color,
+    width: 1,
+    height: 1,
+  }
+}
+
 export default function BlockBuilder() {
   const { awardStars } = useAppState()
   const [blocks, setBlocks] = useLocalStorage(STORAGE_KEYS.blocks, [])
   const [activeColor, setActiveColor] = useState(colors[0])
   const [selectedBlock, setSelectedBlock] = useState(null)
+  const safeBlocks = Array.isArray(blocks)
+    ? blocks.filter(
+        (block) =>
+          Number.isInteger(block?.x) &&
+          Number.isInteger(block?.y) &&
+          block.x >= 0 &&
+          block.x < gridSize &&
+          block.y >= 0 &&
+          block.y < gridSize &&
+          colors.includes(block.color),
+      )
+    : []
 
   const addBlock = (index, color = activeColor) => {
-    const x = index % gridSize
-    const y = Math.floor(index / gridSize)
+    const nextBlock = createBlock(index, colors.includes(color) ? color : activeColor)
     setBlocks((current) => [
-      ...current,
-      { id: Date.now(), x, y, color, width: 1, height: 1 },
+      ...(Array.isArray(current) ? current : []).filter(
+        (block) => block.x !== nextBlock.x || block.y !== nextBlock.y,
+      ),
+      nextBlock,
     ])
   }
 
   const deleteBlock = () => {
     if (!selectedBlock) return
-    setBlocks((current) => current.filter((block) => block.id !== selectedBlock))
+    setBlocks((current) =>
+      (Array.isArray(current) ? current : []).filter(
+        (block) => block.id !== selectedBlock,
+      ),
+    )
     setSelectedBlock(null)
+  }
+
+  const touchPlacedBlock = (block) => {
+    if (block.color === activeColor) {
+      setSelectedBlock(block.id)
+      return
+    }
+
+    setBlocks((current) =>
+      (Array.isArray(current) ? current : []).map((item) =>
+        item.id === block.id ? { ...item, color: activeColor } : item,
+      ),
+    )
+    setSelectedBlock(block.id)
   }
 
   const randomTower = () => {
     const tower = Array.from({ length: 7 }, (_, index) => ({
-      id: Date.now() + index,
+      id: `${Date.now()}-${index}`,
       x: 3 + (index % 2),
       y: 7 - index,
       color: colors[index % colors.length],
@@ -42,7 +86,7 @@ export default function BlockBuilder() {
   }
 
   const saveCreation = () => {
-    setBlocks((current) => [...current])
+    setBlocks((current) => [...(Array.isArray(current) ? current : [])])
     awardStars(1, 'Block creation saved.')
   }
 
@@ -114,7 +158,7 @@ export default function BlockBuilder() {
               />
             ))}
 
-            {blocks.map((block) => (
+            {safeBlocks.map((block) => (
               <button
                 key={block.id}
                 type="button"
@@ -128,7 +172,7 @@ export default function BlockBuilder() {
                   height: '12.5%',
                   background: block.color,
                 }}
-                onClick={() => setSelectedBlock(block.id)}
+                onClick={() => touchPlacedBlock(block)}
                 aria-label="Placed block"
               />
             ))}

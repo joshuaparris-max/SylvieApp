@@ -26,8 +26,15 @@ export default function SortingTruck() {
   const [trash, setTrash] = useLocalStorage(STORAGE_KEYS.trash, defaultTrash)
   const [selectedItem, setSelectedItem] = useState(null)
   const [message, setMessage] = useState('Sort each item into its gentle bin.')
+  const safeTrash = {
+    ...defaultTrash,
+    ...trash,
+    sorted: trash?.sorted && typeof trash.sorted === 'object' ? trash.sorted : {},
+    completedRounds: Number(trash?.completedRounds || 0),
+    celebrated: Boolean(trash?.celebrated),
+  }
 
-  const allSorted = items.every((item) => trash.sorted[item.id] === item.bin)
+  const allSorted = items.every((item) => safeTrash.sorted[item.id] === item.bin)
 
   const sortItem = (itemId, bin) => {
     const item = items.find((entry) => entry.id === itemId)
@@ -38,20 +45,21 @@ export default function SortingTruck() {
       return
     }
 
-    const nextSorted = { ...trash.sorted, [itemId]: bin }
+    const nextSorted = { ...safeTrash.sorted, [itemId]: bin }
     const completed = items.every((entry) => nextSorted[entry.id] === entry.bin)
 
     setTrash((current) => ({
+      ...defaultTrash,
       ...current,
       sorted: nextSorted,
       completedRounds:
-        completed && !current.celebrated
-          ? current.completedRounds + 1
-          : current.completedRounds,
-      celebrated: completed ? true : current.celebrated,
+        completed && !current?.celebrated
+          ? Number(current?.completedRounds || 0) + 1
+          : Number(current?.completedRounds || 0),
+      celebrated: completed ? true : Boolean(current?.celebrated),
     }))
     setSelectedItem(null)
-    if (completed && !trash.celebrated) {
+    if (completed && !safeTrash.celebrated) {
       setMessage('Great sorting. You helped the earth!')
       awardStars(2, 'Sorting round finished.')
     } else {
@@ -61,6 +69,7 @@ export default function SortingTruck() {
 
   const newRound = () => {
     setTrash((current) => ({
+      ...defaultTrash,
       ...current,
       sorted: {},
       celebrated: false,
@@ -79,7 +88,7 @@ export default function SortingTruck() {
           <h2 className="panel-title">Items</h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {items.map((item) => {
-              const sorted = trash.sorted[item.id]
+                  const sorted = safeTrash.sorted[item.id]
               return (
                 <button
                   key={item.id}
@@ -88,10 +97,15 @@ export default function SortingTruck() {
                   className={`sort-item ${
                     selectedItem === item.id ? 'selected' : ''
                   } ${sorted ? 'sorted' : ''}`}
-                  onClick={() => !sorted && setSelectedItem(item.id)}
+                  onClick={() => {
+                    if (sorted) return
+                    setSelectedItem(item.id)
+                    setMessage(`Where should ${item.label} go?`)
+                  }}
                   onDragStart={(event) => {
                     event.dataTransfer.setData('text/plain', item.id)
                     setSelectedItem(item.id)
+                    setMessage(`Where should ${item.label} go?`)
                   }}
                   disabled={Boolean(sorted)}
                 >
@@ -131,7 +145,7 @@ export default function SortingTruck() {
                 <span className="text-lg font-black">{bin}</span>
                 <span className="mt-2 block text-sm">
                   {
-                    items.filter((item) => trash.sorted[item.id] === bin)
+                    items.filter((item) => safeTrash.sorted[item.id] === bin)
                       .length
                   }{' '}
                   sorted

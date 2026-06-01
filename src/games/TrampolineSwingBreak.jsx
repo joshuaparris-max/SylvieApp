@@ -20,6 +20,15 @@ export default function TrampolineSwingBreak() {
     setPromptIndex((current) => (current + 1) % movementPrompts.length)
     setSeconds(30)
     setRunning(false)
+    setDone(false)
+  }
+
+  const startTimer = () => {
+    if (seconds <= 0) {
+      setSeconds(30)
+      setDone(false)
+    }
+    setRunning(true)
   }
 
   const finish = () => {
@@ -27,6 +36,7 @@ export default function TrampolineSwingBreak() {
       awardStars(1, 'Movement break finished.')
       setDone(true)
     }
+    setRunning(false)
   }
 
   return (
@@ -47,8 +57,8 @@ export default function TrampolineSwingBreak() {
           Calm timer
         </p>
         <div className="mt-5 grid gap-2 sm:grid-cols-4">
-          <button type="button" className="btn-primary" onClick={() => setRunning(true)}>
-            Start
+          <button type="button" className="btn-primary" onClick={startTimer}>
+            {seconds <= 0 ? 'Restart' : 'Start'}
           </button>
           <button type="button" className="btn-secondary" onClick={() => setRunning(false)}>
             Pause
