@@ -12,7 +12,7 @@ import PrincessDressUp from './games/PrincessDressUp'
 import PuzzlePlay from './games/PuzzlePlay'
 import StoryCorner from './games/StoryCorner'
 import TrampolineSwingBreak from './games/TrampolineSwingBreak'
-import TrashTruckSorter from './games/TrashTruckSorter'
+import SortingTruck from './games/SortingTruck'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
             <Route path="colouring-room" element={<ColouringRoom />} />
             <Route path="puzzle-play" element={<PuzzlePlay />} />
             <Route path="block-builder" element={<BlockBuilder />} />
-            <Route path="trash-truck-sorter" element={<TrashTruckSorter />} />
+            <Route path="sorting-truck" element={<SortingTruck />} />
             <Route path="trampoline-swing-break" element={<TrampolineSwingBreak />} />
             <Route path="story-corner" element={<StoryCorner />} />
             <Route path="parent-settings" element={<ParentSettings />} />

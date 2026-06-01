@@ -13,7 +13,7 @@ The app is inspired by gentle play themes: fairies, farms, princess dress-up, co
 - Colouring Room with 10 original pages, large colours, eraser, clear, local saves, and PNG download
 - Puzzle Play with matching, picture placement, and missing-piece puzzles
 - Block Builder with snap-grid building, drag/drop colour blocks, delete, clear, save, and random tower
-- Trash Truck Sorter with recycling, compost, rubbish bins, and a friendly original truck
+- Sorting Truck with recycling, compost, rubbish bins, and a friendly original truck
 - Trampoline & Swing Break with movement prompts and a calm timer
 - Story Corner with short original interactive stories and custom parent prompts
 - Parent Settings with passcode, reset, sounds toggle, visual mode, saved drawing management, messages, and movement reminder interval

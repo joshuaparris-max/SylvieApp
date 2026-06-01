@@ -1020,6 +1020,118 @@ select:focus-visible {
   box-shadow: 0 16px 36px rgba(37, 53, 86, 0.12);
 }
 
+.favorite-gallery {
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 1rem;
+  box-shadow: 0 16px 36px rgba(37, 53, 86, 0.12);
+}
+
+.favorite-gallery-heading {
+  margin-bottom: 1rem;
+}
+
+.favorite-picture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 720px) {
+  .favorite-picture-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1060px) {
+  .favorite-picture-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.favorite-picture-card {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 12px 28px rgba(37, 53, 86, 0.1);
+}
+
+.favorite-picture {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.72), transparent 24%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+}
+
+.favorite-picture-fairy {
+  color: #f9a8d4;
+}
+
+.favorite-picture-farm {
+  color: #86efac;
+}
+
+.favorite-picture-piglet {
+  color: #fecdd3;
+}
+
+.favorite-picture-puppy {
+  color: #bae6fd;
+}
+
+.favorite-picture-ocean-princess,
+.favorite-picture-mermaid {
+  color: #67e8f9;
+}
+
+.favorite-picture-ice-sisters {
+  color: #dbeafe;
+}
+
+.favorite-picture-book-princess {
+  color: #fde68a;
+}
+
+.favorite-picture-mouse-friend {
+  color: #e2e8f0;
+}
+
+.favorite-picture-sorting-truck {
+  color: #bbf7d0;
+}
+
+.favorite-picture-colouring {
+  color: #fef3c7;
+}
+
+.favorite-picture-swing {
+  color: #ddd6fe;
+}
+
+.favorite-picture-trampoline {
+  color: #cffafe;
+}
+
+.favorite-picture-dress-up {
+  color: #fce7f3;
+}
+
+.favorite-picture-wand {
+  color: #ede9fe;
+}
+
+.favorite-picture-puzzle {
+  color: #e0f2fe;
+}
+
+.favorite-picture-blocks {
+  color: #ffedd5;
+}
+
 .favorite-grid {
   display: grid;
   gap: 1rem;

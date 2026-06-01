@@ -42,8 +42,8 @@ export const homeSections = [
     summary: 'Snap colourful blocks onto a bright building mat.',
   },
   {
-    title: 'Trash Truck Sorter',
-    path: '/trash-truck-sorter',
+    title: 'Sorting Truck',
+    path: '/sorting-truck',
     icon: 'truck',
     tone: 'leaf',
     summary: 'Sort recycling, compost, and rubbish for a friendly original truck.',
@@ -71,15 +71,109 @@ export const homeSections = [
   },
 ]
 
-export const favoriteThings = [
-  'Fairies and gentle magic',
-  'Farm friends and baby animals',
-  'Princess dresses, crowns, and wands',
-  'Finger painting with bright colours',
-  'Fun puzzles and building blocks',
-  'Jumping on a swing or trampoline',
-  'Cute shoes and sparkly accessories',
-  'Helping the trash truck sort recycling',
+export const favoritePictures = [
+  {
+    id: 'fairy',
+    title: 'Fairy friend',
+    kind: 'fairy',
+    description: 'Tiny wings, flowers, stars, and gentle magic.',
+  },
+  {
+    id: 'farm',
+    title: 'Cozy harvest farm',
+    kind: 'farm',
+    description: 'Seeds, crops, chickens, lambs, ducks, and warm little fields.',
+  },
+  {
+    id: 'piglet',
+    title: 'Rosy piglet pal',
+    kind: 'piglet',
+    description: 'A cheerful original piglet for soft pretend-play stories.',
+  },
+  {
+    id: 'puppy',
+    title: 'Blue puppy pal',
+    kind: 'puppy',
+    description: 'A playful original puppy with kind eyes and floppy ears.',
+  },
+  {
+    id: 'ocean-princess',
+    title: 'Ocean voyager princess',
+    kind: 'ocean-princess',
+    description: 'Shells, waves, courage, and sea-breeze adventure.',
+  },
+  {
+    id: 'ice-sisters',
+    title: 'Ice castle sisters',
+    kind: 'ice-sisters',
+    description: 'Snowy gowns, warm hearts, and a shining ice castle.',
+  },
+  {
+    id: 'book-princess',
+    title: 'Book-loving princess',
+    kind: 'book-princess',
+    description: 'Stories, kindness, golden dresses, and a cozy library.',
+  },
+  {
+    id: 'mermaid',
+    title: 'Kind mermaid',
+    kind: 'mermaid',
+    description: 'A gentle sea friend with shells, bubbles, and ocean songs.',
+  },
+  {
+    id: 'mouse-friend',
+    title: 'Polka-dot mouse friend',
+    kind: 'mouse-friend',
+    description: 'Round ears, a star scarf, and sweet dress-up fun.',
+  },
+  {
+    id: 'sorting-truck',
+    title: 'Friendly sorting truck',
+    kind: 'sorting-truck',
+    description: 'A helpful original truck for recycling, compost, and rubbish.',
+  },
+  {
+    id: 'colouring',
+    title: 'Colouring table',
+    kind: 'colouring',
+    description: 'Big crayons, simple pages, and saved drawings.',
+  },
+  {
+    id: 'swing',
+    title: 'Garden swing',
+    kind: 'swing',
+    description: 'A calm swing under a soft rainbow sky.',
+  },
+  {
+    id: 'trampoline',
+    title: 'Trampoline jumps',
+    kind: 'trampoline',
+    description: 'Gentle jumping, movement breaks, and happy balance.',
+  },
+  {
+    id: 'dress-up',
+    title: 'Dress-up shoes',
+    kind: 'dress-up',
+    description: 'Sparkly shoes, capes, crowns, and imagination.',
+  },
+  {
+    id: 'wand',
+    title: 'Magic wands',
+    kind: 'wand',
+    description: 'Original wands that sparkle most for kindness.',
+  },
+  {
+    id: 'puzzle',
+    title: 'Puzzle pieces',
+    kind: 'puzzle',
+    description: 'Matching, missing pieces, and picture puzzles.',
+  },
+  {
+    id: 'blocks',
+    title: 'Block tower',
+    kind: 'blocks',
+    description: 'Big colourful blocks for towers and tiny buildings.',
+  },
 ]
 
 export const encouragements = [

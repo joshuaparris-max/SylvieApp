@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import FavoritePicture from '../components/FavoritePicture'
 import PlayIcon from '../components/PlayIcon'
-import { homeSections } from '../data/content'
+import { favoritePictures, homeSections } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">{greeting}</p>
           <p className="mt-3 text-sm text-slate-600">
-            Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, a friendly truck, swings, and trampoline fun.
+            Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, original piglet and puppy pals, a friendly sorting truck, swings, and trampoline fun.
           </p>
         </div>
         <div className="garden-illustration" aria-hidden="true">
@@ -34,6 +35,33 @@ export default function Home() {
           <span className="fairy-wing left" />
           <span className="fairy-wing right" />
           <span className="magic-trail" />
+        </div>
+      </section>
+
+      <section className="favorite-gallery" aria-labelledby="favorite-gallery-title">
+        <div className="favorite-gallery-heading">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-700">
+            Original pictures
+          </p>
+          <h2 id="favorite-gallery-title" className="text-2xl font-black text-slate-950">
+            Things Sylvie loves
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+            These are SylvieApp originals inspired by her favourite kinds of play.
+          </p>
+        </div>
+        <div className="favorite-picture-grid">
+          {favoritePictures.map((picture) => (
+            <article key={picture.id} className="favorite-picture-card">
+              <FavoritePicture kind={picture.kind} title={picture.title} />
+              <div className="p-3">
+                <h3 className="text-base font-black text-slate-950">{picture.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-slate-600">
+                  {picture.description}
+                </p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

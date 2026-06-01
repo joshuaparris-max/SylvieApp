@@ -21,7 +21,7 @@ const defaultTrash = {
   celebrated: false,
 }
 
-export default function TrashTruckSorter() {
+export default function SortingTruck() {
   const { awardStars } = useAppState()
   const [trash, setTrash] = useLocalStorage(STORAGE_KEYS.trash, defaultTrash)
   const [selectedItem, setSelectedItem] = useState(null)
@@ -70,7 +70,7 @@ export default function TrashTruckSorter() {
 
   return (
     <div>
-      <PageHeader title="Trash Truck Sorter" eyebrow="Helpful sorting">
+      <PageHeader title="Sorting Truck" eyebrow="Helpful sorting">
         <p>{message}</p>
       </PageHeader>
 
