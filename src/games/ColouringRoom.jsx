@@ -32,6 +32,7 @@ export default function ColouringRoom() {
   const [isErasing, setIsErasing] = useState(false)
   const [isPainting, setIsPainting] = useState(false)
   const [drawings, setDrawings] = useLocalStorage(STORAGE_KEYS.drawings, {})
+  const [historyStacks, setHistoryStacks] = useState({})
   const isPaintingRef = useRef(false)
   const lastPaintedCellRef = useRef(null)
 
@@ -63,6 +64,15 @@ export default function ColouringRoom() {
     event.preventDefault()
     const index = getCellIndexFromPoint(event)
     if (index === null) return
+
+    // snapshot current drawing for undo (one snapshot per pointerdown)
+    setHistoryStacks((current) => {
+      const pageStack = current[pageId] ? [...current[pageId]] : []
+      pageStack.push(currentDrawing)
+      // limit history depth
+      if (pageStack.length > 20) pageStack.shift()
+      return { ...current, [pageId]: pageStack }
+    })
 
     isPaintingRef.current = true
     lastPaintedCellRef.current = null
@@ -104,6 +114,17 @@ export default function ColouringRoom() {
 
   const clearPage = () => {
     setDrawings((current) => ({ ...current, [pageId]: blankPage() }))
+    setHistoryStacks((current) => ({ ...current, [pageId]: [] }))
+  }
+
+  const undo = () => {
+    setHistoryStacks((current) => {
+      const pageStack = current[pageId] ? [...current[pageId]] : []
+      if (pageStack.length === 0) return current
+      const last = pageStack.pop()
+      setDrawings((d) => ({ ...d, [pageId]: last }))
+      return { ...current, [pageId]: pageStack }
+    })
   }
 
   const saveDrawing = () => {
@@ -191,6 +212,14 @@ export default function ColouringRoom() {
               </button>
               <button type="button" className="btn-secondary" onClick={clearPage}>
                 Clear page
+              </button>
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={undo}
+                disabled={!(historyStacks[pageId] && historyStacks[pageId].length)}
+              >
+                Undo
               </button>
               <button type="button" className="btn-primary" onClick={saveDrawing}>
                 Save drawing
