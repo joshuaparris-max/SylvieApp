@@ -1281,6 +1281,309 @@ button[disabled] {
   font-weight: 800;
 }
 
+.mini-scene,
+.mini-puppy-yard,
+.mini-position-world,
+.mini-sound-water,
+.mini-wand-spell,
+.mini-movement-counter {
+  position: relative;
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(#dff6ff 0 56%, #dcfce7 56% 100%);
+  margin-bottom: 1rem;
+}
+
+.fairy-mini {
+  background: linear-gradient(#fef3c7 0 48%, #bbf7d0 48% 100%);
+}
+
+.mini-flower {
+  position: absolute;
+  bottom: 36px;
+  width: 14px;
+  border-radius: 999px;
+  background: #16a34a;
+  transition: height 220ms ease;
+}
+
+.mini-flower::before {
+  position: absolute;
+  top: -28px;
+  left: -18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #ffd166 0 8px, transparent 9px),
+    radial-gradient(circle at 50% 12%, #f9a8d4 0 10px, transparent 11px),
+    radial-gradient(circle at 88% 50%, #f9a8d4 0 10px, transparent 11px),
+    radial-gradient(circle at 50% 88%, #f9a8d4 0 10px, transparent 11px),
+    radial-gradient(circle at 12% 50%, #f9a8d4 0 10px, transparent 11px);
+  content: "";
+}
+
+.mini-sun {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffd166;
+}
+
+.mini-sparkles {
+  position: absolute;
+  left: 24%;
+  top: 26%;
+  width: 18px;
+  height: 18px;
+  background: #facc15;
+  box-shadow: 90px 20px #facc15, 46px 80px #facc15;
+  clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+}
+
+.mini-sequence,
+.mini-story-path,
+.mini-bin-row,
+.mini-pattern-row,
+.mini-colour-row {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mini-sequence,
+.mini-story-path,
+.mini-bin-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mini-sequence div,
+.mini-story-path div,
+.mini-bin,
+.mini-pattern-row span,
+.mini-prompt-chip {
+  min-height: 72px;
+  border-radius: 8px;
+  background: #f8fafc;
+  padding: 0.75rem;
+  font-weight: 900;
+  color: #334155;
+  text-align: center;
+}
+
+.mini-sequence span,
+.mini-story-path strong {
+  display: block;
+  color: #2563eb;
+}
+
+.mini-sequence .done {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.mini-character-card {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  background: #fff7ed;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 900;
+  color: #334155;
+}
+
+.mini-character-card .favorite-picture,
+.mini-puppy-yard .favorite-picture {
+  width: min(100%, 220px);
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.mini-action-strip {
+  width: min(90%, 28rem);
+  border-radius: 8px;
+  background: white;
+  padding: 0.9rem;
+  text-align: center;
+  font-weight: 900;
+  color: #334155;
+}
+
+.mini-position-world {
+  background:
+    linear-gradient(#cffafe 0 58%, #67e8f9 58% 100%);
+}
+
+.mini-shell {
+  position: absolute;
+  bottom: 42px;
+  left: calc(50% - 28px);
+  width: 56px;
+  height: 42px;
+  border-radius: 50% 50% 10px 10px;
+  background: #fbbf24;
+}
+
+.mini-voyager {
+  position: absolute;
+  left: calc(50% - 18px);
+  bottom: 92px;
+  width: 36px;
+  height: 52px;
+  border-radius: 999px 999px 8px 8px;
+  background: #f97316;
+  transition:
+    left 220ms ease,
+    bottom 220ms ease;
+}
+
+.position-over {
+  bottom: 132px;
+}
+
+.position-beside {
+  left: calc(50% + 54px);
+  bottom: 44px;
+}
+
+.position-under {
+  bottom: 14px;
+}
+
+.mini-sound-water {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-content: center;
+  background: linear-gradient(#cffafe, #0ea5e9);
+  padding: 1rem;
+}
+
+.mini-sound-water span {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 0.6rem 0.9rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.mini-pattern-row {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.mini-paint-grid {
+  display: grid;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: hidden;
+  border: 2px solid #94a3b8;
+  border-radius: 8px;
+  margin: 0 auto 1rem;
+  background: white;
+}
+
+.mini-paint-grid button {
+  min-height: 0;
+  border: 1px solid #e2e8f0;
+}
+
+.mini-colour-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mini-colour-row button {
+  min-height: 58px;
+  border: 2px solid rgba(15, 23, 42, 0.16);
+  border-radius: 8px;
+}
+
+.mini-colour-row button.selected {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #bfdbfe;
+}
+
+.mini-movement-counter {
+  background: linear-gradient(#fef3c7, #d9f99d);
+}
+
+.mini-movement-counter span {
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #2563eb;
+  font-size: 3rem;
+  font-weight: 950;
+}
+
+.mini-movement-counter p {
+  margin-top: 0.75rem;
+  font-weight: 900;
+  color: #334155;
+}
+
+.mini-wand-spell {
+  background:
+    radial-gradient(circle at 18% 24%, #fef08a 0 12px, transparent 13px),
+    radial-gradient(circle at 82% 34%, #f0abfc 0 12px, transparent 13px),
+    linear-gradient(135deg, #ede9fe, #fce7f3);
+  color: #4c1d95;
+  font-size: 1.35rem;
+  font-weight: 950;
+  text-align: center;
+}
+
+.mini-puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mini-puzzle-grid button {
+  min-height: 82px;
+  border-radius: 8px;
+  background: #e0f2fe;
+  color: #0f172a;
+  font-weight: 950;
+}
+
+.mini-puzzle-grid button.matched {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.mini-block-stack {
+  display: flex;
+  min-height: 210px;
+  align-items: end;
+  justify-content: center;
+  gap: 0.35rem;
+  border-radius: 8px;
+  background: linear-gradient(#dff6ff 0 58%, #fef3c7 58% 100%);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.mini-block-stack span {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  box-shadow: inset 0 -6px rgba(15, 23, 42, 0.14);
+}
+
 .favorite-grid {
   display: grid;
   gap: 1rem;
