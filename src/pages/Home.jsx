@@ -42,8 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      {!isSimpleMode ? (
-        <section className="favorite-gallery" aria-labelledby="favorite-gallery-title">
+      <section className="favorite-gallery" aria-labelledby="favorite-gallery-title">
         <div className="favorite-gallery-heading">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-700">
             Original pictures
@@ -68,8 +67,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        </section>
-      ) : null}
+      </section>
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-label="App sections">
         {homeSections.map((section) => (
