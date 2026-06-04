@@ -1,0 +1,946 @@
+Evidence-Based App Design
+for Early Childhood
+Sylvie (4 yrs 3 mo) & Elias (2 yrs) — Four Custom Apps
+
+Comprehensive Research Report
+
+Australian EYLF · NSW Curriculum · Developmental Science · Paediatric Guidelines
+Prepared: 04 June 2026 · Parris Tech Services
+
+SYLVIE
+Born 26 Feb 2022 · Age 4y 3m
+Apps: SylvieApp · SylviePhonetics · Sleepy
+
+ELIAS
+Born 11 May 2024 · Age 2y 0m
+App: EliasApp2 (vehicles/tools)
+
+Contents
+1.
+
+Screen Time Guidelines by Age
+Australian 24-hr Movement · WHO · AAP · ECA
+
+2.
+
+App & Digital Media Design Principles
+Cognitive science · UX for under-5s · Session length
+
+3.
+
+Literacy & Phonics — Sylvie (Age 4)
+EYLF Outcome 5 · NSW curriculum · Systematic phonics
+
+4.
+
+Infant & Toddler Development — Elias (Age 2)
+Sensory play · Video deficit · Cause-and-effect
+
+5.
+
+Sleep & Bedtime — Sleepy App
+Blue light · Melatonin · Paediatric sleep science
+
+6.
+
+Australian Curriculum Frameworks
+EYLF outcomes · NQF Quality Area 1 · ACARA
+
+7.
+
+Social-Emotional Learning & Wellbeing
+Attachment · Emotional literacy · Mindfulness
+
+8.
+
+Sociological & Homeschool Perspectives
+Play-based learning · Cultural diversity · Equity
+
+9.
+
+QA Audit Checklist — All Four Apps
+Per-app evaluation against evidence criteria
+
+1
+0.
+
+Priority Action List
+Top 10 changes ranked by evidence strength
+
+1
+
+Screen Time Guidelines by Age
+
+Every major paediatric body agrees: less is better, quality matters more than quantity, and co-viewing
+transforms the learning outcome. Here is what the key guidelines say — with direct relevance to Sylvie
+(4y) and Elias (2y).
+
+1.1 The Consensus — What All Guidelines Agree On
+Body
+
+Under 2
+
+Ages 2–5
+
+WHO (2019)
+
+Zero screen time (excl. video calls)
+
+≤ 1 hr/day — less is better
+
+AAP (2024 update)
+
+Avoid passive screens under 18 mo
+
+≤ 1 hr/day high-quality; quality + co-view >
+duration
+
+Australian 24-hr Movement
+
+No sedentary screen time
+
+≤ 1 hr/day; less is better
+
+Strongly discouraged
+
+≤ 1 hr balanced with ≥ 180 min physical
+
+Guidelines
+ECA Digital Statement
+
+activity/day
+SCHN (Sydney Children's
+
+No sedentary screen time
+
+≤ 1 hr/day; bedtime and mealtimes screen-free
+
+Hospital)
+
+1.2 Quality vs Quantity — What the Evidence Says
+The AAP's 2024 update was a landmark shift: their guidance moved explicitly from time caps toward
+quality, co-viewing, and communication as the more meaningful predictors of wellbeing outcomes. A child
+engaging with an educational app alongside a parent who narrates, questions, and extends the content is
+in a fundamentally different learning situation to a child alone with the same app for the same duration.
+The "Five Cs" Framework (AAP 2024)
+• Child: Developmental stage determines appropriate content and duration.
+• Content: High-quality, interactive, educational — not passive scrolling or fast-paced entertainment.
+• Calm: Avoid screens that elevate arousal; especially important pre-bedtime.
+• Crowding Out: Screen time should never displace sleep, physical play, or face-to-face interaction.
+• Communication: Co-viewing and discussion transform passive viewing into active learning.
+
+1.3 Application to Sylvie & Elias
+Given the current guidelines, here is the evidence-based framing for each child:
+Sylvie, 4y 3m
+
+Elias, 2y 0m
+
+• Max 1 hr/day total across all apps and
+passive media
+
+• WHO still recommends zero screen time
+under 2
+
+• Individual app sessions: 10–15 min maximum
+
+• At exactly 2, he is at the threshold —
+co-viewing is essential
+
+• At least 2 sessions, not one long block
+• Co-view or co-play whenever possible
+• SleepyTime: no bright screens within 45–60
+min of sleep
+
+• Every EliasApp session should have a parent
+co-play prompt on launch
+• Keep sessions under 10 min;
+cause-and-effect tapping with narration
+• Strongly prefer real-world vehicle play
+alongside or instead of screen
+
+2
+
+App & Digital Media Design Principles
+
+2.1 The Four Pillars of Learning (Kuhl et al.)
+Research by Patricia Kuhl and colleagues identifies four conditions that must be met for digital media to
+produce genuine learning in young children. An app that omits any pillar drops significantly in educational
+effectiveness:
+Active Involvement
+
+The child must initiate and direct activity — not merely watch. Tap-to-reveal, voice
+response, and choice architecture all increase active engagement.
+
+Contingent
+Feedback
+
+The app must respond meaningfully to the child's specific input — not generic
+praise. Scaffolded hints ("That's close — try again — listen to the sound")
+outperform both silence and blanket "great job!" responses.
+
+Meaningful
+Experiences
+
+Content must connect to the child's existing world — familiar objects, relevant
+vocabulary, emotional resonance. Elias's vehicle theme scores well here.
+
+Social Interaction
+
+Co-play with a caregiver is the single biggest multiplier of learning from screens.
+Apps should cue and facilitate adult involvement, not design it out.
+
+2.2 Attention Span & Session Length
+Research on preschool attention spans consistently shows a working window of 8–12 minutes for
+structured tasks in 4-year-olds, and 5–8 minutes for 2-year-olds. This has direct design implications:
+Evidence-Based Session Design
+• 4-year-olds (Sylvie): target 8–12 min sessions; hard stop or transition prompt at 15 min.
+• 2-year-olds (Elias): target 5–8 min sessions; hard stop or parent handoff prompt at 10 min.
+• Multiple short sessions outperform single long sessions for retention and emotional regulation.
+• Include a natural "closing ritual" (goodbye animation, achievement summary) — not an abrupt
+cutoff.
+• Avoid autoplay next-session mechanics — require positive parent/child re-initiation.
+
+2.3 UI/UX Design for Under-5s
+Tap Target Size: Minimum 20mm × 20mm (44pt+). Preschoolers have low fine-motor precision. Larger
+targets reduce frustration and support skill development.
+Animation Speed: Keep transitions under 300ms; avoid fast-cut or flashing sequences that spike
+arousal. Slow, smooth animations support attention and calm.
+
+Visual Complexity: Max 3–5 interactive elements per screen for 2–3-year-olds; 4–6 for 4–5-year-olds.
+Background clutter competes with focal attention.
+Audio Feedback: Immediate contingent audio (< 100ms delay) is critical for cause-and-effect learning.
+Use warm, calm voice over jarring sound effects. Consistent voice actor builds trust.
+Colour: High contrast for core interactive elements. Avoid purely red/green cues (colour blindness).
+Warm amber/cream palettes support calming; bright primaries support alerting activities.
+Movement Breaks: Build in a physical prompt every 5–8 minutes: "Shake your sillies out!" or "Stand up
+and jump three times!" These counter sedentary accumulation.
+
+2.4 Reward Design — Avoiding Dopamine Dependency
+Child psychologists and OTs raise consistent concerns about gamification mechanics (streaks, badges,
+escalating rewards) in children's apps. Self-Determination Theory research (Deci & Ryan) shows that
+extrinsic rewards can undermine intrinsic motivation when overused — the child begins to engage for the
+reward, not the learning. Best practice:
+Evidence-Based Reward Principles
+• Use informational praise ("You found the letter S — that's the sound in Sylvie!") over evaluative
+("Amazing!!").
+• Avoid variable-ratio reward schedules (slot-machine mechanics) — these maximise addiction, not
+learning.
+• Completion rewards should be narrative/story-based rather than points or streaks.
+• Let the child "show" a parent the achievement — social sharing is more developmentally
+appropriate than a leaderboard.
+• No shame mechanics: never show sad faces, alarms, or countdown timers for mistakes.
+
+3
+
+Literacy & Phonics — Sylvie (Age 4)
+
+3.1 The Australian Research Consensus
+Australia has experienced its own "reading wars" debate. The 2024 Grattan Institute "Reading Guarantee"
+report found that one-third of Australian students are not effective independent readers, and firmly
+discredited whole-language approaches in favour of systematic, explicit phonics. NSW implemented the
+Year 1 Phonics Screening Check, with results jumping from 71% to 95% meeting expectations in just one
+year after systematic phonics programs were adopted. The science of reading in Australia is now settled:
+explicit systematic phonics instruction is the evidence-based foundation.
+
+3.2 Is Phonics Appropriate at Age 4?
+Yes — with important nuance. At 4 years old, phonological awareness work is not only appropriate, it is
+the optimal window for building the foundation. The correct developmental sequence for Sylvie's age is:
+Stage
+
+Typical Age
+
+Example
+
+1. Rhyme recognition
+
+3–4 years
+
+Can she hear that "cat" and "hat" rhyme?
+
+2. Syllable segmentation
+
+3–4 years
+
+"Clap the beats in your name: Syl-vie!"
+
+3. Onset-rime
+
+4 years
+
+"What sound does 'cat' start with? /k/"
+
+4. Phoneme isolation
+
+4–5 years
+
+"What's the first sound in 'sun'? /s/"
+
+5. Phoneme blending
+
+4–5 years
+
+"/k/ /æ/ /t/ — what word? cat!"
+
+6. Grapheme-phoneme
+correspondence
+
+4.5–6 years
+
+Letters map to sounds; decoding begins
+
+3.3 SylviePhonetics — Design Recommendations
+Phonics App Design — Evidence-Based Principles
+• Sequence matters: begin with rhyme and syllables before grapheme-phoneme correspondence.
+• Use Sylvie's own name as the first phonemic anchor — "What sound does YOUR name start
+with?"
+• Decodable words only in early stages — do not mix sight-word memorisation with phonics (this
+confuses the phonemic pathway).
+• Audio-first: the child should hear the phoneme modelled before seeing the grapheme.
+• NSW EYLF Outcome 5 alignment: frame activities as "investigating sounds and symbols" not drill.
+• Scaffolded feedback: if wrong — hint; if hint fails — model; never just show "X" and move on.
+• Australian accent voice acting: critical for authentic phoneme modelling in NSW.
+
+3.4 Evidence-Supported Programs (for Benchmarking)
+Jolly Phonics: Widely used in Australian kindy. Multi-sensory (actions, songs). Good for 4–5-year-olds.
+Strong evidence base.
+UFLI Foundations: Explicit systematic synthetic phonics. Strong US research base. Not AU-specific but
+structurally excellent for app design reference.
+Heggerty Phonemic Awareness: Oral-only phonemic awareness curriculum. Ideal for Sylvie's current
+stage. 10-min daily segments.
+SPELD NSW: Australian-specific, decodable text libraries. Alignment with NSW curriculum. Excellent
+reference for word lists and sequencing.
+
+4
+
+Infant & Toddler Development — Elias (Age 2)
+
+4.1 The Video Deficit Effect
+Research consistently documents the "video deficit effect": children under 2.5 years learn significantly less
+from screens than from identical live interactions. The mechanism is contingency — a live caregiver
+adjusts their language, pace, and affect in real time to the child's response. Screens cannot do this. At
+exactly 2 years old, Elias is at the beginning of the window where contingent interactive apps can start to
+bridge this deficit — but only with co-viewing.
+
+4.2 Development at Age 2 — What to Design For
+Cause & Effect: Toddlers at 2 understand contingency: "I tap → something happens." This is the core
+mechanic EliasApp should leverage. Every interaction should have an immediate, satisfying, and
+varied response.
+Object Permanence: Now well-established. Hide-and-reveal mechanics work well.
+Vocabulary Explosion: Average 2-year-olds have 50–200 words. Naming every vehicle/tool with
+consistent audio labelling supports vocabulary growth.
+Imitation & Modelling: Toddlers learn by watching and copying. Include a "watch dad/mum do it" mode
+or mirroring prompt.
+Parallel Play: At 2, children play alongside rather than with others. Design for side-by-side co-play with a
+carer, not joint turn-taking.
+Emotional Regulation: Keep audio calm. Avoid startling or overwhelming sound design. Celebratory
+sounds should be warm, not jarring.
+
+4.3 Vehicle & Construction Theme — Developmental Appropriateness
+The vehicle/construction/mechanical theme in EliasApp is developmentally well-matched to Elias's age
+and well-supported by functional play research. At 2 years, children are in the peak of functional play with
+vehicles and cause-effect toys. Naming vehicle categories, sounds, and actions ("the bulldozer PUSHES
+the dirt") builds vocabulary through concrete, high-interest categories. The theme is not
+gender-deterministic — current developmental research treats vehicle interest as schema-based
+(movement, cause-effect) rather than gender-fixed.
+EliasApp Design Priorities
+• Launch with co-play prompt: "Show mum/dad what you found!"
+• Every tap: immediate audio label + animated response (under 150ms)
+• Session timer: visible to parent, soft prompt at 8 min, hard stop at 10 min
+• Include physical bridge: "Now go find something that drives! Bring it back!"
+• Vocabulary: consistent, simple, Australian-accented labels for every object
+• No achievement streaks — use narrative completion ("the truck is home!")
+
+5
+
+Sleep & Bedtime — Sleepy App
+
+5.1 Blue Light, Melatonin & the Biological Mechanism
+Screen light — particularly in the 460–480nm blue wavelength range emitted by LCD/OLED panels —
+suppresses melatonin production in the pineal gland by up to 88% in adults, and emerging evidence
+suggests children are more sensitive, not less. The suppression begins within minutes of exposure and
+can delay sleep onset by 30–60 minutes in preschoolers. The Australian 24-hour Movement Guidelines
+explicitly recommend removing screens at least 1 hour before sleep.
+
+5.2 Evidence-Based Bedtime App Design
+Screen-free window
+
+No screens 45–60 min before Sylvie's designated sleep time. If Sleepy is used
+earlier in the routine, treat it as the transition signal, not the final step.
+
+Colour temperature
+
+Shift display to warm amber tones (< 3000K) for any nighttime use.
+Night-shift/blue-filter mode should be mandatory, not optional.
+
+Brightness
+
+Auto-reduce to 20–30% of maximum brightness for bedtime content. Bright screens
+signal daytime to the circadian clock.
+
+Audio-first design
+
+Research supports audio-only or audio-dominant bedtime content over full-video.
+Consider a "lights out" mode: screen fades to black, only audio continues.
+
+Pacing
+
+Slow, low-variability audio. Music with 60–80 BPM (near resting heart rate). Calm
+narrator voice. No sudden sound effects.
+
+Content type
+
+Non-stimulating narrative (familiar stories, nature imagery).
+problem-solving or exciting content — arousal is the enemy.
+
+Consistency
+
+The bedtime routine is more powerful than any single content choice. Sleepy should
+have a consistent structure: opening ritual → content → closing ritual → parent
+handoff.
+
+Avoid
+
+novel
+
+Critical: Elias and Screen Use at Bedtime
+• WHO/AAP: zero passive screen time for children under 2. This applies to bedtime as much as any
+time.
+• If Elias is present during Sleepy use with Sylvie, position him away from the screen or transition
+him first.
+• No EliasApp use within 2 hours of sleep — his melatonin regulation is even more sensitive than
+Sylvie's.
+
+6
+
+Australian Curriculum Frameworks
+
+6.1 EYLF Learning Outcomes — App Alignment
+The Early Years Learning Framework (EYLF v2.0, 2022) identifies five learning outcomes. All four apps
+should embed at least one outcome explicitly. Here is how each outcome maps to the app suite:
+EYLF Outcome
+
+Description
+
+App Alignment
+
+Outcome 1: Identity
+
+Children have a strong sense of
+
+SylvieApp: character personalisation, use Sylvie's name
+
+identity
+
+throughout. EliasApp: mirror mechanics.
+
+Children are connected and
+
+All apps: co-play features, parent involvement prompts,
+
+contribute to their world
+
+"show someone!" mechanics.
+
+Children have a strong sense of
+
+Sleepy: bedtime routine support, calm content. All apps:
+
+wellbeing
+
+movement break prompts.
+
+Children are confident and involved
+
+SylviePhonetics: scaffolded challenge, mastery
+
+learners
+
+progression. EliasApp: cause-and-effect.
+
+Outcome 5:
+
+Children are effective
+
+SylviePhonetics: primary alignment. Sleepy: narrative
+
+Communication
+
+communicators
+
+language. EliasApp: vocabulary labelling.
+
+Outcome 2: Community
+
+Outcome 3: Wellbeing
+
+Outcome 4: Learning
+
+6.2 NSW Curriculum & ACARA Foundation Year Bridges
+Sylvie will enter Kindergarten in NSW in 2027. The Australian Curriculum Foundation Year English strand
+expects students to "use phonological awareness and phonics knowledge to decode words when reading."
+SylviePhonetics should explicitly build toward this. The NSW phonics screening check begins in Year 1 —
+strong phonological foundations built now make that check a formality.
+
+6.3 NQF Quality Area 1 — National Quality Framework
+Quality Area 1 (Educational Program and Practice) under the National Quality Framework requires that
+programs are evidence-based, reflect children's developmental stages, and embed the EYLF. For digital
+tools used in home education or as supplements, the same principles apply. Documenting how your apps
+align with these standards also supports any NDIS reporting requirements for Sylvie.
+
+7
+
+Social-Emotional Learning & Wellbeing in Apps
+
+7.1 Attachment & Co-Regulation
+Child psychology research rooted in attachment theory (Bowlby, Ainsworth) establishes that co-regulation
+— where a caregiver helps a child manage emotional states — is the developmental precursor to
+self-regulation. Apps cannot replace this. What they can do is create structured "invitation moments" that
+cue parent-child interaction, thereby supporting rather than substituting the attachment relationship.
+Co-Regulation Design Principles
+• Include parent "peek in" prompts: "Call mum/dad over — show them what you built!"
+• Celebrate relational achievements over individual: "You and dad learned that together!"
+• Design "pause and breathe" moments into phonics challenges — not just for calm, but as skill
+modelling.
+• Avoid designs that reward the child for NOT engaging with the parent (solo streak bonuses, etc.).
+
+7.2 Emotional Literacy Embedding
+Character-based apps can weave emotion naming and simple regulation strategies into the narrative
+without making it clinical. For Sylvie at 4:
+• Characters can model emotions and name them simply: "The truck is frustrated."
+• Simple breath prompts can precede challenging phonics tasks.
+• Completion of a difficult level could be framed as "You kept going even when it was hard — that's
+brave!"
+• Avoid over-labelling or excessive emotional commentary — keep it natural and embedded.
+
+7.3 Mindfulness for 4-Year-Olds — Evidence Check
+Evidence for structured mindfulness in under-5s is still emerging and should be treated as
+weak-to-moderate. What is well-supported is: slow breathing (belly breathing / "smell the flowers, blow out
+the candles"), body-scan prompts in simple language, and sensory grounding. For Sleepy specifically, a
+1–2 minute guided breathing sequence before story content has reasonable support from paediatric sleep
+literature.
+■ Flag: Evidence is weak for app-delivered mindfulness replacing caregiver-led calm-down in toddlers.
+
+8
+
+Sociological & Homeschool Perspectives
+
+8.1 Play-Based Learning vs Structured Digital Learning
+The research on play-based versus structured learning for ages 3–5 consistently favours play-based
+approaches as the dominant mode, with structured digital learning as a supplement rather than a driver.
+CELA (Community Early Learning Australia) and the EYLF both emphasise child-initiated investigation.
+This means apps are most effective when they spark curiosity about the real world, not when they contain
+it.
+Design Philosophy Implication
+• The best session ending is one where the child runs to do the real-world version of what they just
+did digitally.
+• SylviePhonetics should prompt: "Now find something in the room that starts with /s/!"
+• EliasApp should prompt: "Go get your real truck! Show it to the screen!"
+• Sleepy should end with: "Time for real stories with mum/dad now. Put the tablet down."
+
+8.2 Dubbo Context — Rural/Regional Considerations
+Regional and remote families in NSW face specific considerations: variable internet bandwidth, fewer
+allied health services, and greater reliance on digital tools for supplementary education. All four apps
+should function fully offline. For Sylvie's therapy context (Gidgee Speech, Avina OT, Renee Mathieson) —
+SylviePhonetics in particular could serve as a between-session practice tool if designed in consultation
+with her therapists and explicitly scoped for home use.
+
+8.3 Cultural Considerations
+Cross-cultural research (including Aboriginal Australian perspectives) on digital childhood emphasises that
+technology use is most beneficial when embedded in relational and cultural contexts, not isolated. For
+Christian families in particular: the framing of digital tools as purposeful, bounded, and servant to
+relationship (rather than screens as default entertainment) aligns with both the research and the family's
+stated values.
+
+9
+
+QA Audit Checklist — All Four Apps
+
+Apply this checklist to each app independently. Rating: ✓ Present | ■ Partial | ✗ Missing
+
+9.1 Universal Checklist (All Apps)
+Criterion
+
+Sleepy
+
+SylviePhonetics
+
+SylvieApp
+
+EliasApp
+
+Screen time limit / session timer
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Co-play / parent involvement prompt
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Contingent feedback (not generic praise)
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Movement break prompts (5–8 min)
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Minimum 20mm tap targets
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+No variable-ratio reward (slot mechanics)
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+No autoplay / requires re-initiation
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Australian-accented voice acting
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+Offline functionality
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+EYLF outcome alignment documented
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+✓/■/✗
+
+9.2 App-Specific Checks
+Sleepy
+
+✓/■/✗
+
+Blue-light / warm colour mode at launch
+
+____
+
+Brightness auto-reduced for bedtime
+
+____
+
+Audio-only / fade-to-black mode option
+
+____
+
+No stimulating or novel-problem content
+
+____
+
+Consistent opening and closing ritual
+
+____
+
+No use prompts within 45 min of sleep
+
+____
+
+SylviePhonetics
+
+✓/■/✗
+
+Phonological sequence: rhyme → syllable → phoneme → grapheme
+
+____
+
+NSW EYLF Outcome 5 framing
+
+____
+
+Decodable words only in early stages
+
+____
+
+Scaffolded feedback (hint → model → move on)
+
+____
+
+Session max 12 min with natural close
+
+____
+
+No grapheme introduced without phoneme mastery first
+
+____
+
+SylvieApp
+
+✓/■/✗
+
+EYLF outcomes documented for each activity
+
+____
+
+Balance: open-ended play + structured learning
+
+____
+
+Emotional literacy content embedded naturally
+
+____
+
+Physical-world bridge prompts included
+
+____
+
+EliasApp
+
+✓/■/✗
+
+Co-play launch prompt on every session
+
+____
+
+Session max 8–10 min with hard stop or parent handoff
+
+____
+
+Immediate audio label on every interaction (< 150ms)
+
+____
+
+Vehicle/tool vocabulary is consistent and AU-accented
+
+____
+
+No achievement streaks — narrative completion only
+
+____
+
+Physical bridge prompt included ("go find your truck!")
+
+____
+
+10
+
+Priority Action List — Top 10 Changes
+
+Ranked by evidence strength (A = strong/multiple RCTs/guidelines; B = moderate/emerging) and
+developmental impact. Address the top 5 before the next app release.
+#
+
+Action
+
+App(s)
+
+Evidence Grade
+
+1
+
+Add co-play launch prompt to EliasApp Every session
+should open with "Show this to mum or dad first." This is
+the single highest-leverage change given WHO guidance
+and the video deficit effect.
+
+EliasApp
+
+WHO, AAP, video deficit research
+— Evidence A
+
+2
+
+Implement session timers with soft prompt + hard
+stop Sylvie: 12 min soft / 15 min stop. Elias: 8 min soft /
+10 min stop. Requires parental PIN to extend.
+
+All apps
+
+AAP 2024, Australian 24-hr
+Guidelines — Evidence A
+
+3
+
+Add warm colour mode + brightness reduction to
+Sleepy Automatic on launch after 6pm. Reduces
+melatonin suppression. Fade-to-black / audio-only mode
+for final 5 min.
+
+Sleepy
+
+Melatonin/blue-light research,
+paediatric sleep guidelines —
+Evidence A
+
+4
+
+Audit SylviePhonetics sequence — ensure
+rhyme/syllable precedes grapheme If
+grapheme-phoneme correspondence is introduced
+before solid phonemic awareness, re-sequence. This is a
+curriculum safety issue.
+
+SylviePhonetics
+
+Rose Report, Grattan 2024,
+SPELD — Evidence A
+
+5
+
+Replace generic praise with scaffolded feedback in
+phonics "Good job!" → "That's /b/ — listen: /b/ /æ/ /t/ —
+bat! Can you say it?" Targeted informational feedback
+improves word learning significantly.
+
+SylviePhonetics
+
+Scaffolded feedback research
+(Hirsh-Pasek et al.) — Evidence A
+
+6
+
+Add physical bridge prompts to all apps "Now find
+something in your house that starts with S!" / "Go get
+your real truck!" Bridges digital learning to real-world
+play.
+
+All apps
+
+ECA Statement, CELA digital play
+research — Evidence B
+
+7
+
+Remove or redesign streak mechanics Any
+streak/badge system that creates anxiety about
+"breaking the chain" works against intrinsic motivation.
+Replace with narrative completion rewards.
+
+All apps
+
+Self-Determination Theory, child
+psychology — Evidence B
+
+8
+
+Document EYLF alignment for each activity Add a
+parent-facing "Why this matters" screen (one tap away).
+Supports NDIS documentation for Sylvie and
+demonstrates QA rigour.
+
+SylvieApp,
+SylviePhonetics
+
+EYLF v2.0, NQF Quality Area 1 —
+Evidence A
+
+9
+
+Ensure full offline functionality All content should
+cache and run without internet. Critical for regional use
+and removes data-anxiety as a barrier to purposeful use.
+
+All apps
+
+Regional equity research, practical
+accessibility — Evidence B
+
+1
+0
+
+Consult with Sylvie's therapists on SylviePhonetics
+scope Share the app with Gidgee Speech and Avina
+OT. Position it as between-session practice, not
+independent therapy. Get explicit endorsement or
+modification guidance.
+
+SylviePhonetics
+
+Therapeutic best practice, NDIS
+coordination principles —
+Evidence A
+
+Key References & Guidelines
+1. Australian Government Department of Health (2021). 24-Hour Movement Guidelines for the Early Years (Birth to 5 years).
+Canberra: Commonwealth of Australia.
+2. World Health Organization (2019). Guidelines on Physical Activity, Sedentary Behaviour and Sleep for Children under 5
+Years of Age. Geneva: WHO.
+3. American Academy of Pediatrics (2024 update). Media and Children: Five C's of Media Guidance. HealthyChildren.org.
+4. Early Childhood Australia (2018). Statement on Young Children and Digital Technologies. Canberra: ECA.
+5. AGDE (2022). Belonging, Being & Becoming: The Early Years Learning Framework for Australia V2.0. Australian
+Government Department of Education.
+6. Hunter, J., Stobart, A. & Haywood, A. (2024). The Reading Guarantee: How to Give Every Child the Best Chance of
+Success. Grattan Institute.
+7. NSW Department of Education (2024). Year 1 Phonics Screening Check — Key Findings. education.nsw.gov.au.
+8. Kuhl, P.K., Tsao, F.M. & Liu, H.M. (2003). Foreign-language experience in infancy: Effects of short-term exposure. PNAS,
+100(15), 9096–9101.
+9. Hirsh-Pasek, K. et al. (2015). Putting Education in Educational Apps: Lessons from the Science of Learning. Psychological
+Science in the Public Interest, 16(1), 3–34.
+10. Anderson, D.R. & Hanson, K.G. (2010). From blooming, buzzing confusion to media literacy: The early development of
+television viewing. Developmental Review, 30(2), 239–255.
+11. Sydney Children's Hospitals Network (2024). Recommended Screen Time for Australian Children.
+schn.health.nsw.gov.au.
+12. CELA — Community Early Learning Australia (2022). Digital Play in Early Childhood Settings. cela.org.au.
+13. Deci, E.L. & Ryan, R.M. (2000). The "What" and "Why" of Goal Pursuits: Human Needs and the Self-Determination of
+Behavior. Psychological Inquiry, 11(4), 227–268.
+14. Department for Education, UK (2023). The Reading Framework. London: DfE. [Referenced for synthetic phonics
+evidence base].
+15. SPELD NSW (2024). Decodable Readers and Phonics Resources. speldnsw.org.au.
+
+This report was prepared on 4 June 2026 based on available peer-reviewed evidence, Australian government
+guidelines, and best-practice frameworks. Evidence gradings: A = strong (multiple RCTs, peak-body guidelines); B
+= moderate (emerging evidence, expert consensus). Consult allied health professionals — particularly Sylvie's
+speech therapist and OT — before implementing phonics or sensory app changes.
+
+

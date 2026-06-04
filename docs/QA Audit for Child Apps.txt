@@ -1,0 +1,1581 @@
+﻿Audit Report: Sylvie & Elias Educational Apps
+(June 2026)
+1. Executive Summary
+This audit evaluates four web‑based applications designed for a family: SylviePhonetics (an early
+phonics game), SylvieApp (a creative play world), Sleepy (a bedtime video playlist), and EliasApp2
+(cause‑and‑effect play for a toddler). The goal is to determine whether they meet the developmental,
+educational and safety needs of Sylvie (4 years, 3 months) and Elias (2 years) as described in therapist
+reports, the family NDIS plan and the evidence‑based design research. Each app was explored
+thoroughly across desktop, tablet and phone viewports, tested under slow connections and offline
+conditions, and compared against early‑childhood science and Australian guidelines.
+
+Overall judgement. The suite shows promise: it avoids ads and third‑party tracking, uses appealing
+original art, invites co‑play, and aligns with some EYLF outcomes. SylviePhonetics offers a variety of
+phonological‑awareness games, SylvieApp provides a delightful world anchored in Sylvie’s interests and
+includes calm‑down activities, Sleepy aggregates bedtime media and breathing exercises, and 
+EliasApp2 uses vehicles and tools to invite parent narration. However, several elements reduce their
+educational and developmental value. Key concerns include lack of scaffolded feedback in
+SylviePhonetics; reward‑style star collection in SylvieApp; Sleepy’s reliance on long YouTube videos and
+bright screens near bedtime; and limited vocabulary modelling in EliasApp2. Some activities risk
+overstimulation, frustration or reinforcement of rigid perfectionism. Technical issues such as silent
+failures, missing alt text and inconsistent touch targets were found. Privacy risks arise from external
+YouTube links and unguarded navigation. Many recommendations are easily addressable within the
+next development cycle.
+
+Top strengths. The apps are free of ads and monetisation, use original assets tied to the children’s
+interests, and include explicit parent co‑play prompts. They provide large tap targets and simple
+navigation, and they embed some co‑regulation strategies (e.g., breathing page in SylvieApp).
+EliasApp2’s emphasis on cause‑and‑effect with labels supports vocabulary development. The research
+report informs session lengths, co‑play and phonics sequencing.
+
+Major risks. Sleepy’s long video links and use of copyrighted Disney clips conflict with paediatric sleep
+science and guidelines advocating screen‑free periods 45–60 minutes before sleep. SylviePhonetics
+gives minimal guidance after mistakes and sometimes fails to respond, which can frustrate a child who
+struggles with perfectionism and emotional regulation. SylvieApp’s star‑collection unlocking system
+introduces extrinsic reward loops contrary to neurodiversity‑affirming practice. EliasApp2 sometimes
+presents too many interactive elements per screen for a two‑year‑old and lacks consistent language
+modelling. None of the apps implement session timers or natural closing rituals as recommended by
+research.
+
+Top five changes. (1) Add scaffolded hints and calm error feedback in SylviePhonetics; (2) remove or
+redesign star‑collection and ensure choices remain limited and meaningful in SylvieApp; (3) replace
+Sleepy’s external YouTube links with offline audio stories and enforce a screen‑free handoff; (4) include
+parent‑guided narration and vocabulary prompts in EliasApp2; and (5) implement natural closing rituals
+
+1
+
+
+
+with session timers across all apps. With these changes, the suite would move from “usable with
+supervision” to “ready for regular family use.”
+
+2. Child Needs and Learning Matrix
+The following matrix summarises key needs, strengths and goals extracted from therapist reports, the
+family plan and research. Only concise phrases are used inside the table; explanatory prose follows.
+
+Child need, Source (doc & What an app What an app
+Relevant apps
+
+strength or goal section) could support should avoid
+
+Calm error
+feedback;
+
+Sylvie family breathing
+Shaming errors;
+
+report (p. 7 ‘Two prompts;
+punishment; time
+
+Emotional Brains’); OT plan characters
+pressure; All apps
+
+regulation (Emotional modelling
+variable‑ratio
+
+regulation frustration and
+rewards
+
+strategies) repair; parent
+co‑play
+prompts
+
+Breath‑
+awareness
+activities;
+
+Ignoring signals;
+“check‑in”
+
+encouraging
+Interoception & Play therapy prompts Sleepy,
+
+screen time when
+body signals letter (goal focus) before tasks; SylvieApp
+
+tired or
+descriptive
+
+dysregulated
+language
+about body
+sensations
+
+Scaffolded
+hints;
+celebrate
+
+“Wrong” buzzer or
+Frustration OT handover persistence;
+
+immediate SylviePhonetics,
+tolerance & (perfectionism, offer choices;
+
+negative feedback; SylvieApp
+flexible thinking mistakes) allow
+
+forced progression
+repetition
+without
+penalty
+
+2
+
+
+
+Child need, Source (doc & What an app What an app
+Relevant apps
+
+strength or goal section) could support should avoid
+
+Vocabulary
+labelling;
+opportunities
+
+Confusing
+OT plan to choose;
+
+Communication instructions;
+(language & emotion SylvieApp,
+
+of needs & ambiguous icons;
+communication naming in EliasApp2
+
+feelings heavy text
+goals) stories;
+
+requiring reading
+encourage
+telling a
+caregiver
+
+Co‑play
+prompts;
+show‑and‑tell
+
+NDIS notes
+Social cues & moments; Solo play loops;
+
+(declarative
+shared turn‑taking reward for All apps
+
+language and
+attention mechanics; ignoring adults
+
+co‑play)
+parent gates
+for new
+modules
+
+Visual
+schedules;
+
+Abrupt endings;
+OT plan (visual countdowns;
+
+Predictability & autoplay next Sleepy,
+supports, “next step”
+
+transitions games; endless SylviePhonetics
+routines) prompts;
+
+videos
+natural closing
+rituals
+
+Break prompts
+encouraging
+stretching; Loud sounds;
+
+OT handover
+audio off flashing
+
+Sensory needs & (movement
+toggles; animations; All apps
+
+movement seeking, sound
+minimal non‑skip intros;
+
+sensitivity)
+sudden busy screens
+sounds; warm
+colour palettes
+
+Open‑ended
+art and
+construction;
+
+Drill‑like tasks;
+Child‑led play & OT plan (child‑led limited rules;
+
+linear progression; SylvieApp
+creativity play) diverse
+
+heavy scoring
+choices
+reflecting
+interests
+
+3
+
+
+
+Child need, Source (doc & What an app What an app
+Relevant apps
+
+strength or goal section) could support should avoid
+
+“Call Dad over”
+Play therapy
+
+prompts; joint
+letter Gamification that
+
+achievements;
+Co‑regulation & (co‑regulation rewards solo use;
+
+no solo All apps
+attachment reliance); emphasising
+
+streaks;
+research on independence
+
+breathing
+co‑regulation
+
+together
+
+Warm colours;
+audio‑first
+stories; timed Bright screens;
+
+Research (Sleep closing ritual; long videos;
+Sleep routine
+
+& bedtime fade‑to‑black algorithmic Sleepy
+support
+
+section) mode; no recommendations;
+screen 45– external ads
+60 min before
+sleep
+
+Sequence
+from rhyme to
+blending to
+grapheme– Mixed sight‑word
+
+Research phoneme and phonics tasks;
+Phonological (phonics mapping; pure schwa‑added
+awareness & sequence); NSW Australian phonemes; SylviePhonetics
+early phonics curriculum phoneme guessing from
+
+section audio; pictures; long
+decodable sessions
+words;
+scaffolded
+hints
+
+Tap‑and‑see
+reactions;
+label vehicles, Passive videos; too
+
+Elias’s
+Toddler research tools and many buttons;
+
+vocabulary &
+(cause‑and‑effect actions; parent inconsistent EliasApp2
+
+cause‑and‑effect
+& video deficit) narrates; limit vocabulary; reward
+
+learning
+interactive loops
+elements per
+screen to ≤3
+
+4
+
+
+
+Child need, Source (doc & What an app What an app
+Relevant apps
+
+strength or goal section) could support should avoid
+
+Prompts to
+find objects in
+the room, go
+
+NDIS notes (limit
+outside, or Endless digital
+
+Real‑world play choices &
+show a toy; tasks; encouraging All apps
+
+transfer emphasise real
+closing rituals staying on device
+
+play)
+that send the
+child off
+screen
+
+Discussion. These needs emphasise the importance of calm, contingent feedback, predictable
+structure, co‑regulation and real‑world transfer. Both children have strong interests and cognitive
+strengths but need support with emotional regulation, transitions and flexible thinking. The apps
+should scaffold their learning and gently invite them back to offline play. Unmet needs reveal why some
+features (e.g., star collection) may be problematic.
+
+3. Cross‑App Scorecard
+Scores are from 0 (poor) to 5 (excellent) and reflect current implementation relative to evidence. Brief
+explanations follow the table.
+
+Category SylviePhonetics SylvieApp Sleepy EliasApp2
+
+Fun & child appeal 4 5 3 4
+
+Developmental appropriateness 3 4 2 3
+
+Educational value 3 3 1 2
+
+Alignment with child needs 3 4 1 3
+
+Neurodiversity‑affirming design 2 3 1 3
+
+Parent co‑play 3 4 2 3
+
+Real‑world transfer 2 3 1 3
+
+Child‑safe UX 3 4 2 3
+
+Accessibility 3 4 2 3
+
+Privacy & safety 4 4 1 4
+
+Technical reliability 3 4 2 3
+
+Overall score 2.9 3.9 1.7 3.1
+
+Explanation. SylviePhonetics is engaging and covers multiple phonological tasks, but inconsistent
+feedback and occasional silent errors limit educational value and risk frustration. SylvieApp delights
+with imaginative play and fosters emotional language; however the star‑collection unlocking can shift
+attention to rewards. Sleepy is the weakest: its reliance on YouTube, bright screens and lengthy videos
+conflicts with paediatric sleep science and introduces copyright risks; yet its breathing page is a positive
+
+5
+
+
+
+element. EliasApp2 offers accessible cause‑and‑effect play and invites parent co‑play, though
+vocabulary prompts and closing rituals need reinforcement.
+
+4. Per‑App Audit
+
+4.1 SylviePhonetics
+
+Intended purpose. To build phonological awareness and early phonics skills through short games for
+preschoolers, preparing Sylvie for NSW Kindergarten literacy. Activities include rhyme matching, syllable
+clapping, initial‑sound selection, blending games and grapheme–phoneme tasks. A settings panel
+allows toggling gentle mode and parent assist.
+
+Strengths. Variety of games and large tap targets keep engagement high. Parent assist mode invites
+adult guidance, and gentle level reduces difficulty. The art uses neutral colours and avoids
+overstimulation. Audio feedback is calm when correct and uses an Australian accent. The app’s
+organisation follows a rough phonics progression from syllables to phoneme identification, supporting
+evidence‑based learning sequences.
+
+Direct supports. Supports early phonological skills; fosters active involvement through tapping and
+choice; encourages persistence by allowing repeated attempts; uses Sylvie’s name in some examples for
+meaningful connection; has parent prompts in settings. Aligns partially with EYLF Outcome 5
+(communication) by developing sound awareness.
+
+Indirect supports. Without scaffolded hints, the child may still learn by trial and error; however,
+learning is slower. Some games incorporate categories like animals or objects that may interest Sylvie
+(fairies, farms) but not deeply personalised.
+
+Missing supports. There is no clear session timer or closing ritual; games autoplay onto the next
+without a natural break, contrary to recommended session design. Hints are absent: wrong answers
+either produce a generic “no” audio or remain silent; there are no prompts encouraging listening again,
+segmenting the word or modelling the phoneme, which could teach frustration tolerance. There are no
+movement or breathing breaks despite Sylvie’s need for sensory regulation. The app lacks co‑regulation
+prompts inside the activities.
+
+Functional bugs. During testing on Chrome for Android and iOS viewports, selecting an incorrect
+answer sometimes caused the next question to load without feedback. Rapid tapping occasionally froze
+the page requiring a refresh. The Clap Syllables  game sometimes mis‑counted taps when the
+network was slow.
+
+Developmental/educational gaps. Many tasks rely on picking the correct letter from two options; once
+the letter’s shape appears, the child may guess from the first letter or picture rather than processing
+the sound, undermining sound‑to‑letter mapping. Mixing letters and pictures in early tasks can blur
+whether the goal is phonological awareness or letter recognition. There is no bridging to decodable
+words or print in context. The generic praise (“Great job!”) after correct answers does not provide
+contingent feedback or encourage reflection. There is no progress indicator; children may over‑work or
+stop abruptly. Games do not model mistakes as learning opportunities, which could accentuate Sylvie’s
+perfectionism.
+
+UX & accessibility issues. Some interactive elements are small on mobile devices (<44 pt). The contrast
+between text and background is occasionally low in the Word Wheel  game. Audio icons lack
+
+6
+
+
+
+descriptive alt text for screen readers. There is no option for audio‑only or captions for
+hearing‑impaired caregivers. The keyboard mode (toggling for physical keys) is seldom needed for this
+age and may confuse children.
+
+Safety & copyright. The app itself is self‑contained and uses original art; there are no external links or
+ads. However, if wrong answers link to external resources in future, parent gates would be needed. All
+audio recordings should remain stored locally to avoid external streaming.
+
+Recommendations & acceptance criteria.
+
+• Add three‑step scaffolded feedback for wrong answers: (a) gentle hint (“Listen to the first sound
+again”), (b) model the target phoneme without adding a schwa, (c) invite the child to try again.
+Acceptance: every incorrect response triggers at least one specific hint before the answer is
+modelled.
+
+• Introduce session timers with natural closing rituals (e.g., after five rounds a character waves
+goodbye and prompts the child to show a parent). Acceptance: after 10–12 minutes of play the
+app transitions to a calming end screen and pauses automatically.
+
+• Insert brief movement or breathing breaks between games (“Stand up and stomp like a
+dinosaur!”) to support sensory regulation. Acceptance: every 5–7 minutes an interstitial screen
+appears inviting a movement break.
+
+• Clearly separate phonological tasks (sounds, rhymes) from grapheme tasks (letters) until the
+child has mastered phoneme isolation, aligning with the recommended sequence. Acceptance:
+each mini‑game targets a single stage; rhyme games never display letters.
+
+• Add parent co‑play prompts within games (“Ask Dad to say the word with you”) to encourage
+joint attention. Acceptance: each game includes at least one natural prompt inviting caregiver
+involvement.
+
+4.2 SylvieApp
+
+Intended purpose. To provide a child‑led imaginative world where Sylvie can explore her interests
+(fairies, farms, princesses) through play, creativity and storytelling. The app aims to support emotional
+regulation and language development through open‑ended scenes and calm‑down activities.
+
+Strengths. The world map and scene art are beautiful and cohesive, capturing Sylvie’s interests. Scenes
+like Fairy Garden, Farm, Princess Room, Trampoline and Wand Maker offer interactive items and
+encourage imagination. Each scene has limited interactive elements (4–6) appropriate for a
+four‑year‑old. The app uses large tap targets and simple navigation. A Calm Down page guides the
+child through belly breathing with supportive phrases (“You are safe,” “God made you and loves you”).
+Parent prompts appear via a “Parent Mode” overlay, reminding adults to co‑play and linking scenes to
+real‑world activities (“Go outside and collect leaves”). The art and music avoid overstimulation. The 
+Ideas count emphasises creativity rather than points.
+
+Direct supports. The app fosters creativity and narrative expression, aligning with child‑led play
+principles. Scenes embed emotional language (“Bunny looks frustrated”) and choices that help Sylvie
+practise flexible thinking. The Calm Down page integrates interoceptive awareness and breathing
+
+7
+
+
+
+regulation. Parent co‑play prompts encourage sharing with a caregiver, fulfilling co‑regulation goals.
+The spiritual phrasing may resonate with Sylvie’s family values.
+
+Indirect supports. Collecting “ideas” to unlock new features may motivate persistence. The game
+occasionally uses logic puzzles (sorting objects) that indirectly support executive function and
+categorisation. Scenes featuring movement (Trampoline, Swing) encourage the child to get up and
+jump, supporting sensory needs. There is an optional Story Builder that allows creating simple
+narratives by dragging characters and props.
+
+Missing supports. There is no session timer or closing ritual; the world is open‑ended and can be used
+indefinitely. The star‑collection unlocking mechanism, even renamed “ideas,” is extrinsic and risks
+fostering compliance rather than intrinsic enjoyment; Sylvie already struggles with perfectionism and
+may fixate on unlocking everything. Emotional language appears mainly in the Calm Down page;
+scenes rarely model frustration or repair in play narratives. The app could better embed social language
+(e.g., characters ask for help) and cues to check in with a caregiver when things go wrong. There is
+limited integration of Sylvie’s home vocabulary or experiences (e.g., referencing her siblings or school).
+The parent prompts are hidden behind a toggle that might be missed.
+
+Functional bugs. On tablets the world map occasionally scrolls horizontally when it should be static,
+causing misalignment with scene icons. Some items require precise tapping (e.g., small fairy wings) and
+may not register, especially on smaller screens. Rapid collection of ideas sometimes increments
+counters incorrectly or resets unlocked items after a page refresh.
+
+Developmental/educational gaps. The open‑ended nature is appropriate but there is little scaffolding
+to encourage language expansion; the app could prompt Sylvie to describe what she created or to retell
+a story to a parent. There is no bridging to literacy or numeracy (e.g., counting objects, naming letters).
+The reward system could inadvertently create pressure to keep playing. Emotional regulation strategies
+are contained in a separate Calm Down page rather than integrated into play narratives. The content
+does not explicitly incorporate the EYLF outcomes on community or identity beyond personalised art.
+
+UX & accessibility issues. Text labels are small in some scenes; there is no audio narration for icons,
+which could support preliterate users. Colour contrast is generally adequate but some pastel objects
+(e.g., yellow text on pale background) are low contrast. There is no dark mode or accessibility mode for
+high‑contrast or simplified visuals.
+
+Safety & copyright. The app uses original content, with no ads or external links, which is excellent. The
+spiritual content should remain optional and within the family’s values but avoid preaching to avoid
+alienating other users. If the app is shared publicly, clear copyright notices are needed.
+
+Recommendations & acceptance criteria.
+
+• Remove star/idea collection unlocking or redesign it to emphasise exploration rather than
+accumulation. For example, new features could unlock through collaborative achievements (“You
+and Mum built a castle; a fairy arrives!”). Acceptance: unlocking triggers are relational or
+narrative, not numerically driven.
+
+• Integrate emotion modelling within scenes. Characters can express frustration, ask for help and
+show repair (“The pig knocked over her blocks; let’s help rebuild”). Acceptance: at least one scene
+includes a mini‑story where a character models naming an emotion and a solution.
+
+8
+
+
+
+• Add a session timer and natural closing ritual. After 10–12 minutes a gentle character invites
+Sylvie to show her creation to a caregiver and guides her to an offline activity (e.g., “Let’s go
+make a real fairy garden outside”). Acceptance: the app automatically offers an end‑of‑play
+sequence after the timer.
+
+• Include contextual parent prompts within the main interface rather than only in a toggle.
+Acceptance: each scene contains a visible prompt encouraging the caregiver to join or extend
+play.
+
+• Provide optional audio narration for on‑screen text and icons to support preliterate users and
+accessibility. Acceptance: tapping a label triggers an Australian‑accented audio reading.
+
+4.3 Sleepy
+
+Intended purpose. To act as a calming bedtime companion providing breathing exercises, lullabies and
+bedtime stories, curated by the family. It should help Sylvie transition to sleep and reduce bedtime
+struggles.
+
+Strengths. The site offers categories of bedtime content (e.g., hymns, lullabies, Bible stories) and
+includes a custom Breathe with Sylvie sequence with slow animation and soothing instructions. There
+is a “Sleepy mode” button and a “Dim lights” toggle which reduce brightness and show a warm amber
+filter. The text emphasises that the app should be used 45–60 minutes before lights out and not as the
+final step, reflecting research guidance. Parent instructions remind caregivers to watch with the child
+and to follow a consistent bedtime routine.
+
+Direct supports. The breathing exercise addresses interoceptive awareness and calm. The “Dim lights”
+function shifts colour temperature to warmer tones, aligning with recommendations for bedtime
+screens. The variety of lullaby styles allows Sylvie to select music meaningful to her, supporting
+meaningful experiences. The introduction page mentions that the shelf is curated, emphasising parent
+control.
+
+Indirect supports. The presence of Christian music may provide comfort aligned with the family’s
+values. Some playlists have gentle nature visuals that could invite conversation.
+
+Missing supports. Most videos are embedded from YouTube and range from 5 minutes to 12 hours.
+Many feature copyrighted Disney characters (Moana, Aladdin, Frozen) and film clips. This exposes Sylvie
+to algorithmic recommendations, ads (if not using premium), and potential comments. Long “sleep
+music” videos encourage leaving the screen on all night, directly conflicting with research which calls for
+screen removal 45–60 minutes before sleep and recommends audio‑first content. There is no screen
+lock to prevent tapping or accidentally opening a new link. There is no session timer or automatic fade
+to audio‑only mode. The “Pick for me” random button may present highly stimulating or irrelevant
+content. There is no integration of co‑regulation prompts or transitions to offline books. For children
+under two, any screen time at bedtime is discouraged; yet the app has no mechanism to restrict use
+when Elias is present.
+
+Functional bugs. On some mobile devices the “Dim lights” button flickers and does not persist across
+page navigations. Videos sometimes start with loud ads or default to high brightness until the user taps
+the dimmer. When offline, the site displays broken video thumbnails without fallback content. The
+“Sleepy mode” toggle sometimes fails to darken the page if the OS dark mode is disabled.
+
+9
+
+
+
+Developmental/educational gaps. Sleepy provides no active learning; it is essentially a video library.
+The reliance on passive viewing contradicts the Four Pillars of Learning — there is no active involvement
+or social interaction. Without controlling video length and brightness, the app can delay sleep onset by
+suppressing melatonin production. Some content (Disney movies) may be arousing, contain conflict or
+fast pacing and could trigger Sylvie’s fear or frustration. There is little emphasis on real‑world bedtime
+routines such as brushing teeth, putting on pyjamas or reading a physical book.
+
+UX & accessibility issues. Tap targets for video thumbnails are small on mobile. The site lacks a true
+dark mode for visually sensitive users. Audio descriptions or captions are not available, and there is no
+text alternative summarising each video. Navigation relies heavily on scroll menus that can be
+overwhelming. Some external links open in new tabs without warning.
+
+Safety & copyright. Embedding copyrighted Disney clips and film songs poses legal and ethical
+concerns. YouTube’s algorithmic recommendations introduce privacy and safety risks (ads, comments,
+content not appropriate for a four‑year‑old). The site does not block video recommendations, and there
+is no parent gate when leaving the curated list. For children like Sylvie and especially Elias, who are
+sensitive to sudden noises and bright visuals, these exposures are problematic.
+
+Recommendations & acceptance criteria.
+
+• Replace YouTube embeds with locally hosted or licensed audio‑only stories and music. Provide a
+curated library of short (3–5 minute) lullabies and Bible stories with no external links.
+Acceptance: no external YouTube URLs present; all media hosted within the app and playable
+offline.
+
+• Enforce a “lights out” mode where the screen fades to black after the introduction and only audio
+continues. Acceptance: when the Sleepy sequence starts, the display dims to <20 % brightness
+and fades to black within 30 seconds unless the user taps to keep the screen active.
+
+• Remove or clearly limit video lengths to under 30 minutes and restrict to audio‑dominant
+content. Acceptance: the longest audio story is <30 minutes, and no loops play beyond the end;
+a message invites the parent to close the screen.
+
+• Add a session timer and a clear closing ritual (“Let’s turn off the device and read a real book”).
+Acceptance: after 10 minutes of content the app automatically prompts the caregiver to
+transition the child to offline bedtime routines.
+
+• Provide gentle reminders that screens should not be used 45–60 minutes before sleep and
+discourage use for children under 2. Acceptance: a notice appears when the app is launched
+during the recommended screen‑free period or when the profile age is under 2.
+
+• Implement a parent gate before playing any media; require answering a simple math question
+or holding a button for 3 seconds to confirm the caregiver is present. Acceptance: children
+cannot start new media without parent confirmation.
+
+4.4 EliasApp2
+
+Intended purpose. To engage Elias, a two‑year‑old, in cause‑and‑effect play focusing on vehicles, tools
+and construction. Each activity is designed for short sessions and invites parents to narrate actions and
+label objects.
+
+10
+
+
+
+Strengths. The home page shows categories such as Garbage Trucks, Construction, Cars & Trucks, 
+Tools and Screwdriver World. Each category contains simple interactions: tapping a truck to dump
+rubbish, dragging a digger to scoop soil, turning a screw with a screwdriver. The app uses large buttons,
+warm colours and limited interactive elements (usually 2–4 per screen). A prominent overlay at launch
+invites an adult to sit with Elias and narrate. Many scenes include a text label and a consistent icon (“Tap
+to dump”) that appears across categories. There is a sound toggle that turns off effects.
+
+Direct supports. The app encourages active involvement and immediate feedback: a tap makes the
+truck beep and dump trash, providing clear cause‑and‑effect. Vehicles and tools are familiar to Elias and
+meaningful to his interests. Parent prompts emphasise co‑play and limit sessions to 10 minutes,
+aligning with research recommendations. Some scenes encourage movement (“Stand up and pretend
+to lift the garbage bin”), facilitating real‑world transfer.
+
+Indirect supports. Completing tasks may build fine‑motor skill practise (dragging the screwdriver). The
+variety of vehicles broadens vocabulary when accompanied by parent narration. Scenes like “Build a
+road” may nurture spatial awareness.
+
+Missing supports. The app seldom labels objects aloud; text appears on screen, but there is no audio
+narration or vocabulary modelling. Without a caregiver, Elias may silently watch tapping animations
+without learning new words, which weakens the social interaction pillar. Some screens have more than
+four tap points (e.g., Construction site with five different actions), exceeding recommended limits for
+toddlers and potentially causing cognitive overload. There is no session timer or closing ritual; the
+overlay recommending 10 minutes is easily dismissed. Some scenes encourage turning screws or
+driving vehicles repeatedly without connecting to offline play (e.g., building a real road with blocks).
+There is no parent gate to prevent unsupervised use.
+
+Functional bugs. On low‑end devices, dragging objects occasionally stutters. Some interactive
+elements remain visible after being tapped (e.g., the bin resets to full without animation). The sound
+toggle resets after page refresh. Long pressing on buttons inadvertently triggers text selection,
+interfering with gameplay.
+
+Developmental/educational gaps. Without explicit vocabulary prompts, the app relies heavily on the
+parent to supply language. The absence of new verbs or adjectives limits learning. There is no measure
+of progress or encouragement of turn‑taking with a caregiver. Scenes lack variation in challenge;
+children may quickly get bored or, conversely, become fixated on repetitive tapping without context.
+There is no bridging to real‑world activities beyond the initial overlay.
+
+UX & accessibility issues. Some screens require dragging diagonally, which can be challenging for a
+toddler’s fine motor skills. Tap targets are appropriate but sometimes overlap, causing accidental
+activations. There is no audio description for visually impaired caregivers, and text instructions are
+small. Colour contrast is mostly good but could be improved in the Tools scene.
+
+Safety & copyright. The app uses original art and sound effects; no external links or ads are present.
+Tools are depicted as safe toys; the Screwdriver scene includes a warning “Real electric tools are for
+grown‑ups” which is positive. However, there is no gate to prevent a child from quickly switching to
+other categories without a caregiver. Given Elias’s age, any unsupervised screen use is discouraged.
+
+11
+
+
+
+Recommendations & acceptance criteria.
+
+• Add audio vocabulary prompts. When the child taps or drags an item, a friendly voice names the
+object and action (“Dump the rubbish into the truck,” “The excavator is digging”). Acceptance:
+each interactive element triggers a concise Australian‑accented label when audio is on.
+
+• Limit interactive elements per screen to three and emphasise depth over breadth (e.g., in
+Construction, allow only building a road, stacking blocks and using a crane). Acceptance: no
+screen contains more than three primary tap or drag interactions; any additional actions are
+unlocked sequentially or hidden.
+
+• Implement a session timer with a clear closing ritual: after 5–8 minutes the app should prompt
+“Time to play with your real trucks!” and transition the child off screen. Acceptance: once the
+timer expires, interactive controls disable and a friendly character invites offline play.
+
+• Enhance parent prompts: include on‑screen text like “Try making the truck sound together” or
+“Ask Dad what this tool is called” to encourage co‑play. Acceptance: each scene has at least one
+visible prompt for caregiver narration.
+
+• Provide a parent gate to start or switch categories (e.g., hold for 3 seconds), ensuring adults
+control transitions. Acceptance: children cannot change categories without a long press or
+parent code.
+
+5. Functional QA Bug Log
+
+Screen/ Steps to Expected Recommended Acceptance
+ID App Actual result Severity
+
+feature reproduce result fix criteria
+
+When a
+wrong
+answer is
+
+The next Implement
+In “First Child tapped, a
+
+question scaffolded
+Sound receives a gentle hint
+
+Incorrect loads hints and
+Garden”, hint, sees appears, and
+
+BUG‑1 SylviePhonetics answer without any P1 delay
+select the which sound the game
+
+handling feedback; progression
+wrong letter was does not
+
+sometimes after incorrect
+twice quickly mis‑identified proceed until
+
+silent 1 answers
+the child
+responds
+again
+
+Taps within
+In poor Taps are
+
+Taps are 300 ms are
+network counted Debounce taps
+
+Clap mis‑counted; treated as
+conditions, accurately; and handle
+
+BUG‑2 SylviePhonetics Syllables audio lags P2 one; the
+tap quickly audio and offline mode;
+
+timing and resets audio stays
+on the clap animation preload audio
+
+unexpectedly synchronised
+button stay synced
+
+offline
+
+12
+
+
+
+Screen/ Steps to Expected Recommended Acceptance
+ID App Actual result Severity
+
+feature reproduce result fix criteria
+
+The game
+Tap letters
+
+Game never
+Rapid repeatedly Game Throttle input;
+
+freezes; becomes
+BUG‑3 SylviePhonetics tapping in any game continues P2 show loading
+
+refresh unresponsive
+freeze for responding indicator
+
+needed under rapid
+10 seconds
+
+tapping
+
+The map
+On tablet, Map scrolls Disable
+
+World Map remains does not
+drag the and horizontal
+
+BUG‑4 SylvieApp map static or P2 shift when
+world map misaligns scroll or lock
+
+scrolling snaps back swiped
+horizontally icons map position
+
+horizontally
+
+Idea count
+Refresh the Store progress
+
+Collected resets to After refresh,
+Idea browser in local
+
+ideas persist zero; idea count
+BUG‑5 SylvieApp counter after P3 storage or
+
+across unlocked and unlocked
+reset collecting prompt about
+
+sessions items items remain
+ideas progress
+
+disappear
+
+Click “Dim Persist dim
+Brightness
+
+Dim lights” then state across Dim mode
+Brightness flickers back
+
+BUG‑6 Sleepy lights navigate P2 route changes; stays on until
+remains dim to full and
+
+flicker between apply CSS toggled off
+resets
+
+categories correctly
+
+When offline,
+Provide offline the app
+
+Disconnect App shows Broken video
+fallback displays an
+
+Offline network; an offline thumbnail;
+BUG‑7 Sleepy P1 content or offline
+
+fallback open a message or nothing
+clear message and
+
+lullaby video cached audio plays
+messaging plays locally
+
+stored audio
+
+In
+Construction Both cranes Overlapping
+
+Increase
+Tap scene on activate or elements no
+
+Only one spacing;
+BUG‑8 EliasApp2 target phone, tap wrong P2 longer cause
+
+crane moves enlarge hit
+overlap near two element simultaneous
+
+areas
+overlapping moves triggers
+cranes
+
+After refresh,
+Sound Turn sound Persist sound sound
+
+Sound Sound
+BUG‑9 EliasApp2 toggle off; refresh P3 preference in remains off
+
+remains off reverts to on
+reset page local storage until toggled
+
+on
+
+13
+
+
+
+Screen/ Steps to Expected Recommended Acceptance
+ID App Actual result Severity
+
+feature reproduce result fix criteria
+
+Long press Text Long
+Long Nothing Disable text
+
+on an selection pressing
+press happens selection on
+
+BUG‑10 EliasApp2 interactive overlay P2 does not
+selects beyond the interactive
+
+object (e.g., appears; trigger text
+text action elements
+
+truck) blocks view selection
+
+6. Evidence‑to‑Feature Mapping
+
+Observed Child need or
+App Feature Classification Reasoning Recommendation
+
+evidence goal
+
+Generic
+Games
+
+praise does Replace with
+provide
+
+not harm, specific feedback:
+Generic uniform
+
+but it fails to repeat the target
+“Great job!” praise
+
+Contingent teach or phoneme,
+SylviePhonetics praise after regardless Neutral
+
+feedback scaffold; the provide an
+correct of the
+
+child misses example word,
+answers child’s
+
+an invite the child to
+response;
+
+opportunity try again
+no hints
+
+to reflect
+
+Introducing
+The child
+
+letters too
+chooses
+
+early may Separate sound
+between
+
+cause games from
+two letters
+
+guessing letter games;
+Letter after
+
+Phonological based on the maintain
+selection seeing a Potentially
+
+SylviePhonetics awareness first letter or audio‑first
+from picture; harmful
+
+progression picture, learning until
+pictures sometimes
+
+undermining phoneme
+letters
+
+sound isolation is
+appear
+
+awareness secure
+before
+
+and causing
+sounds
+
+frustration
+
+Slow
+The app
+
+breathing
+guides Integrate shorter
+
+and
+slow breathing
+
+supportive
+breathing prompts into
+
+Calm Down phrases
+with Interoception challenging
+
+page with align with
+SylvieApp phrases & emotional Direct scenes; ensure
+
+breathing evidence
+such as regulation phrases are
+
+animation that mindful
+“You are inclusive for
+
+breathing
+safe” and broader
+
+helps
+references audiences
+
+under‑5s
+to God
+
+regulate
+
+14
+
+
+
+Observed Child need or
+App Feature Classification Reasoning Recommendation
+
+evidence goal
+
+Extrinsic
+reward loops
+can
+encourage
+
+Collecting Sylvie to Replace with
+stars fixate on narrative
+
+Idea (star)
+unlocks collecting unlocking tied to
+
+collection Perfectionism Potentially
+SylvieApp additional rather than collaborative
+
+unlocks new & motivation harmful
+features enjoying achievements
+
+items
+after three play; may rather than star
+stars trigger counts
+
+frustration
+when
+progress
+resets
+
+These videos
+are long,
+
+The site
+visually
+
+embeds Remove these
+stimulating,
+
+videos of links; replace
+YouTube and connect
+
+Aladdin, with short,
+video links Sleep routine to YouTube’s
+
+Sleepy Frozen, Harmful audio‑first stories
+to Disney support algorithm;
+
+Moana and curated
+songs they can
+
+and other lullabies hosted
+suppress
+
+licensed locally
+melatonin
+
+content
+and delay
+sleep onset
+
+Warm
+colours and Ensure mode
+
+Buttons
+reduced persists across
+
+Dim lights & that apply
+Sleep routine brightness navigation;
+
+Sleepy Sleepy mode warm filter Direct
+support help prepare automatically
+
+toggles and dark
+for sleep; enable for all
+
+overlay
+positive bedtime content
+design
+
+The overlay
+prompts
+
+On Keep overlay but
+adult
+
+loading, ensure it cannot
+Parent involvement
+
+an overlay Co‑regulation be dismissed
+co‑play and
+
+EliasApp2 invites a & parent Direct without reading;
+overlay at emphasises
+
+caregiver involvement include
+launch co‑play;
+
+to sit with age‑appropriate
+strongly
+
+Elias instructions
+supported
+by research
+
+15
+
+
+
+Observed Child need or
+App Feature Classification Reasoning Recommendation
+
+evidence goal
+
+Too many
+interactive
+elements
+
+Multiple More than Limit to three
+exceed
+
+interactive five main actions per
+Attention Indirect/ cognitive
+
+EliasApp2 elements in clickable screen and guide
+span limits harmful load for a
+
+Construction tools on sequential
+toddler,
+
+scene one screen exploration
+leading to
+confusion or
+hyperfocus
+
+Modelling
+Text at the safe tool use Retain and
+top warns and explicit expand warnings
+
+Screwdriver
+that Safety & warnings to other scenes;
+
+World warns
+EliasApp2 electric real‑world Direct align with consider adding
+
+about real
+tools are transfer safety goals; safe handling
+
+tools
+for adults encourages language in
+only real‑life audio
+
+learning
+
+7. Prioritised Improvement Roadmap
+The table below ranks the most important changes across the suite. Priority is based on child impact
+(high, medium, low), safety risk, educational value, evidence strength, and development effort.
+
+Child Evidence
+Priority App Change Why it matters Effort Acceptance criteria
+
+impact strength
+
+Replace
+Current videos
+
+YouTube
+delay melatonin
+
+embeds with
+production and All media hosted
+
+locally hosted
+risk locally; screen dims
+
+audio‑only
+1 Sleepy overstimulation; High A Medium to black after start;
+
+stories and
+removing them no external
+
+lullabies; add
+immediately recommendations
+
+mandatory
+mitigates a high
+
+“lights‑out”
+safety risk
+
+mode
+
+16
+
+
+
+Child Evidence
+Priority App Change Why it matters Effort Acceptance criteria
+
+impact strength
+
+Lack of
+feedback
+
+Implement undermines Every incorrect
+scaffolded learning and answer triggers a
+feedback and increases hint, then models
+
+2 SylviePhonetics High A Medium
+hint system frustration; the phoneme, then
+for wrong hints support invites another
+answers frustration attempt
+
+tolerance and
+flexible thinking
+
+Add session
+Research
+
+timers and
+emphasises After timer expires,
+
+natural
+short sessions app prompts to
+
+closing rituals
+with gentle end and
+
+aligned with
+3 All apps endings to High A Medium encourages offline
+
+recommended
+protect play; cannot
+
+durations
+attention span continue without
+
+(Sylvie: 10–
+and emotional caregiver resetting
+
+12 min;
+regulation
+
+Elias: 5–8 min)
+
+Remove or Extrinsic reward
+redesign star/ loops risk
+
+Features unlock
+idea perfectionism
+
+through
+collection; and stress;
+
+4 SylvieApp Medium B Medium collaborative
+integrate narrative
+
+events; no numeric
+relational or unlocking
+
+counter displayed
+narrative fosters
+unlocking motivation
+
+Without
+Add audio language
+vocabulary modelling,
+
+Each tap triggers
+narration for vocabulary
+
+an
+each action growth
+
+Australian‑accented
+5 EliasApp2 and limit depends Medium B Low
+
+label; no screen has
+interactive entirely on
+
+>3 interactive
+elements to parent; too
+
+objects
+three per many actions
+screen overwhelm
+
+toddlers
+
+17
+
+
+
+Child Evidence
+Priority App Change Why it matters Effort Acceptance criteria
+
+impact strength
+
+Shorten
+content
+length
+(<30 min) and Reduces screen All items under
+embed exposure near 30 min; closing
+
+6 Sleepy co‑regulation bedtime; invites Medium B Low ritual invites to
+prompts parent read a physical
+(“snuggle involvement book
+now”, “turn
+page
+together”)
+
+Separate
+sound games
+from letter
+games; follow
+systematic
+sequence Mixing letters Each mini‑game
+
+too early targets only one
+(rhyme →
+
+confuses the stage; letters
+7 SylviePhonetics syllable → Medium A Medium
+
+child and appear only after
+onset/rime →
+
+encourages phoneme isolation
+phoneme
+
+guessing mastery
+isolation →
+blending →
+grapheme–
+phoneme
+mapping)
+
+Integrate
+emotional and
+social Embeds At least one scene
+narratives into emotional shows a character
+
+8 SylvieApp scenes literacy into Medium B Medium expressing and
+(characters play, meeting resolving an
+model therapy goals emotion
+feelings and
+repair)
+
+Long press or
+Introduce
+
+Prevents simple math
+parent gate
+
+unsupervised challenge required
+9 EliasApp2 for category Medium C Low
+
+use; ensures to switch
+changes and
+
+co‑play categories or begin
+session start
+
+play
+
+18
+
+
+
+Child Evidence
+Priority App Change Why it matters Effort Acceptance criteria
+
+impact strength
+
+Add
+accessibility Improves Accessibility
+features usability for settings added; text
+
+10 All apps (audio labels, diverse families; Low C Medium labels have audio;
+high‑contrast ensures high‑contrast mode
+mode, closed inclusive design available
+captions)
+
+Quick wins. Add audio vocabulary to EliasApp2; persist sound and dim settings in Sleepy; add local
+storage for idea count in SylvieApp; disable horizontal scrolling on the SylvieApp map; persist sound
+toggle across sessions; disable text selection on interactive elements in EliasApp2; hide letter labels in
+early phonics games; apply alt text to all icons.
+
+Medium changes. Implement session timers with closing rituals; refactor Sleepy to host audio stories
+and remove YouTube; add hint and feedback system in SylviePhonetics; redesign star unlocking;
+integrate emotion modelling into SylvieApp scenes; limit interactive elements in EliasApp2; implement
+parent gates.
+
+Strategic changes. Expand voiceover support across all apps; develop a parent dashboard
+summarising usage and progress; integrate optional offline printables or physical activities; align
+SylviePhonetics with the NSW phonics scope & sequence; design cross‑app bridging prompts that
+reference real family experiences (e.g., check the vegetable garden after playing farm). Consider
+obtaining licences for high‑quality children’s music rather than using YouTube content.
+
+8. Test Cases for the Next Release
+
+Universal test cases
+
+1. Session timer: Launch each app, play continuously until the recommended time (10 min for
+Sylvie; 5 min for Elias) elapses. Verify that a closing ritual appears and invites the child to finish
+and show a caregiver. Ensure the app does not progress further until the caregiver confirms.
+
+2. Parent gate: Attempt to access settings or start a new game without an adult. Confirm that a
+gate (e.g., long press or solving a math problem) prevents the child from proceeding
+independently.
+
+3. Accessibility: Toggle high‑contrast mode and confirm that text and icons meet WCAG contrast
+ratios. Use a screen reader to ensure alt text is present and logical.
+
+4. Offline resilience: Disconnect the internet while using each app. Confirm that content either
+plays from local storage (if applicable) or that a clear offline message appears. Ensure no broken
+thumbnails or unhandled errors.
+
+5. Multi‑device persistence: Collect progress or settings on one device (e.g., toggling sound,
+unlocking items) then reopen on another. Confirm that progress persists if it is intended to;
+ensure privacy if data is device‑specific.
+
+6. Rapid tapping: Simulate rapid tapping on interactive elements for 30 seconds. Confirm that no
+game freezes, miscounts or unhandled exceptions occur.
+
+7. Dim mode: In Sleepy, turn on dim mode and navigate through categories. Confirm that
+brightness and warm colour filters persist across pages and remain active until turned off.
+
+19
+
+
+
+8. Audio narration: With sound toggled on, tap each interactive element in the updated apps.
+Confirm that an Australian‑accented voice names the object or action. With sound off, verify
+silence.
+
+9. Breathing break: Play SylviePhonetics or EliasApp2 until a movement/breathing break appears.
+Ensure the child must interact with the break (e.g., stand up, breathe) before continuing.
+
+10. Accessibility of parent prompts: Check that prompts encouraging co‑play are visible, clear and
+not hidden behind small toggles. Ensure parents can access instructions easily.
+
+SylviePhonetics test cases
+
+1. Hint sequence: Answer incorrectly; verify that a hint appears (“Listen to the first sound again”)
+followed by modelling and a second chance. Ensure the child cannot progress without hearing
+the hint.
+
+2. Sequence separation: Play rhyme, syllable and phoneme games. Confirm that no letters appear
+in rhyme or syllable games. Ensure grapheme mapping appears only after phoneme isolation
+levels are completed.
+
+3. Movement break: After five rounds, verify that a movement prompt appears (“Jump like a
+kangaroo!”) and that the game pauses until the child resumes.
+
+4. Parent prompt: In parent assist mode, check that each game includes at least one prompt
+inviting a caregiver’s involvement (e.g., “Ask Dad to clap with you”).
+
+5. Progress tracking: After completing a set of games, refresh the page. Confirm that progress
+(e.g., completed levels or badges) persists if appropriate, or resets if designed to clear after each
+session. Ensure there is an option to reset progress manually via the parent gate.
+
+SylvieApp test cases
+
+1. Emotion modelling: Enter a scene with the new emotion narrative (e.g., farm scene where a pig
+knocks over blocks). Confirm that the character expresses an emotion, names it and models
+repair; ensure the child can participate in the repair.
+
+2. Star removal: Play several scenes and confirm that unlocking new features is based on narrative
+or joint achievements rather than star counts. Ensure there is no numeric counter.
+
+3. Closing ritual: After 10 minutes, verify that the app transitions to a gentle ending and invites the
+child to continue play offline (e.g., make a real fairy garden). Ensure the child cannot continue
+without restarting.
+
+4. Audio narration of labels: Tap labels and icons; verify that an Australian‑accented voice reads
+them aloud. Ensure the voice is clear and there is an option to mute narration.
+
+5. Map stability: On tablet and phone, drag the world map in all directions. Confirm that horizontal
+scrolling is disabled and icons remain aligned.
+
+Sleepy test cases
+
+1. Media hosting: Attempt to play each lullaby and story; verify that no YouTube or external link
+loads. Confirm that all media plays locally and offline.
+
+2. Lights‑out mode: Start a Sleepy session; ensure the screen fades to black within 30 seconds of
+starting and only audio continues. Verify that tapping brings back visuals only with parent
+confirmation.
+
+3. Content length: Check that each item is under 30 minutes. Confirm there are no loops or
+playlists that exceed the limit. After finishing, verify that a closing ritual invites the parent to
+continue offline bedtime routines.
+
+4. Age‑appropriate warning: Launch the app with an age setting under two; verify that a warning
+appears discouraging use and recommending no screen time for that age..
+
+20
+
+
+
+5. Dim mode persistence: Turn on dim mode; navigate across categories; ensure that the warm
+filter remains active and brightness stays low until manually turned off.
+
+EliasApp2 test cases
+
+1. Vocabulary narration: Tap each object; confirm that an Australian‑accented voice names the
+object and action. With sound off, ensure there is no narration.
+
+2. Interactive elements limit: Verify that no scene has more than three interactive elements.
+Attempt to interact with hidden elements; ensure they remain inaccessible until sequentially
+unlocked.
+
+3. Session timer: Play continuously; check that after 5–8 minutes the app presents a closing ritual
+encouraging the child to play with real trucks and prevents further digital play until reset by a
+caregiver.
+
+4. Parent gate: Attempt to switch categories or start a game; ensure a long press or math question
+appears. Confirm that a toddler cannot bypass the gate accidentally.
+
+5. Co‑play prompts: Read prompts in each scene; confirm that at least one prompt encourages the
+caregiver to narrate or imitate (e.g., “Make the truck sound together”). Ensure prompts are
+visible and not hidden behind menus.
+
+9. Questions for Parent Observation
+1. Sylvie’s regulation: When Sylvie makes a mistake in SylviePhonetics, does she remain calm and
+
+attempt again, or does she show signs of frustration or shutting down? Does the new hint
+system help her persist?
+
+2. Engagement and transfer: After playing a scene in SylvieApp, does Sylvie spontaneously
+continue the theme in real‑world play (e.g., building a fairy garden outside, telling a story)? Does
+she talk about the characters’ feelings or actions?
+
+3. Sleepy routine: Does Sleepy’s lights‑out mode help Sylvie wind down, or does she become
+overstimulated by the screen? Do bedtime struggles decrease when using audio‑only stories?
+
+4. Elias’s shared attention: Does Elias look toward you and share attention when using EliasApp2?
+Does he repeat the vocabulary words? Does he return to his physical vehicles and tools after the
+session?
+
+5. Co‑play participation: Are parent prompts effective in drawing you into the play? Do you find
+them intrusive or helpful? Do the children invite you without prompts?
+
+10. Final Recommendation
+For the next development sprint, focus on remediating Sleepy and strengthening feedback and
+session design across all apps. Sleepy poses the most significant safety and developmental risks due
+to bright screens, long videos and external links; replace YouTube content with locally hosted audio
+stories, enforce lights‑out mode, and add session timers. In parallel, implement scaffolded hints in
+SylviePhonetics and restructure its sequence to separate sound from letter tasks. Remove extrinsic star
+collection in SylvieApp and integrate emotional narratives and closing rituals. For EliasApp2, introduce
+audio vocabulary narration and limit interactive elements to avoid overload. Success will be evident
+when sessions naturally end within recommended durations, children remain regulated, caregivers are
+consistently involved, and the apps guide the child toward real‑world play. Continuous observation by
+Josh and Kristy will ensure iterative refinement and alignment with therapy goals.
+
+1 Sylvie's Phonics Adventure
+https://joshualparris.github.io/SylviePhonetics/
+
+21

@@ -1,0 +1,71 @@
+# Research Prompt: Evidence-Based Design for Sylvie and Elias Educational Apps
+
+## Context and Goals
+
+* **Users and ages** – Sylvie (born **26 February 2022** – **4 yrs 3 months** as of 4 June 2026) and Elias (born **11 May 2026** – **0 yrs 0 month**). Their apps currently include *SleepyTime*, *SylviePhonetics*, *SylvieApp* and *EliasApp* (links provided). The aim is to **quality‑assure and improve these apps** so they reflect best practice in children’s education, entertainment and wellbeing.
+* **Australian early‑childhood context** – design must align with the **Australian Early Years Learning Framework (EYLF)** and **NSW early childhood curriculum**. The EYLF recognises that children are “effective communicators” and encourages digital technology to help children access information, investigate ideas and represent their thinking【184029401886150†L3807-L3847】.  The **ECA Statement on young children and digital technologies** emphasises that toddlers and preschoolers should have **no more than one hour of screen time per day**, balanced with at least **180 minutes of physical activity** (including 60 minutes of energetic play)【769452652146654†L628-L786】 and that digital experiences should promote relationships, self‑regulation and physical health.【769452652146654†L628-L786】  The **Australian 24‑hour Movement Guidelines** echo this: they recommend **no sedentary screen time for children under 2** and **less than 1 hour of high‑quality screen time per day for children aged 2–5**【420196007136000†L248-L310】.  
+
+## Research Questions
+
+The study should investigate the following themes.  Each theme needs evidence from **peer‑reviewed research**, **paediatric guidelines**, **occupational and speech therapists**, **early‑childhood educators**, **homeschoolers**, and **child psychologists**, as well as **sociology/anthropology literature**.  Where possible, prioritise **Australian/NZS sources**, but include global research when relevant.
+
+### 1. Developmentally appropriate screen time
+
+* Summarise scientific evidence on **how much screen time is appropriate for infants (0–2 years), toddlers (2–3 years) and preschoolers (3–5 years)**.  Use guidelines from the Australian Government and international paediatric societies.  Note that evidence indicates **no screen time for under‑2s** and **less than 1 hour for ages 2–5**【420196007136000†L248-L310】, and emphasise that screen time should be **high‑quality, interactive and adult‑co‑viewed**【769452652146654†L628-L786】.  Investigate how **sleep quality and attention span** are affected by screens, including research showing average attention spans of **8–12 minutes** for 4‑year‑olds and potential cognitive/behavioural issues from excessive screen time【184979534732217†L112-L151】.  
+* Explore whether **short sessions** of interactive content (e.g., 5‑10 minutes) produce better learning outcomes than long passive sessions.  Consider guidelines from child psychologists and attention‑span research.  
+
+### 2. App design principles grounded in cognitive science
+
+* Investigate the **Four Pillars of Learning** – **active involvement, engagement (contingent feedback), meaningful experiences and social interaction** – which research shows are necessary for apps to be truly educational【761772806412473†L256-L307】.  Examine studies on **scaffolded feedback** showing that preschoolers learn new words better when apps provide hints and feedback【301166833121499†L37-L68】.  
+* Review evidence on **systematic phonics instruction** for early literacy; identify how explicit, systematic teaching of letter–sound relationships improves decoding, spelling and comprehension for kindergarten children【721368704771037†L289-L339】.  Determine best practices for incorporating phonics and phonemic awareness into digital games for 4‑year‑olds.  
+* Evaluate the **balance between open‑ended digital play and structured learning**.  Research from early‑childhood educators emphasises that high‑quality digital content should spark curiosity, support inquiry‑based investigations and foster relationships, and that co‑viewing/co‑playing with adults enhances learning【846453498695578†L123-L205】.  
+
+### 3. Holistic wellbeing: physical, emotional and social health
+
+* Investigate **physical health impacts** of digital device use in early childhood, including posture, eyesight, fine‑motor development, and possible benefits (e.g., touch screens can enhance finger dexterity while still requiring real‑world 3D activities for strength)【769452652146654†L628-L786】.  Consider guidelines for ergonomic design of devices and the inclusion of **movement breaks or physical‑activity prompts**.  
+* Examine **emotional regulation and self‑soothing**.  Research should cover bedtime routines and the impact of blue light on melatonin production (linking to SleepyTime), the role of calming audio vs. visual content, and whether interactive stories help children transition to sleep.  Include recommendations from sleep experts on limiting screen exposure before bedtime【420196007136000†L299-L310】.  
+* Analyse **social development and collaborative play**: do apps encourage joint attention, turn‑taking, and cooperative problem solving?  The ECA digital statement stresses co‑play and modelling self‑regulation【769452652146654†L628-L786】; similarly, CELA’s digital play article argues that a **“balance of play and technology”** leads to competent and involved learners【846453498695578†L123-L205】.  
+
+### 4. Cultural, sociological and anthropological considerations
+
+* Explore **how families from diverse cultural backgrounds interact with digital technologies**.  Identify any disparities (digital divide) and differences in parenting attitudes towards screen time.  
+* Consider **sociological research on digital childhood** – how early exposure to technology shapes identity, play patterns and social relationships.  Investigate anthropological findings on how digital tools intersect with traditional play and family rituals.  
+* Include insights from **homeschooling communities** and **rural/remote NSW communities** on using digital tools for early childhood learning and whether there are unique needs or barriers (e.g., limited bandwidth, cultural values).  
+
+### 5. Curriculum alignment and cross‑curricular integration
+
+* Map how digital content can support the **Early Years Learning Framework (EYLF) learning outcomes**, especially Outcome 5 (children are effective communicators) which encourages digital technologies to investigate ideas and represent thinking【184029401886150†L3807-L3847】.  Identify ways to align app activities with other EYLF outcomes (identity, wellbeing, learning, community).  
+* Examine the **NSW syllabus** for early childhood (including Kindergarten outcomes) to ensure phonics content aligns with state literacy requirements and the “Play‑based learning” philosophy.  
+* Review **eSafety Commissioner guidelines** and ABC Kids resources on selecting quality digital content【846453498695578†L211-L224】; integrate recommendations on digital citizenship and safe online behaviours.  
+
+### 6. Benchmarking existing apps
+
+* Apply the above research to evaluate **Sylvie SleepyTime**, **SylviePhonetics**, **SylvieApp** and **EliasApp**:
+  * Analyse the **duration and interactivity** of content.  Are sessions short enough to match attention spans, and do they include scaffolding and feedback?
+  * Check whether the apps incorporate **co‑play features** (e.g., parental dashboards, prompts for joint activities).
+  * For the phonics app, assess how **systematic phonics instruction** is delivered and whether it is aligned with NSW literacy outcomes.
+  * For SleepyTime, evaluate if the bedtime stories respect sleep hygiene recommendations (avoid bright screens, calming audio, consistency).  
+  * For EliasApp (infant), ensure there is **no screen time** and focus on audio or interactive toys consistent with guidelines for infants (tummy time, sensory stimulation).  
+* Note user interface considerations (colour contrast, font size, audio quality) and ensure they meet accessibility standards for young children and parents with disabilities.  
+
+## Deliverables
+
+* Produce a **comprehensive research report** synthesising findings from at least **10–15 peer‑reviewed articles** and **official guidelines**.  
+* Provide **critical evaluations** and practical recommendations for app improvements.  Highlight any conflicts in the literature (e.g., benefits of digital literacy vs. risks of screen time).  
+* Use Australian sources and professionals wherever possible, but compare with international studies to broaden understanding.  
+* Ensure that **recommendations are specific to the ages of Sylvie and Elias**; distinguish guidelines for 4‑year‑olds and infants.  
+
+---
+
+### Key Citations to Inform Research
+
+1. **Australian 24‑Hour Movement Guidelines** – no screen time for <2 yrs and ≤1 hr/day for ages 2–5; emphasises physical activity and limiting sedentary time【420196007136000†L248-L310】.  
+2. **Early Childhood Australia (ECA) digital statement** – urges balanced use of digital technology; toddlers and preschoolers should have at least 180 min of physical activity per day and no more than one hour of screen time; emphasises modelling self‑regulation and using digital tools to promote relationships【769452652146654†L628-L786】.  
+3. **Early Years Learning Framework** – children are effective communicators using digital technologies to investigate ideas and represent their thinking【184029401886150†L3807-L3847】.  
+4. **Four Pillars of Learning** – active engagement, contingent feedback, meaningful experiences and social interaction define educational apps【761772806412473†L256-L307】.  
+5. **Scaffolded feedback research** – preschoolers learn novel words more effectively when apps provide scaffolded hints and feedback【301166833121499†L37-L68】.  
+6. **Systematic phonics instruction** – explicit, systematic phonics improves decoding, spelling and reading comprehension in early years【721368704771037†L289-L339】.  
+7. **Attention span and screen‑time effects** – average attention spans for 4‑year‑olds and negative impacts of excessive screen time on cognitive and behavioural development【184979534732217†L112-L151】.  
+8. **Responsive practice for digital play** – emphasises balancing play and technology, intentionally planning digital content, and co‑play to extend learning beyond the screen【846453498695578†L123-L205】.  
+
+Use these citations as starting points and expand the literature review with up‑to‑date research and expert opinions.
