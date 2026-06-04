@@ -56,7 +56,12 @@ export default function Home() {
         </div>
         <div className="favorite-picture-grid">
           {favoritePictures.map((picture) => (
-            <article key={picture.id} className="favorite-picture-card">
+            <Link
+              key={picture.id}
+              to={`/things-sylvie-loves/${picture.id}`}
+              className="favorite-picture-card"
+              aria-label={`Open ${picture.title} activity`}
+            >
               <FavoritePicture kind={picture.kind} title={picture.title} />
               <div className="p-3">
                 <h3 className="text-base font-black text-slate-950">{picture.title}</h3>
@@ -64,7 +69,7 @@ export default function Home() {
                   {picture.description}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

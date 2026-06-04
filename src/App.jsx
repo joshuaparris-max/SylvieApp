@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppStateProvider from './components/AppStateProvider'
 import AppShell from './components/AppShell'
 import CalmDown from './pages/CalmDown'
+import FavoriteActivity from './pages/FavoriteActivity'
 import Home from './pages/Home'
 import ParentSettings from './pages/ParentSettings'
 import BlockBuilder from './games/BlockBuilder'
@@ -22,6 +23,7 @@ function App() {
           <Route element={<AppShell />}>
             <Route index element={<Home />} />
             <Route path="fairy-garden" element={<FairyGarden />} />
+            <Route path="things-sylvie-loves/:id" element={<FavoriteActivity />} />
             <Route path="farm-adventure" element={<FarmAdventure />} />
             <Route path="princess-dress-up" element={<PrincessDressUp />} />
             <Route path="colouring-room" element={<ColouringRoom />} />

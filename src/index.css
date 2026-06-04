@@ -1146,11 +1146,27 @@ button[disabled] {
 }
 
 .favorite-picture-card {
+  display: block;
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.24);
   border-radius: 8px;
   background: white;
   box-shadow: 0 12px 28px rgba(37, 53, 86, 0.1);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.favorite-picture-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(37, 53, 86, 0.14);
+}
+
+.favorite-picture-card:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
 }
 
 .favorite-picture {
@@ -1225,6 +1241,44 @@ button[disabled] {
 
 .favorite-picture-blocks {
   color: #ffedd5;
+}
+
+.favorite-activity-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .favorite-activity-layout {
+    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}
+
+.favorite-activity-picture,
+.favorite-activity-panel {
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  box-shadow: 0 16px 36px rgba(37, 53, 86, 0.12);
+}
+
+.favorite-activity-picture .favorite-picture {
+  border-radius: 8px;
+}
+
+.favorite-feedback {
+  margin-top: 1rem;
+  border-radius: 8px;
+  background: #ecfdf5;
+  padding: 1rem;
+}
+
+.favorite-feedback.quiet {
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 800;
 }
 
 .favorite-grid {
