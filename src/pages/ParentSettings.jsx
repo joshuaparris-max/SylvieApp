@@ -73,7 +73,7 @@ export default function ParentSettings() {
     return [
       'SylvieApp local parent summary',
       `When: ${new Date().toLocaleString()}`,
-      `Stars/decorations earned: ${Number(stars || 0)}`,
+      `Garden ideas/decorations earned: ${Number(stars || 0)}`,
       `Saved drawings: ${savedDrawings}`,
       `Block cells currently filled: ${blockCount}`,
       `Puzzle progress entries: ${puzzleCount}`,

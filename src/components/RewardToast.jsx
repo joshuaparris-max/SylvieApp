@@ -12,7 +12,7 @@ export default function RewardToast() {
       aria-live="polite"
     >
       {reward.amount > 0
-        ? `+${reward.amount} star${reward.amount === 1 ? '' : 's'}. `
+        ? `${reward.amount} new idea${reward.amount === 1 ? '' : 's'} saved. `
         : ''}
       {reward.reason}
     </div>

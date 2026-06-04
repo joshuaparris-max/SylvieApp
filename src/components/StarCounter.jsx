@@ -2,7 +2,7 @@ import { useAppState } from '../hooks/useAppState'
 
 export default function StarCounter() {
   const { stars } = useAppState()
-  const label = `${stars} star${stars === 1 ? '' : 's'} collected`
+  const label = `${stars} saved garden idea${stars === 1 ? '' : 's'}`
 
   return (
     <div
@@ -13,7 +13,7 @@ export default function StarCounter() {
         *
       </span>
       <span className="text-lg font-bold">{stars}</span>
-      <span className="text-sm font-semibold">star{stars === 1 ? '' : 's'}</span>
+      <span className="text-sm font-semibold">idea{stars === 1 ? '' : 's'}</span>
     </div>
   )
 }
