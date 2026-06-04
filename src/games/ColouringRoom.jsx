@@ -26,7 +26,7 @@ function blankPage() {
 }
 
 export default function ColouringRoom() {
-  const { awardStars } = useAppState()
+  const { awardStars, settings } = useAppState()
   const [pageId, setPageId] = useState(coloringPages[0].id)
   const [selectedColor, setSelectedColor] = useState(palette[0])
   const [challengeIndex, setChallengeIndex] = useState(0)
@@ -50,6 +50,9 @@ export default function ColouringRoom() {
     [drawings, pageId],
   )
   const outlines = lineArt[pageId] || []
+  const showCreativeIdeas =
+    settings.audienceMode === 'parent' || settings.screenDetail === 'full'
+  const showGrownUpGuidance = settings.audienceMode === 'parent'
 
   const paintCell = (index) => {
     if (!Number.isInteger(index) || index < 0 || index >= cellCount) return
@@ -236,13 +239,15 @@ export default function ColouringRoom() {
 
           <section className="rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft">
             <h2 className="panel-title">Colours</h2>
-            <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm leading-6 text-slate-700">
-              <strong className="block text-slate-900">Drawing idea</strong>
-              {creativeChallenges.drawing[challengeIndex]}
-              <button type="button" className="btn-secondary mt-3 w-full" onClick={nextChallenge}>
-                New idea
-              </button>
-            </div>
+            {showCreativeIdeas ? (
+              <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm leading-6 text-slate-700">
+                <strong className="block text-slate-900">Drawing idea</strong>
+                {creativeChallenges.drawing[challengeIndex]}
+                <button type="button" className="btn-secondary mt-3 w-full" onClick={nextChallenge}>
+                  New idea
+                </button>
+              </div>
+            ) : null}
             <div className="grid grid-cols-4 gap-2">
               {palette.map((color) => (
                 <button
@@ -315,10 +320,12 @@ export default function ColouringRoom() {
               />
             ))}
           </div>
-          <div className="mt-4 rounded-lg bg-emerald-50 p-3 text-sm leading-6 text-slate-700">
-            <strong className="block text-slate-900">Show and tell</strong>
-            {realWorldBridgePrompts[2]} Then tell a grown-up the story in your picture.
-          </div>
+          {showGrownUpGuidance ? (
+            <div className="mt-4 rounded-lg bg-emerald-50 p-3 text-sm leading-6 text-slate-700">
+              <strong className="block text-slate-900">Show and tell</strong>
+              {realWorldBridgePrompts[2]} Then tell a grown-up the story in your picture.
+            </div>
+          ) : null}
         </section>
       </section>
     </div>

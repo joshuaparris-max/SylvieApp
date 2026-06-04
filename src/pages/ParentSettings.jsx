@@ -79,6 +79,8 @@ export default function ParentSettings() {
       `Puzzle progress entries: ${puzzleCount}`,
       `Story progress entries: ${storyCount}`,
       `Sorting items completed: ${sortedCount}`,
+      `App mode: ${settings.audienceMode === 'parent' ? 'Parent' : 'Sylvie'}`,
+      `Screen detail: ${settings.screenDetail === 'full' ? 'full' : 'simple'}`,
       `Movement reminder: every ${settings.movementBreakMinutes} minutes`,
       `Session cues: soft ${settings.sessionSoftStopMinutes} min, finish ${settings.sessionHardStopMinutes} min`,
       'Suggested next co-play: ask Sylvie to show one creation and tell the story of what she made.',
@@ -86,7 +88,9 @@ export default function ParentSettings() {
   }, [
     blocks,
     savedDrawingNames,
+    settings.audienceMode,
     settings.movementBreakMinutes,
+    settings.screenDetail,
     settings.sessionHardStopMinutes,
     settings.sessionSoftStopMinutes,
   ])
@@ -120,6 +124,42 @@ export default function ParentSettings() {
                 }
               />
             </label>
+            <div className="mt-4">
+              <p className="label-text">App mode</p>
+              <div className="segmented">
+                {[
+                  ['sylvie', 'Sylvie'],
+                  ['parent', 'Parent'],
+                ].map(([mode, label]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => updateSettings({ audienceMode: mode })}
+                    className={settings.audienceMode === mode ? 'active' : ''}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="label-text">Screen detail</p>
+              <div className="segmented">
+                {[
+                  ['simple', 'Simple'],
+                  ['full', 'Full'],
+                ].map(([mode, label]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => updateSettings({ screenDetail: mode })}
+                    className={settings.screenDetail === mode ? 'active' : ''}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="mt-4">
               <p className="label-text">Visual mode</p>
               <div className="segmented">

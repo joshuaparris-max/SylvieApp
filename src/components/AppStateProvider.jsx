@@ -25,7 +25,9 @@ export default function AppStateProvider({ children }) {
       ...settings,
       passcode: String(settings?.passcode || defaultSettings.passcode),
       soundsEnabled: Boolean(settings?.soundsEnabled),
+      audienceMode: settings?.audienceMode === 'parent' ? 'parent' : 'sylvie',
       visualMode: settings?.visualMode === 'playful' ? 'playful' : 'calm',
+      screenDetail: settings?.screenDetail === 'full' ? 'full' : 'simple',
       movementBreakMinutes: [5, 8, 10, 20, 30].includes(
         Number(settings?.movementBreakMinutes),
       )

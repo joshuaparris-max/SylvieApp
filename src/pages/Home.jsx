@@ -6,6 +6,8 @@ import { useAppState } from '../hooks/useAppState'
 
 export default function Home() {
   const { settings } = useAppState()
+  const isParentMode = settings.audienceMode === 'parent'
+  const isSimpleMode = settings.screenDetail === 'simple'
   const greeting =
     settings.customEncouragements?.[settings.customEncouragements.length - 1] ||
     'You are loved exactly as you are.'
@@ -21,9 +23,11 @@ export default function Home() {
             SylvieApp
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">{greeting}</p>
-          <p className="mt-3 text-sm text-slate-600">
-            Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, original piglet and puppy pals, a friendly sorting truck, swings, and trampoline fun.
-          </p>
+          {!isSimpleMode ? (
+            <p className="mt-3 text-sm text-slate-600">
+              Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, original piglet and puppy pals, a friendly sorting truck, swings, and trampoline fun.
+            </p>
+          ) : null}
         </div>
         <div className="garden-illustration" aria-hidden="true">
           <span className="sun" />
@@ -38,7 +42,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="favorite-gallery" aria-labelledby="favorite-gallery-title">
+      {!isSimpleMode ? (
+        <section className="favorite-gallery" aria-labelledby="favorite-gallery-title">
         <div className="favorite-gallery-heading">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-700">
             Original pictures
@@ -63,7 +68,8 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
+      ) : null}
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-label="App sections">
         {homeSections.map((section) => (
@@ -79,15 +85,17 @@ export default function Home() {
                 {section.summary}
               </span>
             </Link>
-            <details className="mt-3 rounded-lg bg-white/70 px-3 py-2 text-sm text-slate-600">
-              <summary className="cursor-pointer font-black text-slate-800">
-                Grown-up note
-              </summary>
-              <p className="mt-2 leading-6">{section.why}</p>
-              <p className="mt-2 leading-6">
-                <strong>Try:</strong> {section.parentCue}
-              </p>
-            </details>
+            {isParentMode ? (
+              <details className="mt-3 rounded-lg bg-white/70 px-3 py-2 text-sm text-slate-600">
+                <summary className="cursor-pointer font-black text-slate-800">
+                  Grown-up note
+                </summary>
+                <p className="mt-2 leading-6">{section.why}</p>
+                <p className="mt-2 leading-6">
+                  <strong>Try:</strong> {section.parentCue}
+                </p>
+              </details>
+            ) : null}
           </article>
         ))}
       </section>

@@ -3,7 +3,9 @@ import { createContext, useContext } from 'react'
 export const defaultSettings = {
   passcode: '2468',
   soundsEnabled: false,
+  audienceMode: 'sylvie',
   visualMode: 'calm',
+  screenDetail: 'simple',
   movementBreakMinutes: 8,
   sessionSoftStopMinutes: 12,
   sessionHardStopMinutes: 15,

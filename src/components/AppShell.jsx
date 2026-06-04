@@ -6,7 +6,7 @@ import { movementPrompts, parentPlayPrompts, realWorldBridgePrompts } from '../d
 import { useAppState } from '../hooks/useAppState'
 
 export default function AppShell() {
-  const { settings } = useAppState()
+  const { settings, updateSettings } = useAppState()
   const location = useLocation()
   const [showMovementReminder, setShowMovementReminder] = useState(false)
   const [openingDismissedFor, setOpeningDismissedFor] = useState('')
@@ -15,8 +15,10 @@ export default function AppShell() {
 
   const isPlayRoute =
     location.pathname !== '/' && location.pathname !== '/parent-settings'
+  const isParentMode = settings.audienceMode === 'parent'
+  const isSimpleMode = settings.screenDetail === 'simple'
   const showOpeningRitual =
-    isPlayRoute && openingDismissedFor !== location.pathname
+    isPlayRoute && isParentMode && openingDismissedFor !== location.pathname
   const showSoftStop = isPlayRoute && softStopFor === location.pathname
   const showHardStop = isPlayRoute && hardStopFor === location.pathname
 
@@ -66,7 +68,11 @@ export default function AppShell() {
     movementPrompts[Math.abs(location.pathname.length) % movementPrompts.length]
 
   return (
-    <div className={`app-bg min-h-screen ${settings.visualMode === 'playful' ? 'mode-playful' : 'mode-calm'}`}>
+    <div
+      className={`app-bg min-h-screen ${
+        settings.visualMode === 'playful' ? 'mode-playful' : 'mode-calm'
+      } ${isSimpleMode ? 'mode-simple' : 'mode-full'}`}
+    >
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-3 py-4 sm:px-5 lg:px-6">
         <header className="sticky top-0 z-30 mb-4 rounded-lg border border-white/80 bg-white/90 p-3 shadow-soft backdrop-blur backdrop-saturate-150">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -84,6 +90,22 @@ export default function AppShell() {
               </span>
             </Link>
             <div className="flex flex-wrap items-center gap-2">
+              <div className="mode-switch" aria-label="Choose app mode">
+                {[
+                  ['sylvie', 'Sylvie'],
+                  ['parent', 'Parent'],
+                ].map(([mode, label]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    className={settings.audienceMode === mode ? 'active' : ''}
+                    onClick={() => updateSettings({ audienceMode: mode })}
+                    aria-pressed={settings.audienceMode === mode}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
               <StarCounter />
               <Link to="/calm-down" className="btn-calm" aria-label="Open Calm Down screen">
                 Calm Down
