@@ -616,7 +616,7 @@ button[disabled] {
   overflow: hidden;
   border-radius: 8px;
   background:
-    linear-gradient(#ddf4ff 0 58%, #fef3c7 58% 100%),
+    linear-gradient(var(--preview-sky, #ddf4ff) 0 58%, var(--preview-ground, #fef3c7) 58% 100%),
     #fff;
 }
 
@@ -626,7 +626,8 @@ button[disabled] {
 .preview-cape,
 .preview-dress,
 .preview-shoes,
-.preview-wand {
+.preview-wand,
+.preview-sparkle {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -637,7 +638,7 @@ button[disabled] {
   width: 148px;
   height: 140px;
   border-radius: 50% 50% 12px 12px;
-  background: #8b5cf6;
+  background: var(--preview-cape, #8b5cf6);
 }
 
 .preview-dress {
@@ -645,7 +646,9 @@ button[disabled] {
   width: 118px;
   height: 150px;
   clip-path: polygon(50% 0, 92% 100%, 8% 100%);
-  background: linear-gradient(135deg, #f9a8d4, #93c5fd);
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255, 255, 255, 0.62) 0 12px, transparent 13px),
+    linear-gradient(135deg, var(--preview-dress, #f9a8d4), #ffffff 180%);
 }
 
 .preview-face {
@@ -665,7 +668,7 @@ button[disabled] {
   width: 106px;
   height: 92px;
   border-radius: 50% 50% 44% 44%;
-  background: #7c4a26;
+  background: var(--preview-hair, #7c4a26);
 }
 
 .preview-crown {
@@ -674,7 +677,7 @@ button[disabled] {
   width: 86px;
   height: 38px;
   clip-path: polygon(0 100%, 10% 20%, 35% 72%, 50% 0, 65% 72%, 90% 20%, 100% 100%);
-  background: #ffd166;
+  background: var(--preview-crown, #ffd166);
 }
 
 .preview-shoes {
@@ -690,7 +693,7 @@ button[disabled] {
   width: 46px;
   height: 20px;
   border-radius: 999px;
-  background: #334155;
+  background: var(--preview-shoes, #334155);
   content: "";
 }
 
@@ -708,7 +711,7 @@ button[disabled] {
   width: 8px;
   height: 120px;
   border-radius: 999px;
-  background: #6d28d9;
+  background: var(--preview-wand, #6d28d9);
   transform: rotate(-25deg);
 }
 
@@ -719,8 +722,35 @@ button[disabled] {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ffd166;
+  background: var(--preview-sparkle, #ffd166);
   content: "";
+}
+
+.preview-sparkle {
+  z-index: 3;
+  width: 18px;
+  height: 18px;
+  clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+  background: var(--preview-sparkle, #facc15);
+}
+
+.sparkle-one {
+  top: 76px;
+  left: 24%;
+}
+
+.sparkle-two {
+  top: 122px;
+  left: 82%;
+  width: 14px;
+  height: 14px;
+}
+
+.sparkle-three {
+  top: 222px;
+  left: 18%;
+  width: 16px;
+  height: 16px;
 }
 
 .color-swatch,
