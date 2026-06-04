@@ -81,6 +81,8 @@ export default function ParentSettings() {
       `Sorting items completed: ${sortedCount}`,
       `App mode: ${settings.audienceMode === 'parent' ? 'Parent' : 'Sylvie'}`,
       `Screen detail: ${settings.screenDetail === 'full' ? 'full' : 'simple'}`,
+      `Reading support: ${settings.readingSupport}`,
+      `Word complexity: ${settings.wordComplexity === 'rich' ? 'rich' : 'simple'}`,
       `Movement reminder: every ${settings.movementBreakMinutes} minutes`,
       `Session cues: soft ${settings.sessionSoftStopMinutes} min, finish ${settings.sessionHardStopMinutes} min`,
       'Suggested next co-play: ask Sylvie to show one creation and tell the story of what she made.',
@@ -90,9 +92,11 @@ export default function ParentSettings() {
     savedDrawingNames,
     settings.audienceMode,
     settings.movementBreakMinutes,
+    settings.readingSupport,
     settings.screenDetail,
     settings.sessionHardStopMinutes,
     settings.sessionSoftStopMinutes,
+    settings.wordComplexity,
   ])
 
   const copyParentSummary = async () => {
@@ -154,6 +158,43 @@ export default function ParentSettings() {
                     type="button"
                     onClick={() => updateSettings({ screenDetail: mode })}
                     className={settings.screenDetail === mode ? 'active' : ''}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="label-text">Reading support</p>
+              <div className="segmented segmented-three">
+                {[
+                  ['picture', 'Picture'],
+                  ['simple', 'Simple'],
+                  ['full', 'Full'],
+                ].map(([mode, label]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => updateSettings({ readingSupport: mode })}
+                    className={settings.readingSupport === mode ? 'active' : ''}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="label-text">Words</p>
+              <div className="segmented">
+                {[
+                  ['simple', 'Simple'],
+                  ['rich', 'Richer'],
+                ].map(([mode, label]) => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => updateSettings({ wordComplexity: mode })}
+                    className={settings.wordComplexity === mode ? 'active' : ''}
                   >
                     {label}
                   </button>

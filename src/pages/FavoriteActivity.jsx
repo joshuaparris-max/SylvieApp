@@ -22,12 +22,21 @@ function useFinish(activity, awardStars) {
 }
 
 function Feedback({ text, bridge, finish }) {
+  const { settings } = useAppState()
+  const visibleText =
+    settings.wordComplexity === 'rich' || settings.readingSupport === 'full'
+      ? text
+      : text.split('. ')[0].replace(/\.$/, '') + '.'
+  const showBridge = settings.readingSupport !== 'picture'
+
   return (
     <div className="favorite-feedback" role="status">
-      <p className="leading-7 text-slate-700">{text}</p>
-      <p className="mt-3 rounded-lg bg-sky-50 p-3 text-sm font-bold leading-6 text-slate-700">
-        Away from the screen: {bridge}
-      </p>
+      <p className="leading-7 text-slate-700">{visibleText}</p>
+      {showBridge ? (
+        <p className="bridge-copy mt-3 rounded-lg bg-sky-50 p-3 text-sm font-bold leading-6 text-slate-700">
+          Away from the screen: {bridge}
+        </p>
+      ) : null}
       <button type="button" className="btn-primary mt-4 w-full" onClick={finish}>
         I did it
       </button>

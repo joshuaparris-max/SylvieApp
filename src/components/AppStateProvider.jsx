@@ -28,6 +28,10 @@ export default function AppStateProvider({ children }) {
       audienceMode: settings?.audienceMode === 'parent' ? 'parent' : 'sylvie',
       visualMode: settings?.visualMode === 'playful' ? 'playful' : 'calm',
       screenDetail: settings?.screenDetail === 'full' ? 'full' : 'simple',
+      readingSupport: ['picture', 'simple', 'full'].includes(settings?.readingSupport)
+        ? settings.readingSupport
+        : defaultSettings.readingSupport,
+      wordComplexity: settings?.wordComplexity === 'rich' ? 'rich' : 'simple',
       movementBreakMinutes: [5, 8, 10, 20, 30].includes(
         Number(settings?.movementBreakMinutes),
       )

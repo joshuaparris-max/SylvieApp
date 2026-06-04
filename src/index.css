@@ -210,6 +210,10 @@ button[disabled] {
   padding: 0.35rem;
 }
 
+.segmented-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .segmented button {
   border-radius: 8px;
   color: #475569;
@@ -220,6 +224,53 @@ button[disabled] {
   background: white;
   color: #111827;
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.reading-picture .page-eyebrow,
+.reading-picture .page-header-copy,
+.reading-picture .child-copy,
+.reading-picture .favorite-description,
+.reading-picture .section-summary,
+.reading-picture .bridge-copy {
+  display: none;
+}
+
+.reading-picture .page-header {
+  padding: 1rem;
+}
+
+.reading-picture .favorite-gallery-heading {
+  margin-bottom: 0.75rem;
+}
+
+.reading-picture .favorite-picture-card .p-3 {
+  padding: 0.75rem;
+}
+
+.reading-picture .favorite-picture-card h3,
+.reading-picture .section-card .text-xl {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.reading-picture .favorite-feedback {
+  padding: 0.75rem;
+}
+
+.reading-picture .favorite-feedback p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+}
+
+.reading-simple .favorite-description,
+.reading-simple .section-summary,
+.reading-simple .page-header-copy {
+  max-width: 46rem;
+}
+
+.mode-simple .favorite-activity-layout,
+.mode-simple .grid {
+  row-gap: 0.75rem;
 }
 
 .hero-panel {

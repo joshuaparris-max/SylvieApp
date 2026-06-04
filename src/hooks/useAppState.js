@@ -6,6 +6,8 @@ export const defaultSettings = {
   audienceMode: 'sylvie',
   visualMode: 'calm',
   screenDetail: 'simple',
+  readingSupport: 'simple',
+  wordComplexity: 'simple',
   movementBreakMinutes: 8,
   sessionSoftStopMinutes: 12,
   sessionHardStopMinutes: 15,

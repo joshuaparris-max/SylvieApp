@@ -24,7 +24,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">{greeting}</p>
           {!isSimpleMode ? (
-            <p className="mt-3 text-sm text-slate-600">
+            <p className="child-copy mt-3 text-sm text-slate-600">
               Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, original piglet and puppy pals, a friendly sorting truck, swings, and trampoline fun.
             </p>
           ) : null}
@@ -50,7 +50,7 @@ export default function Home() {
           <h2 id="favorite-gallery-title" className="text-2xl font-black text-slate-950">
             Things Sylvie loves
           </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+          <p className="child-copy mt-2 max-w-3xl text-sm leading-6 text-slate-600">
             These are SylvieApp originals inspired by her favourite kinds of play.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function Home() {
               <FavoritePicture kind={picture.kind} title={picture.title} />
               <div className="p-3">
                 <h3 className="text-base font-black text-slate-950">{picture.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-600">
+                <p className="favorite-description mt-1 text-sm leading-6 text-slate-600">
                   {picture.description}
                 </p>
               </div>
@@ -84,7 +84,7 @@ export default function Home() {
               <span className="mt-4 block text-xl font-black text-slate-950">
                 {section.title}
               </span>
-              <span className="mt-2 block text-sm leading-6 text-slate-700">
+              <span className="section-summary mt-2 block text-sm leading-6 text-slate-700">
                 {section.summary}
               </span>
             </Link>

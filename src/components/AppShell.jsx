@@ -17,6 +17,8 @@ export default function AppShell() {
     location.pathname !== '/' && location.pathname !== '/parent-settings'
   const isParentMode = settings.audienceMode === 'parent'
   const isSimpleMode = settings.screenDetail === 'simple'
+  const readingClass = `reading-${settings.readingSupport || 'simple'}`
+  const wordClass = `words-${settings.wordComplexity || 'simple'}`
   const showOpeningRitual =
     isPlayRoute && isParentMode && openingDismissedFor !== location.pathname
   const showSoftStop = isPlayRoute && softStopFor === location.pathname
@@ -71,7 +73,7 @@ export default function AppShell() {
     <div
       className={`app-bg min-h-screen ${
         settings.visualMode === 'playful' ? 'mode-playful' : 'mode-calm'
-      } ${isSimpleMode ? 'mode-simple' : 'mode-full'}`}
+      } ${isSimpleMode ? 'mode-simple' : 'mode-full'} ${readingClass} ${wordClass}`}
     >
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-3 py-4 sm:px-5 lg:px-6">
         <header className="sticky top-0 z-30 mb-4 rounded-lg border border-white/80 bg-white/90 p-3 shadow-soft backdrop-blur backdrop-saturate-150">
