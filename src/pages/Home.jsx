@@ -67,21 +67,28 @@ export default function Home() {
 
       <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-label="App sections">
         {homeSections.map((section) => (
-          <Link
-            key={section.path}
-            to={section.path}
-            className={`section-card tone-${section.tone}`}
-          >
-            <span className="section-icon">
-              <PlayIcon name={section.icon} className="h-10 w-10" />
-            </span>
-            <span className="mt-4 block text-xl font-black text-slate-950">
-              {section.title}
-            </span>
-            <span className="mt-2 block text-sm leading-6 text-slate-700">
-              {section.summary}
-            </span>
-          </Link>
+          <article key={section.path} className={`section-card tone-${section.tone}`}>
+            <Link to={section.path} className="block text-inherit no-underline">
+              <span className="section-icon">
+                <PlayIcon name={section.icon} className="h-10 w-10" />
+              </span>
+              <span className="mt-4 block text-xl font-black text-slate-950">
+                {section.title}
+              </span>
+              <span className="mt-2 block text-sm leading-6 text-slate-700">
+                {section.summary}
+              </span>
+            </Link>
+            <details className="mt-3 rounded-lg bg-white/70 px-3 py-2 text-sm text-slate-600">
+              <summary className="cursor-pointer font-black text-slate-800">
+                Grown-up note
+              </summary>
+              <p className="mt-2 leading-6">{section.why}</p>
+              <p className="mt-2 leading-6">
+                <strong>Try:</strong> {section.parentCue}
+              </p>
+            </details>
+          </article>
         ))}
       </section>
     </div>

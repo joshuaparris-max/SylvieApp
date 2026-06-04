@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
+import { creativeChallenges, realWorldBridgePrompts } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 import { STORAGE_KEYS } from '../utils/storage'
@@ -24,6 +25,7 @@ export default function BlockBuilder() {
   const { awardStars } = useAppState()
   const [blocks, setBlocks] = useLocalStorage(STORAGE_KEYS.blocks, [])
   const [activeColor, setActiveColor] = useState(colors[0])
+  const [challengeIndex, setChallengeIndex] = useState(0)
   const [selectedBlock, setSelectedBlock] = useState(null)
   const safeBlocks = Array.isArray(blocks)
     ? blocks.filter(
@@ -87,7 +89,11 @@ export default function BlockBuilder() {
 
   const saveCreation = () => {
     setBlocks((current) => [...(Array.isArray(current) ? current : [])])
-    awardStars(1, 'Block creation saved.')
+    awardStars(1, 'You saved a careful block idea.')
+  }
+
+  const nextChallenge = () => {
+    setChallengeIndex((index) => (index + 1) % creativeChallenges.blocks.length)
   }
 
   return (
@@ -99,6 +105,13 @@ export default function BlockBuilder() {
       <section className="grid gap-4 lg:grid-cols-[0.7fr_1.3fr]">
         <div className="rounded-lg border border-white/80 bg-white/90 p-4 shadow-soft">
           <h2 className="panel-title">Blocks</h2>
+          <div className="mb-4 rounded-lg bg-amber-50 p-3 text-sm leading-6 text-slate-700">
+            <strong className="block text-slate-900">Builder idea</strong>
+            {creativeChallenges.blocks[challengeIndex]}
+            <button type="button" className="btn-secondary mt-3 w-full" onClick={nextChallenge}>
+              New idea
+            </button>
+          </div>
           <div className="grid grid-cols-5 gap-2">
             {colors.map((color) => (
               <button
@@ -176,6 +189,10 @@ export default function BlockBuilder() {
                 aria-label="Placed block"
               />
             ))}
+          </div>
+          <div className="mt-4 rounded-lg bg-emerald-50 p-3 text-sm leading-6 text-slate-700">
+            <strong className="block text-slate-900">Show and tell</strong>
+            {realWorldBridgePrompts[1]} Then tell someone what each colour is doing.
           </div>
         </section>
       </section>

@@ -4,13 +4,15 @@ import ParentGate from '../components/ParentGate'
 import { coloringPages } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { STORAGE_KEYS } from '../utils/storage'
+import { readLocalStorage, STORAGE_KEYS } from '../utils/storage'
 
 export default function ParentSettings() {
   const { settings, updateSettings, resetProgress } = useAppState()
   const [drawings, setDrawings] = useLocalStorage(STORAGE_KEYS.drawings, {})
+  const [blocks] = useLocalStorage(STORAGE_KEYS.blocks, [])
   const [newMessage, setNewMessage] = useState('')
   const [newStoryPrompt, setNewStoryPrompt] = useState('')
+  const [copyStatus, setCopyStatus] = useState('')
 
   const savedDrawingNames = useMemo(
     () =>
@@ -46,6 +48,56 @@ export default function ParentSettings() {
       delete next[id]
       return next
     })
+  }
+
+  const parentSummary = useMemo(() => {
+    const stars = readLocalStorage(STORAGE_KEYS.stars, 0)
+    const savedDrawings = savedDrawingNames.map((page) => page.name).join(', ') || 'none yet'
+    const blockCount = Array.isArray(blocks) ? blocks.length : 0
+    const puzzles = readLocalStorage(STORAGE_KEYS.puzzles, {})
+    const stories = readLocalStorage(STORAGE_KEYS.stories, {})
+    const trash = readLocalStorage(STORAGE_KEYS.trash, {})
+    const puzzleCount =
+      puzzles && typeof puzzles === 'object' && !Array.isArray(puzzles)
+        ? Object.keys(puzzles).length
+        : 0
+    const storyCount =
+      stories && typeof stories === 'object' && !Array.isArray(stories)
+        ? Object.keys(stories).length
+        : 0
+    const sortedCount =
+      trash && typeof trash === 'object' && !Array.isArray(trash)
+        ? Object.values(trash).filter(Boolean).length
+        : 0
+
+    return [
+      'SylvieApp local parent summary',
+      `When: ${new Date().toLocaleString()}`,
+      `Stars/decorations earned: ${Number(stars || 0)}`,
+      `Saved drawings: ${savedDrawings}`,
+      `Block cells currently filled: ${blockCount}`,
+      `Puzzle progress entries: ${puzzleCount}`,
+      `Story progress entries: ${storyCount}`,
+      `Sorting items completed: ${sortedCount}`,
+      `Movement reminder: every ${settings.movementBreakMinutes} minutes`,
+      `Session cues: soft ${settings.sessionSoftStopMinutes} min, finish ${settings.sessionHardStopMinutes} min`,
+      'Suggested next co-play: ask Sylvie to show one creation and tell the story of what she made.',
+    ].join('\n')
+  }, [
+    blocks,
+    savedDrawingNames,
+    settings.movementBreakMinutes,
+    settings.sessionHardStopMinutes,
+    settings.sessionSoftStopMinutes,
+  ])
+
+  const copyParentSummary = async () => {
+    try {
+      await navigator.clipboard.writeText(parentSummary)
+      setCopyStatus('Copied summary.')
+    } catch {
+      setCopyStatus('Copy unavailable here.')
+    }
   }
 
   return (
@@ -95,10 +147,50 @@ export default function ParentSettings() {
                   updateSettings({ movementBreakMinutes: Number(event.target.value) })
                 }
               >
+                <option value={5}>Every 5 minutes</option>
+                <option value={8}>Every 8 minutes</option>
                 <option value={10}>Every 10 minutes</option>
                 <option value={20}>Every 20 minutes</option>
                 <option value={30}>Every 30 minutes</option>
               </select>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div>
+                <label className="label-text" htmlFor="soft-stop">
+                  Soft stop
+                </label>
+                <select
+                  id="soft-stop"
+                  className="input-field mt-2"
+                  value={settings.sessionSoftStopMinutes}
+                  onChange={(event) =>
+                    updateSettings({ sessionSoftStopMinutes: Number(event.target.value) })
+                  }
+                >
+                  <option value={8}>8 minutes</option>
+                  <option value={10}>10 minutes</option>
+                  <option value={12}>12 minutes</option>
+                  <option value={15}>15 minutes</option>
+                </select>
+              </div>
+              <div>
+                <label className="label-text" htmlFor="hard-stop">
+                  Finish cue
+                </label>
+                <select
+                  id="hard-stop"
+                  className="input-field mt-2"
+                  value={settings.sessionHardStopMinutes}
+                  onChange={(event) =>
+                    updateSettings({ sessionHardStopMinutes: Number(event.target.value) })
+                  }
+                >
+                  <option value={10}>10 minutes</option>
+                  <option value={12}>12 minutes</option>
+                  <option value={15}>15 minutes</option>
+                  <option value={20}>20 minutes</option>
+                </select>
+              </div>
             </div>
           </section>
 
@@ -185,6 +277,22 @@ export default function ParentSettings() {
             ) : (
               <p className="text-sm text-slate-600">No saved drawings yet.</p>
             )}
+          </section>
+
+          <section className="settings-panel lg:col-span-2">
+            <h2 className="panel-title">Parent summary</h2>
+            <p className="mb-3 text-sm leading-6 text-slate-600">
+              Local-only notes for a grown-up, educator, or therapist conversation.
+            </p>
+            <pre className="max-h-72 overflow-auto rounded-lg bg-slate-950 p-4 text-sm leading-6 text-white">
+              {parentSummary}
+            </pre>
+            <button type="button" className="btn-primary mt-3" onClick={copyParentSummary}>
+              Copy summary
+            </button>
+            {copyStatus ? (
+              <p className="mt-2 text-sm font-bold text-emerald-700">{copyStatus}</p>
+            ) : null}
           </section>
         </div>
       </ParentGate>

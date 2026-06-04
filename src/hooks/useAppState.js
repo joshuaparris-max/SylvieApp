@@ -4,7 +4,9 @@ export const defaultSettings = {
   passcode: '2468',
   soundsEnabled: false,
   visualMode: 'calm',
-  movementBreakMinutes: 20,
+  movementBreakMinutes: 8,
+  sessionSoftStopMinutes: 12,
+  sessionHardStopMinutes: 15,
   customEncouragements: ['You are kind and brave.'],
   customStoryPrompts: [],
 }

@@ -1,34 +1,51 @@
 # SylvieApp
 
-SylvieApp is a calm, child-safe React + Vite play world made for Sylvie. It uses original CSS/SVG-style illustrations, localStorage progress, React Router pages, and Tailwind CSS styling.
+SylvieApp is a calm, child-safe React and Vite play world for Sylvie. It uses original illustrations and themes, browser-local progress, React Router pages, and Tailwind/CSS styling.
 
-The app is inspired by gentle play themes: fairies, farms, princess dress-up, colouring, puzzles, block building, rubbish sorting, movement breaks, stories, and calm breathing. It does not use official copyrighted characters, franchise names, logos, music, images, voices, ads, external child links, login, purchases, or social sharing.
+Repository: https://github.com/joshuaparris-max/SylvieApp.git
 
-## Features
+## Current State
 
-- Home screen with large child-friendly navigation
-- Fairy Garden with blooming flowers, collectable stars, and unlockable decorations
-- Farm Adventure with planting, watering, harvesting, animal care, and farm decorations
-- Princess Dress-Up with original outfit themes and saved local outfit state
-- Colouring Room with 10 original pages, large colours, eraser, clear, local saves, and PNG download
-- Puzzle Play with matching, picture placement, and missing-piece puzzles
-- Block Builder with snap-grid building, drag/drop colour blocks, delete, clear, save, and random tower
-- Sorting Truck with recycling, compost, rubbish bins, and a friendly original truck
-- Trampoline & Swing Break with movement prompts and a calm timer
-- Story Corner with short original interactive stories and custom parent prompts
-- Parent Settings with passcode, reset, sounds toggle, visual mode, saved drawing management, messages, and movement reminder interval
-- Calm Down screen with breathing animation and gentle words
+The app is a working local-first play world with multiple activities, parent settings, saved progress, and QA fixes for localStorage resilience and mobile/touch play.
 
-## Local Development
+See:
+
+- [Status](docs/status.md)
+- [Roadmap](docs/roadmap.md)
+- [Research Implementation Roadmap](docs/ResearchImplementationRoadmap.md)
+- [QA Log](docs/qa-log.md)
+- [Content and Safety](docs/content-and-safety.md)
+- [Development](docs/development.md)
+
+## Feature Summary
+
+- Home screen with large child-friendly navigation.
+- Fairy Garden with blooming flowers, collectable stars, and unlockable decorations.
+- Farm Adventure with planting, watering, harvesting, animal care, and farm decorations.
+- Princess Dress-Up with original outfit themes and saved local outfit state.
+- Colouring Room with 10 original pages, large colors, eraser, clear, local saves, and PNG download.
+- Puzzle Play with matching, picture placement, and missing-piece puzzles.
+- Block Builder with snap-grid building, drag/drop color blocks, delete, clear, save, and random tower.
+- Sorting Truck with recycling, compost, rubbish bins, and a friendly original truck.
+- Trampoline and Swing Break with movement prompts and a calm timer.
+- Story Corner with short original interactive stories and custom parent prompts.
+- Calm Down screen with breathing animation and gentle words.
+- Parent Settings with passcode, reset, sounds toggle, visual mode, saved drawing management, messages, and movement reminder interval.
+
+## Safety Model
+
+SylvieApp avoids official copyrighted characters, franchise names, logos, music, images, voices, ads, external child links, login, purchases, and social sharing. Progress is local-only in the browser.
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open the local Vite URL shown in the terminal.
+Open the local Vite URL shown in the terminal.
 
-## Production Build
+## Build
 
 ```bash
 npm run build
@@ -40,41 +57,6 @@ Preview the production build:
 npm run preview
 ```
 
-## GitHub Setup
-
-From the project folder:
-
-```bash
-git init
-git add .
-git commit -m "Build SylvieApp"
-git branch -M main
-git remote add origin https://github.com/joshuaparris-max/SylvieApp.git
-git push -u origin main
-```
-
-If the remote already exists locally, use:
-
-```bash
-git remote set-url origin https://github.com/joshuaparris-max/SylvieApp.git
-git push -u origin main
-```
-
-## Vercel Deployment
-
-1. Import the GitHub repository into Vercel.
-2. Use the Vite defaults:
-   - Framework preset: Vite
-   - Build command: `npm run build`
-   - Output directory: `dist`
-3. Deploy.
-
-## Parent Settings
-
-The default parent passcode is `2468`. Settings and progress are stored only in the browser using localStorage.
-
-Stored data includes stars, farm progress, outfit state, saved drawings, block creations, puzzle progress, story progress, sorting progress, and parent settings.
-
 ## Project Structure
 
 ```text
@@ -85,16 +67,7 @@ src/
   hooks/
   pages/
   utils/
-  assets/
+docs/
 ```
 
-## Safety Notes
-
-- No child-facing external links
-- No ads
-- No accounts
-- No purchases
-- No social sharing
-- Sounds are off by default
-- Rewards are gentle and non-pressuring
-- All characters, scenes, and illustrations are original
+Main routes are defined in `src/App.jsx`; home cards and most activity copy live in `src/data/content.js`.

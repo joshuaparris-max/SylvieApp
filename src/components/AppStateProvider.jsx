@@ -26,11 +26,21 @@ export default function AppStateProvider({ children }) {
       passcode: String(settings?.passcode || defaultSettings.passcode),
       soundsEnabled: Boolean(settings?.soundsEnabled),
       visualMode: settings?.visualMode === 'playful' ? 'playful' : 'calm',
-      movementBreakMinutes: [10, 20, 30].includes(
+      movementBreakMinutes: [5, 8, 10, 20, 30].includes(
         Number(settings?.movementBreakMinutes),
       )
         ? Number(settings.movementBreakMinutes)
         : defaultSettings.movementBreakMinutes,
+      sessionSoftStopMinutes: [8, 10, 12, 15].includes(
+        Number(settings?.sessionSoftStopMinutes),
+      )
+        ? Number(settings.sessionSoftStopMinutes)
+        : defaultSettings.sessionSoftStopMinutes,
+      sessionHardStopMinutes: [10, 12, 15, 20].includes(
+        Number(settings?.sessionHardStopMinutes),
+      )
+        ? Number(settings.sessionHardStopMinutes)
+        : defaultSettings.sessionHardStopMinutes,
       customEncouragements: Array.isArray(settings?.customEncouragements)
         ? settings.customEncouragements
         : defaultSettings.customEncouragements,

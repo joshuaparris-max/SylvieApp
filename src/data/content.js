@@ -5,6 +5,8 @@ export const homeSections = [
     icon: 'flower',
     tone: 'rose',
     summary: 'Bloom flowers, collect soft stars, and hear kind little messages.',
+    why: 'Supports care, turn-taking, gentle persistence, and naming what helps living things grow.',
+    parentCue: 'Ask: what helped the flower grow?',
   },
   {
     title: 'Farm Adventure',
@@ -12,6 +14,8 @@ export const homeSections = [
     icon: 'farm',
     tone: 'meadow',
     summary: 'Plant seeds, water crops, harvest treats, and feed gentle animals.',
+    why: 'Builds sequencing language, animal vocabulary, and early responsibility through pretend care.',
+    parentCue: 'Name the animal and the action: feed, water, harvest, help.',
   },
   {
     title: 'Princess Dress-Up',
@@ -19,6 +23,8 @@ export const homeSections = [
     icon: 'crown',
     tone: 'lilac',
     summary: 'Choose dresses, crowns, wands, capes, shoes, hair, and sparkles.',
+    why: 'Encourages identity, imagination, emotion language, and storytelling through original characters.',
+    parentCue: 'Ask: how does this character feel today?',
   },
   {
     title: 'Colouring Room',
@@ -26,6 +32,8 @@ export const homeSections = [
     icon: 'paint',
     tone: 'sun',
     summary: 'Colour original pages, save drawings, erase, clear, and download PNGs.',
+    why: 'Strengthens fine-motor planning, colour language, creative choice, and show-and-tell confidence.',
+    parentCue: 'Ask Sylvie to tell you about one colour choice.',
   },
   {
     title: 'Puzzle Play',
@@ -33,6 +41,8 @@ export const homeSections = [
     icon: 'puzzle',
     tone: 'sky',
     summary: 'Match shapes, colours, farm friends, princess items, and picture pieces.',
+    why: 'Supports visual discrimination, flexible thinking, and trying another way when a piece is tricky.',
+    parentCue: 'Model thinking aloud: I might try this piece next.',
   },
   {
     title: 'Block Builder',
@@ -40,6 +50,8 @@ export const homeSections = [
     icon: 'blocks',
     tone: 'coral',
     summary: 'Snap colourful blocks onto a bright building mat.',
+    why: 'Builds spatial language, early patterning, planning, and open-ended construction play.',
+    parentCue: 'Ask: is your build tall, wide, balanced, or patterned?',
   },
   {
     title: 'Sorting Truck',
@@ -47,6 +59,8 @@ export const homeSections = [
     icon: 'truck',
     tone: 'leaf',
     summary: 'Sort recycling, compost, and rubbish for a friendly original truck.',
+    why: 'Supports classification, everyday vocabulary, and community care through simple sorting.',
+    parentCue: 'Find a real recycling item together after play.',
   },
   {
     title: 'Trampoline & Swing Break',
@@ -54,6 +68,8 @@ export const homeSections = [
     icon: 'rainbow',
     tone: 'mint',
     summary: 'Take a gentle movement break with calm prompts.',
+    why: 'Protects wellbeing by breaking up sitting time and practising body regulation.',
+    parentCue: 'Join the movement so it becomes co-regulation, not a command.',
   },
   {
     title: 'Story Corner',
@@ -61,6 +77,8 @@ export const homeSections = [
     icon: 'moon',
     tone: 'dusk',
     summary: 'Read short original stories where kind choices matter.',
+    why: 'Builds narrative language, emotional literacy, and cause/effect thinking through gentle stories.',
+    parentCue: 'Ask: what happened first, next, and last?',
   },
   {
     title: 'Parent Settings',
@@ -68,6 +86,8 @@ export const homeSections = [
     icon: 'settings',
     tone: 'cloud',
     summary: 'Grown-up settings, saved drawings, messages, and reset controls.',
+    why: 'Keeps adult controls separate from child play and supports local-only family review.',
+    parentCue: 'Use this area to tune session timing and saved creations.',
   },
 ]
 
@@ -245,6 +265,35 @@ export const movementPrompts = [
   'Jump like a frog.',
   'Swing your arms gently.',
 ]
+
+export const parentPlayPrompts = [
+  'Ask Sylvie what she wants to make before tapping.',
+  'Name one colour, shape, or feeling together.',
+  'Let Sylvie teach you the next step.',
+  'Finish by showing a grown-up one favourite part.',
+]
+
+export const realWorldBridgePrompts = [
+  'Find something in the room with the same colour.',
+  'Build a tiny version with real blocks.',
+  'Draw one more part on paper.',
+  'Tell a grown-up the story of what you made.',
+]
+
+export const creativeChallenges = {
+  blocks: [
+    'Build a tall tower, then make it wider at the bottom.',
+    'Make a repeating colour pattern.',
+    'Build a house with a door and a roof.',
+    'Make stairs for a tiny friend.',
+  ],
+  drawing: [
+    'Add one colour that feels calm.',
+    'Make a pattern with two colours.',
+    'Tell the picture what happens next.',
+    'Add a tiny detail for someone you love.',
+  ],
+}
 
 export const palette = [
   '#ef476f',
