@@ -40,3 +40,35 @@ export function removeLocalStorage(key) {
     console.warn(`Could not remove localStorage key ${key}`, error)
   }
 }
+
+export function createLocalDataBackup() {
+  const data = Object.fromEntries(
+    Object.values(STORAGE_KEYS)
+      .map((key) => [key, window.localStorage.getItem(key)])
+      .filter(([, value]) => value !== null),
+  )
+
+  return {
+    app: 'SylvieApp',
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    data,
+  }
+}
+
+export function restoreLocalDataBackup(backup) {
+  if (
+    backup?.app !== 'SylvieApp'
+    || !backup.data
+    || typeof backup.data !== 'object'
+  ) {
+    throw new Error('This is not a SylvieApp backup.')
+  }
+
+  const allowedKeys = new Set(Object.values(STORAGE_KEYS))
+  Object.entries(backup.data).forEach(([key, value]) => {
+    if (allowedKeys.has(key) && typeof value === 'string') {
+      window.localStorage.setItem(key, value)
+    }
+  })
+}

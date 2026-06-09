@@ -21,7 +21,7 @@ SylvieApp is a functional React/Vite app with a complete first set of play activ
 | Trampoline and Swing Break | Done | Movement prompts and calm timer. |
 | Story Corner | Done | Short original interactive stories and parent prompts. |
 | Calm Down | Done | Breathing animation and calming words. |
-| Parent Settings | Done | Passcode, saved data controls, messages, settings. |
+| Parent Settings | Done | Passcode, saved data controls, messages, settings, and portable local backups. |
 | Local persistence | Done | Browser `localStorage`; hardened against malformed saved data. |
 
 ## QA Status

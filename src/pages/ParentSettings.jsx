@@ -1,10 +1,15 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import ParentGate from '../components/ParentGate'
 import { coloringPages } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 import { useLocalStorage } from '../hooks/useLocalStorage'
-import { readLocalStorage, STORAGE_KEYS } from '../utils/storage'
+import {
+  createLocalDataBackup,
+  readLocalStorage,
+  restoreLocalDataBackup,
+  STORAGE_KEYS,
+} from '../utils/storage'
 
 export default function ParentSettings() {
   const { settings, updateSettings, resetProgress } = useAppState()
@@ -13,6 +18,8 @@ export default function ParentSettings() {
   const [newMessage, setNewMessage] = useState('')
   const [newStoryPrompt, setNewStoryPrompt] = useState('')
   const [copyStatus, setCopyStatus] = useState('')
+  const [backupStatus, setBackupStatus] = useState('')
+  const importInputRef = useRef(null)
 
   const savedDrawingNames = useMemo(
     () =>
@@ -116,6 +123,40 @@ export default function ParentSettings() {
     link.click()
     URL.revokeObjectURL(url)
     setCopyStatus('Downloaded summary.')
+  }
+
+  const exportBackup = () => {
+    const blob = new Blob([JSON.stringify(createLocalDataBackup(), null, 2)], {
+      type: 'application/json',
+    })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `sylvieapp-backup-${new Date().toISOString().slice(0, 10)}.json`
+    link.click()
+    URL.revokeObjectURL(url)
+    setBackupStatus('Backup downloaded.')
+  }
+
+  const importBackup = async (event) => {
+    const file = event.target.files?.[0]
+    event.target.value = ''
+    if (!file) return
+
+    try {
+      restoreLocalDataBackup(JSON.parse(await file.text()))
+      setBackupStatus('Backup restored. Reloading...')
+      window.setTimeout(() => window.location.reload(), 700)
+    } catch (error) {
+      setBackupStatus(error instanceof Error ? error.message : 'Could not restore that backup.')
+    }
+  }
+
+  const confirmReset = () => {
+    if (window.confirm('Reset all saved play progress and stars on this device?')) {
+      resetProgress()
+      setBackupStatus('Saved play progress reset.')
+    }
   }
 
   return (
@@ -296,9 +337,32 @@ export default function ParentSettings() {
               value={settings.passcode}
               onChange={(event) => updateSettings({ passcode: event.target.value })}
             />
-            <button type="button" className="btn-warning mt-5 w-full" onClick={resetProgress}>
+            <button type="button" className="btn-warning mt-5 w-full" onClick={confirmReset}>
               Reset saved progress
             </button>
+          </section>
+
+          <section className="settings-panel">
+            <h2 className="panel-title">Backup this play world</h2>
+            <p className="text-sm text-slate-600">
+              Download stars, settings, drawings, creations, and game progress, or restore them on this device later.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button type="button" className="btn-primary" onClick={exportBackup}>
+                Download backup
+              </button>
+              <button type="button" className="btn-secondary" onClick={() => importInputRef.current?.click()}>
+                Restore backup
+              </button>
+              <input
+                ref={importInputRef}
+                type="file"
+                accept="application/json"
+                className="hidden"
+                onChange={importBackup}
+              />
+            </div>
+            {backupStatus && <p role="status" className="mt-3 text-sm font-bold text-slate-700">{backupStatus}</p>}
           </section>
 
           <section className="settings-panel">

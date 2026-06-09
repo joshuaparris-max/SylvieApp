@@ -31,6 +31,7 @@ See:
 - Story Corner with short original interactive stories and custom parent prompts.
 - Calm Down screen with breathing animation and gentle words.
 - Parent Settings with passcode, reset, sounds toggle, visual mode, saved drawing management, messages, and movement reminder interval.
+- Parent-only local backup and restore for stars, settings, drawings, creations, and game progress.
 
 ## Safety Model
 
