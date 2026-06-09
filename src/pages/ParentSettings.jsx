@@ -108,6 +108,16 @@ export default function ParentSettings() {
     }
   }
 
+  const downloadParentSummary = () => {
+    const url = URL.createObjectURL(new Blob([parentSummary], { type: 'text/plain;charset=utf-8' }))
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `sylvieapp-parent-summary-${new Date().toISOString().slice(0, 10)}.txt`
+    link.click()
+    URL.revokeObjectURL(url)
+    setCopyStatus('Downloaded summary.')
+  }
+
   return (
     <div>
       <PageHeader title="Parent Settings" eyebrow="Grown-up area">
@@ -370,6 +380,9 @@ export default function ParentSettings() {
             </pre>
             <button type="button" className="btn-primary mt-3" onClick={copyParentSummary}>
               Copy summary
+            </button>
+            <button type="button" className="btn-secondary ml-2 mt-3" onClick={downloadParentSummary}>
+              Download summary
             </button>
             {copyStatus ? (
               <p className="mt-2 text-sm font-bold text-emerald-700">{copyStatus}</p>
