@@ -143,9 +143,16 @@ export default function ParentSettings() {
     event.target.value = ''
     if (!file) return
 
+    if (!file.name.toLowerCase().endsWith('.json')) {
+      setBackupStatus('Please choose a .json backup file.')
+      return
+    }
+
     try {
-      restoreLocalDataBackup(JSON.parse(await file.text()))
-      setBackupStatus('Backup restored. Reloading...')
+      const raw = await file.text()
+      const parsed = JSON.parse(raw)
+      restoreLocalDataBackup(parsed)
+      setBackupStatus('Backup restored successfully. Reloading...')
       window.setTimeout(() => window.location.reload(), 700)
     } catch (error) {
       setBackupStatus(error instanceof Error ? error.message : 'Could not restore that backup.')

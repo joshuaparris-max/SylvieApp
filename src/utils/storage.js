@@ -59,16 +59,24 @@ export function createLocalDataBackup() {
 export function restoreLocalDataBackup(backup) {
   if (
     backup?.app !== 'SylvieApp' ||
+    backup?.version !== 1 ||
     !backup.data ||
     typeof backup.data !== 'object'
   ) {
-    throw new Error('This is not a SylvieApp backup.')
+    throw new Error('This is not a valid SylvieApp backup file.')
   }
 
   const allowedKeys = new Set(Object.values(STORAGE_KEYS))
+  let restoredCount = 0
+
   Object.entries(backup.data).forEach(([key, value]) => {
     if (allowedKeys.has(key) && typeof value === 'string') {
       window.localStorage.setItem(key, value)
+      restoredCount += 1
     }
   })
+
+  if (restoredCount === 0) {
+    throw new Error('Backup file did not contain any recognized SylvieApp data.')
+  }
 }
