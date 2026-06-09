@@ -166,6 +166,8 @@ export default function ParentSettings() {
     }
   }
 
+  const summaryLines = useMemo(() => parentSummary.split('\n'), [parentSummary])
+
   return (
     <div>
       <PageHeader title="Parent Settings" eyebrow="Grown-up area">
@@ -174,6 +176,25 @@ export default function ParentSettings() {
 
       <ParentGate>
         <div className="grid gap-4 lg:grid-cols-2">
+          <section className="settings-panel">
+            <h2 className="panel-title">Progress Summary</h2>
+            <div className="space-y-2 rounded-2xl bg-stone-50 p-4 text-sm text-stone-700">
+              {summaryLines.map((line, i) => (
+                <p key={i} className={i === 0 ? 'font-bold text-stone-900' : ''}>
+                  {line}
+                </p>
+              ))}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button type="button" className="btn-primary" onClick={copyParentSummary}>
+                Copy text
+              </button>
+              <button type="button" className="btn-secondary" onClick={downloadParentSummary}>
+                Download .txt
+              </button>
+            </div>
+            {copyStatus && <p className="mt-2 text-xs text-emerald-600">{copyStatus}</p>}
+          </section>
           <section className="settings-panel">
             <h2 className="panel-title">Calm controls</h2>
             <label className="toggle-row">
@@ -203,6 +224,11 @@ export default function ParentSettings() {
                   </button>
                 ))}
               </div>
+            </div>
+            <div className="mt-4">
+              <p className="label-text italic text-stone-500">
+                Audience mode changes the tone of the app.
+              </p>
             </div>
             <div className="mt-4">
               <p className="label-text">Screen detail</p>
@@ -441,24 +467,7 @@ export default function ParentSettings() {
             )}
           </section>
 
-          <section className="settings-panel lg:col-span-2">
-            <h2 className="panel-title">Parent summary</h2>
-            <p className="mb-3 text-sm leading-6 text-slate-600">
-              Local-only notes for a grown-up, educator, or therapist conversation.
-            </p>
-            <pre className="max-h-72 overflow-auto rounded-lg bg-slate-950 p-4 text-sm leading-6 text-white">
-              {parentSummary}
-            </pre>
-            <button type="button" className="btn-primary mt-3" onClick={copyParentSummary}>
-              Copy summary
-            </button>
-            <button type="button" className="btn-secondary ml-2 mt-3" onClick={downloadParentSummary}>
-              Download summary
-            </button>
-            {copyStatus ? (
-              <p className="mt-2 text-sm font-bold text-emerald-700">{copyStatus}</p>
-            ) : null}
-          </section>
+
         </div>
       </ParentGate>
     </div>
