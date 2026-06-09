@@ -58,9 +58,9 @@ export function createLocalDataBackup() {
 
 export function restoreLocalDataBackup(backup) {
   if (
-    backup?.app !== 'SylvieApp'
-    || !backup.data
-    || typeof backup.data !== 'object'
+    backup?.app !== 'SylvieApp' ||
+    !backup.data ||
+    typeof backup.data !== 'object'
   ) {
     throw new Error('This is not a SylvieApp backup.')
   }

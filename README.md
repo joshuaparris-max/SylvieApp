@@ -8,6 +8,20 @@ Repository: https://github.com/joshuaparris-max/SylvieApp.git
 
 The app is a working local-first play world with multiple activities, parent settings, saved progress, and QA fixes for localStorage resilience and mobile/touch play.
 
+- Home screen with large child-friendly navigation
+- Fairy Garden with blooming flowers, collectable stars, and unlockable decorations
+- Farm Adventure with planting, watering, harvesting, animal care, and farm decorations
+- Princess Dress-Up with original outfit themes and saved local outfit state
+- Colouring Room with 10 original pages, large colours, eraser, clear, local saves, and PNG download
+- Puzzle Play with matching, picture placement, and missing-piece puzzles
+- Block Builder with snap-grid building, drag/drop colour blocks, delete, clear, save, and random tower
+- Sorting Truck with recycling, compost, rubbish bins, and a friendly original truck
+- Trampoline & Swing Break with movement prompts and a calm timer
+- Story Corner with short original interactive stories and custom parent prompts
+- Parent Settings with passcode, reset, sounds toggle, visual mode, saved drawing management, messages, and movement reminder interval
+- Parent-only local backup and restore for stars, settings, drawings, creations, and game progress
+- Calm Down screen with breathing animation and gentle words
+
 See:
 
 - [Status](docs/status.md)

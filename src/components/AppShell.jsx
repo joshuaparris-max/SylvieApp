@@ -5,6 +5,8 @@ import StarCounter from './StarCounter'
 import { movementPrompts, parentPlayPrompts, realWorldBridgePrompts } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 
+const LAST_PATH_KEY = 'sylvieapp:last-path'
+
 export default function AppShell() {
   const { settings, updateSettings } = useAppState()
   const location = useLocation()
@@ -61,6 +63,18 @@ export default function AppShell() {
     settings.sessionHardStopMinutes,
     settings.sessionSoftStopMinutes,
   ])
+
+  useEffect(() => {
+    try {
+      if (location.pathname && location.pathname !== '/') {
+        localStorage.setItem(LAST_PATH_KEY, location.pathname)
+      } else {
+        localStorage.removeItem(LAST_PATH_KEY)
+      }
+    } catch {
+      // ignore storage failures
+    }
+  }, [location.pathname])
 
   const playPrompt =
     parentPlayPrompts[Math.abs(location.pathname.length) % parentPlayPrompts.length]

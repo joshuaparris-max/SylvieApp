@@ -1,13 +1,25 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import FavoritePicture from '../components/FavoritePicture'
 import PlayIcon from '../components/PlayIcon'
 import { favoritePictures, homeSections } from '../data/content'
 import { useAppState } from '../hooks/useAppState'
 
+const LAST_PATH_KEY = 'sylvieapp:last-path'
+
+function getContinuePath() {
+  try {
+    const stored = localStorage.getItem(LAST_PATH_KEY)
+    return stored && stored !== '/' ? stored : ''
+  } catch {
+    return ''
+  }
+}
+
 export default function Home() {
-  const { settings } = useAppState()
-  const isParentMode = settings.audienceMode === 'parent'
+  const { settings, stars } = useAppState()
   const isSimpleMode = settings.screenDetail === 'simple'
+  const [continuePath] = useState(getContinuePath)
   const greeting =
     settings.customEncouragements?.[settings.customEncouragements.length - 1] ||
     'You are loved exactly as you are.'
@@ -23,6 +35,17 @@ export default function Home() {
             SylvieApp
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">{greeting}</p>
+          <p className="mt-4 text-sm font-semibold text-emerald-700">
+            You’ve collected {stars} star{stars === 1 ? '' : 's'} so far.
+          </p>
+          {continuePath ? (
+            <Link
+              to={continuePath}
+              className="inline-flex items-center gap-2 mt-4 rounded-full bg-rose-100 px-4 py-2 text-sm font-semibold text-rose-800 hover:bg-rose-200"
+            >
+              Continue last activity
+            </Link>
+          ) : null}
           {!isSimpleMode ? (
             <p className="child-copy mt-3 text-sm text-slate-600">
               Discover fairies, farm play, princess outfits, colouring pages, block building, puzzles, original piglet and puppy pals, a friendly sorting truck, swings, and trampoline fun.
