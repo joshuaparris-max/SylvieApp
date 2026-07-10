@@ -19,6 +19,7 @@ function getContinuePath() {
 export default function Home() {
   const { settings, stars } = useAppState()
   const isSimpleMode = settings.screenDetail === 'simple'
+  const isParentMode = settings.audienceMode === 'parent'
   const [continuePath] = useState(getContinuePath)
   const greeting =
     settings.customEncouragements?.[settings.customEncouragements.length - 1] ||

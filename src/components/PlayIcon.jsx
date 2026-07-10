@@ -96,6 +96,14 @@ const icons = {
       <path d="M13 45h34" />
     </>
   ),
+  sparkleCount: (
+    <>
+      <circle cx="18" cy="24" r="7" />
+      <circle cx="40" cy="19" r="7" />
+      <circle cx="32" cy="42" r="7" />
+      <path d="M48 34h6M51 31v6M9 42h6M12 39v6" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),

@@ -14,6 +14,8 @@ import PuzzlePlay from './games/PuzzlePlay'
 import StoryCorner from './games/StoryCorner'
 import TrampolineSwingBreak from './games/TrampolineSwingBreak'
 import SortingTruck from './games/SortingTruck'
+import SparkleCount from './games/SparkleCount'
+import StarDanceParty from './games/StarDanceParty'
 import GameIdeas from './pages/GameIdeas'
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
             <Route path="sorting-truck" element={<SortingTruck />} />
             <Route path="trampoline-swing-break" element={<TrampolineSwingBreak />} />
             <Route path="story-corner" element={<StoryCorner />} />
+            <Route path="sparkle-count" element={<SparkleCount />} />
+            <Route path="star-dance-party" element={<StarDanceParty />} />
             <Route path="game-ideas" element={<GameIdeas />} />
             <Route path="parent-settings" element={<ParentSettings />} />
             <Route path="calm-down" element={<CalmDown />} />
