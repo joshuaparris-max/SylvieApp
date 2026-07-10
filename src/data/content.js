@@ -45,6 +45,15 @@ export const homeSections = [
     parentCue: 'Name the shape after Sylvie fits it.',
   },
   {
+    title: 'Rhyme Time Together',
+    path: '/rhyme-time-together',
+    icon: 'words',
+    tone: 'sky',
+    summary: 'Listen to a word and choose its word friend.',
+    why: 'Prioritises vocabulary while gently introducing rhyme awareness.',
+    parentCue: 'Tap the picture to hear the word again before choosing.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

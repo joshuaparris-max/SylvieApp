@@ -128,6 +128,13 @@ const icons = {
       <path d="M30 35 42 52H18Z" />
     </>
   ),
+  words: (
+    <>
+      <rect x="10" y="15" width="40" height="30" rx="6" />
+      <path d="M18 25h24M18 34h16" stroke="#fff" />
+      <circle cx="44" cy="43" r="7" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),
