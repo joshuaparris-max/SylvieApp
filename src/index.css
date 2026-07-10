@@ -61,6 +61,118 @@ select:focus-visible {
     linear-gradient(45deg, #fff3b8, #ddf7d5, #e6dcff);
 }
 
+.mode-dark {
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 8%, rgba(244, 114, 182, 0.2), transparent 26%),
+    linear-gradient(135deg, #111827, #1e1b4b 48%, #0f172a);
+}
+
+.mode-dark header,
+.mode-dark .page-header,
+.mode-dark .hero-panel,
+.mode-dark .favorite-gallery,
+.mode-dark .favorite-activity-picture,
+.mode-dark .favorite-activity-panel,
+.mode-dark .settings-panel,
+.mode-dark .story-card,
+.mode-dark .unlock-card,
+.mode-dark .section-card {
+  border-color: rgba(148, 163, 184, 0.32);
+  background: rgba(15, 23, 42, 0.86);
+  color: #f8fafc;
+}
+
+.mode-dark .shadow-soft,
+.mode-dark header,
+.mode-dark .page-header,
+.mode-dark .hero-panel,
+.mode-dark .favorite-gallery,
+.mode-dark .settings-panel,
+.mode-dark .section-card {
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.32);
+}
+
+.mode-dark h1,
+.mode-dark h2,
+.mode-dark h3,
+.mode-dark .panel-title,
+.mode-dark .text-slate-950,
+.mode-dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+.mode-dark .text-slate-800,
+.mode-dark .text-slate-700,
+.mode-dark .text-slate-600,
+.mode-dark .text-slate-500,
+.mode-dark .label-text,
+.mode-dark .section-summary,
+.mode-dark .favorite-description,
+.mode-dark .page-header-copy {
+  color: #cbd5e1 !important;
+}
+
+.mode-dark .btn-secondary,
+.mode-dark .input-field,
+.mode-dark .toggle-row,
+.mode-dark .mode-switch button.active,
+.mode-dark .segmented button.active,
+.mode-dark .choice-chip,
+.mode-dark .puzzle-piece,
+.mode-dark .puzzle-home,
+.mode-dark .picture-piece,
+.mode-dark .picture-slot,
+.mode-dark .story-choice,
+.mode-dark .sort-item,
+.mode-dark .bin-card {
+  border-color: rgba(148, 163, 184, 0.34);
+  background: #1f2937;
+  color: #f8fafc;
+}
+
+.mode-dark .mode-switch,
+.mode-dark .segmented {
+  background: #111827;
+}
+
+.mode-dark .mode-switch button,
+.mode-dark .segmented button {
+  color: #cbd5e1;
+}
+
+.mode-dark .favorite-picture-card,
+.mode-dark .favorite-card,
+.mode-dark .mini-sequence div,
+.mode-dark .mini-story-path div,
+.mode-dark .mini-bin,
+.mode-dark .mini-pattern-row span,
+.mode-dark .mini-prompt-chip {
+  border-color: rgba(148, 163, 184, 0.28);
+  background: rgba(30, 41, 59, 0.92);
+  color: #f8fafc;
+}
+
+.mode-dark .garden-illustration,
+.mode-dark .garden-stage,
+.mode-dark .movement-scene,
+.mode-dark .mini-scene,
+.mode-dark .mini-puppy-yard,
+.mode-dark .mini-position-world,
+.mode-dark .mini-sound-water,
+.mode-dark .mini-wand-spell,
+.mode-dark .mini-movement-counter,
+.mode-dark .missing-scene,
+.mode-dark .dress-preview,
+.mode-dark .sparkle-count-sky {
+  filter: brightness(0.86) saturate(1.05);
+}
+
+.mode-dark aside {
+  color: #172033;
+}
+
 .shadow-soft {
   box-shadow: 0 16px 36px rgba(37, 53, 86, 0.12);
 }

@@ -26,7 +26,9 @@ export default function AppStateProvider({ children }) {
       passcode: String(settings?.passcode || defaultSettings.passcode),
       soundsEnabled: Boolean(settings?.soundsEnabled),
       audienceMode: settings?.audienceMode === 'parent' ? 'parent' : 'sylvie',
-      visualMode: settings?.visualMode === 'playful' ? 'playful' : 'calm',
+      visualMode: ['calm', 'playful', 'dark'].includes(settings?.visualMode)
+        ? settings.visualMode
+        : 'calm',
       screenDetail: settings?.screenDetail === 'full' ? 'full' : 'simple',
       readingSupport: ['picture', 'simple', 'full'].includes(settings?.readingSupport)
         ? settings.readingSupport

@@ -254,8 +254,8 @@ export default function ParentSettings() {
             </div>
             <div className="mt-4">
               <p className="label-text">Visual mode</p>
-              <div className="segmented">
-                {['calm', 'playful'].map((mode) => (
+              <div className="segmented segmented-three">
+                {['calm', 'playful', 'dark'].map((mode) => (
                   <button
                     key={mode}
                     type="button"
