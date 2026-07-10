@@ -27,6 +27,15 @@ export const homeSections = [
     parentCue: 'Say the pattern together once, then let Sylvie choose the next picture.',
   },
   {
+    title: 'More or Less Meadow',
+    path: '/more-or-less-meadow',
+    icon: 'compare',
+    tone: 'meadow',
+    summary: 'Choose which meadow group has more or less.',
+    why: 'Builds early comparison, measurement language, sorting, and quantity awareness.',
+    parentCue: 'Ask: which side has more? Which side has less?',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

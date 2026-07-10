@@ -1842,6 +1842,150 @@ button[disabled] {
   content: "";
 }
 
+.meadow-mode-switch {
+  width: min(100%, 24rem);
+  margin: 0 auto 1rem;
+}
+
+.meadow-prompt {
+  margin: 0 auto 1rem;
+  width: fit-content;
+  min-height: 64px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 1.25rem;
+  color: #172033;
+  font-size: 2rem;
+  font-weight: 950;
+}
+
+.comparison-meadow {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .comparison-meadow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.meadow-group {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border: 5px solid rgba(255, 255, 255, 0.82);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.58) 0 30px, transparent 31px),
+    linear-gradient(#bae6fd 0 46%, #86efac 46% 100%);
+}
+
+.meadow-group.correct {
+  animation: learning-pop 620ms ease-in-out;
+  box-shadow: 0 0 0 9px rgba(34, 197, 94, 0.24);
+}
+
+.soft-wiggle {
+  animation: gentle-wiggle 440ms ease-in-out;
+}
+
+.meadow-thing {
+  position: absolute;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+}
+
+.meadow-thing span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgba(23, 32, 51, 0.22);
+  background: var(--thing-color);
+}
+
+.thing-ladybug span {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 38%, #172033 0 4px, transparent 5px),
+    radial-gradient(circle at 65% 38%, #172033 0 4px, transparent 5px),
+    linear-gradient(90deg, transparent 46%, #172033 46% 54%, transparent 54%),
+    var(--thing-color);
+}
+
+.thing-flower span {
+  border-radius: 50%;
+  box-shadow:
+    18px 0 var(--thing-color),
+    -18px 0 var(--thing-color),
+    0 18px var(--thing-color),
+    0 -18px var(--thing-color);
+}
+
+.thing-leaf span {
+  border-radius: 80% 0 80% 0;
+}
+
+.sorting-meadow {
+  display: grid;
+  gap: 1rem;
+}
+
+.sort-scatter {
+  position: relative;
+  display: flex;
+  min-height: 260px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 1rem;
+}
+
+.sort-meadow-item {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.sort-meadow-item .meadow-thing {
+  left: 50%;
+  top: 50%;
+}
+
+.basket-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .basket-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.meadow-basket {
+  display: grid;
+  min-height: 118px;
+  place-items: center;
+  border: 4px dashed rgba(15, 23, 42, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #172033;
+  font-weight: 950;
+}
+
+.meadow-basket strong {
+  font-size: 2.6rem;
+}
+
 .star-party-sky span {
   position: absolute;
   width: 10px;
