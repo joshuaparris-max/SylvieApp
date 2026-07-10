@@ -36,6 +36,15 @@ export const homeSections = [
     parentCue: 'Ask: which side has more? Which side has less?',
   },
   {
+    title: 'Shape Fit Forest',
+    path: '/shape-fit-forest',
+    icon: 'shapes',
+    tone: 'leaf',
+    summary: 'Match friendly shapes to the forest outline.',
+    why: 'Builds geometry, shape vocabulary, and spatial reasoning through guided play.',
+    parentCue: 'Name the shape after Sylvie fits it.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

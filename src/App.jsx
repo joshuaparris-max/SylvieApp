@@ -13,6 +13,7 @@ import MoreOrLessMeadow from './games/MoreOrLessMeadow'
 import PatternParade from './games/PatternParade'
 import PrincessDressUp from './games/PrincessDressUp'
 import PuzzlePlay from './games/PuzzlePlay'
+import ShapeFitForest from './games/ShapeFitForest'
 import StoryCorner from './games/StoryCorner'
 import TrampolineSwingBreak from './games/TrampolineSwingBreak'
 import SortingTruck from './games/SortingTruck'
@@ -33,6 +34,7 @@ function App() {
             <Route path="more-or-less-meadow" element={<MoreOrLessMeadow />} />
             <Route path="pattern-parade" element={<PatternParade />} />
             <Route path="princess-dress-up" element={<PrincessDressUp />} />
+            <Route path="shape-fit-forest" element={<ShapeFitForest />} />
             <Route path="colouring-room" element={<ColouringRoom />} />
             <Route path="puzzle-play" element={<PuzzlePlay />} />
             <Route path="block-builder" element={<BlockBuilder />} />

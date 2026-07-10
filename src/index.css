@@ -1986,6 +1986,77 @@ button[disabled] {
   font-size: 2.6rem;
 }
 
+.shape-fit-forest {
+  background:
+    radial-gradient(circle at 80% 16%, rgba(255, 255, 255, 0.7) 0 36px, transparent 38px),
+    linear-gradient(#bae6fd 0 44%, #bbf7d0 44% 100%);
+}
+
+.shape-hole {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+  border-radius: 8px;
+  background:
+    linear-gradient(transparent 0 68%, rgba(34, 197, 94, 0.24) 68% 100%),
+    rgba(255, 255, 255, 0.58);
+}
+
+.shape-choice {
+  display: grid;
+  width: clamp(92px, 18vw, 132px);
+  height: clamp(92px, 18vw, 132px);
+  place-items: center;
+  border: 5px solid rgba(255, 255, 255, 0.84);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.15);
+}
+
+.shape-glyph {
+  display: block;
+  width: clamp(74px, 16vw, 116px);
+  height: clamp(74px, 16vw, 116px);
+  background: var(--shape-color);
+  transition: transform 180ms ease;
+}
+
+.shape-glyph.outline {
+  background: transparent;
+  border: 10px dashed rgba(15, 23, 42, 0.42);
+}
+
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-square {
+  border-radius: 12px;
+}
+
+.shape-rectangle {
+  width: clamp(98px, 18vw, 142px);
+  height: clamp(58px, 10vw, 82px);
+  border-radius: 12px;
+}
+
+.shape-triangle {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.shape-triangle.outline {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(60deg, transparent 44%, rgba(15, 23, 42, 0.42) 44% 54%, transparent 54%),
+    linear-gradient(-60deg, transparent 44%, rgba(15, 23, 42, 0.42) 44% 54%, transparent 54%),
+    linear-gradient(0deg, transparent 82%, rgba(15, 23, 42, 0.42) 82% 94%, transparent 94%);
+  border: 0;
+}
+
+.shape-star {
+  clip-path: polygon(50% 0, 62% 35%, 100% 35%, 69% 57%, 82% 100%, 50% 74%, 18% 100%, 31% 57%, 0 35%, 38% 35%);
+}
+
 .star-party-sky span {
   position: absolute;
   width: 10px;
