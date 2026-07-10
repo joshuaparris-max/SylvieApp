@@ -72,6 +72,15 @@ export const homeSections = [
     parentCue: 'Let mismatches sit for a moment, then say what you both remember.',
   },
   {
+    title: 'Freeze and Go Garden',
+    path: '/freeze-and-go-garden',
+    icon: 'stopGo',
+    tone: 'meadow',
+    summary: 'Tap to grow the garden on go, then freeze on stop.',
+    why: 'Practises inhibitory control in a playful, low-pressure way.',
+    parentCue: 'Play along and freeze your hands together on stop.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

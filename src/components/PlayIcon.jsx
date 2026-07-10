@@ -151,6 +151,13 @@ const icons = {
       <rect x="32" y="35" width="17" height="17" rx="4" />
     </>
   ),
+  stopGo: (
+    <>
+      <circle cx="22" cy="30" r="12" />
+      <rect x="36" y="18" width="12" height="24" rx="3" />
+      <path d="M18 30h8M40 24v12" stroke="#fff" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),

@@ -2374,6 +2374,100 @@ button[disabled] {
   margin-top: 1rem;
 }
 
+.freeze-go-garden {
+  background: linear-gradient(#dff6ff 0 40%, #bbf7d0 40% 100%);
+}
+
+.signal-card {
+  display: grid;
+  width: min(100%, 380px);
+  min-height: 150px;
+  place-items: center;
+  border: 6px solid rgba(255, 255, 255, 0.88);
+  border-radius: 28px;
+  margin: 0 auto 1rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+}
+
+.signal-card span {
+  font-size: 3.2rem;
+  font-weight: 950;
+}
+
+.signal-card strong {
+  font-size: 2.4rem;
+}
+
+.signal-go {
+  background: #16a34a;
+}
+
+.signal-stop {
+  background: #dc2626;
+}
+
+.grow-garden-button {
+  display: grid;
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+  border: 6px solid rgba(255, 255, 255, 0.88);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0;
+}
+
+.go-garden-scene {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: linear-gradient(#bae6fd 0 48%, #86efac 48% 100%);
+}
+
+.go-tree {
+  position: absolute;
+  left: 50%;
+  bottom: 44px;
+  width: 50px;
+  transform: translateX(-50%);
+  border-radius: 999px 999px 12px 12px;
+  background: linear-gradient(#22c55e 0 58%, #92400e 58%);
+  transition: height 220ms ease;
+}
+
+.go-flower {
+  position: absolute;
+  left: calc(8% + (var(--i) * 29 % 82) * 1%);
+  bottom: calc(24px + (var(--i) * 17 % 58) * 1px);
+  width: 16px;
+  height: 42px;
+  border-radius: 999px;
+  background: #15803d;
+}
+
+.go-flower::before {
+  position: absolute;
+  top: -16px;
+  left: -12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fb7185;
+  box-shadow: 12px 0 #facc15, -12px 0 #c4b5fd;
+  content: "";
+}
+
+.grow-label {
+  display: grid;
+  min-height: 72px;
+  place-items: center;
+  color: #172033;
+  font-size: 1.5rem;
+  font-weight: 950;
+}
+
 .star-party-sky span {
   position: absolute;
   width: 10px;

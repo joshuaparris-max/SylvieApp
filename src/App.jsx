@@ -10,6 +10,7 @@ import ColouringRoom from './games/ColouringRoom'
 import FairyGarden from './games/FairyGarden'
 import FarmAdventure from './games/FarmAdventure'
 import FeelingsFriends from './games/FeelingsFriends'
+import FreezeAndGoGarden from './games/FreezeAndGoGarden'
 import MoreOrLessMeadow from './games/MoreOrLessMeadow'
 import PatternParade from './games/PatternParade'
 import PrincessDressUp from './games/PrincessDressUp'
@@ -35,6 +36,7 @@ function App() {
             <Route path="things-sylvie-loves/:id" element={<FavoriteActivity />} />
             <Route path="farm-adventure" element={<FarmAdventure />} />
             <Route path="feelings-friends" element={<FeelingsFriends />} />
+            <Route path="freeze-and-go-garden" element={<FreezeAndGoGarden />} />
             <Route path="memory-meadow" element={<MemoryMeadow />} />
             <Route path="more-or-less-meadow" element={<MoreOrLessMeadow />} />
             <Route path="pattern-parade" element={<PatternParade />} />
