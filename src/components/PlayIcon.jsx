@@ -135,6 +135,14 @@ const icons = {
       <circle cx="44" cy="43" r="7" />
     </>
   ),
+  feelings: (
+    <>
+      <circle cx="30" cy="30" r="20" />
+      <circle cx="23" cy="26" r="3" fill="#fff" />
+      <circle cx="37" cy="26" r="3" fill="#fff" />
+      <path d="M22 38c5 5 11 5 16 0" stroke="#fff" fill="none" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),

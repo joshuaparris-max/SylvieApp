@@ -54,6 +54,15 @@ export const homeSections = [
     parentCue: 'Tap the picture to hear the word again before choosing.',
   },
   {
+    title: 'Feelings Friends',
+    path: '/feelings-friends',
+    icon: 'feelings',
+    tone: 'rose',
+    summary: 'Match gentle faces and check in with today’s feeling.',
+    why: 'Builds emotion identification, labeling, and early self-awareness.',
+    parentCue: 'Name the feeling warmly, then wonder what might help.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',
