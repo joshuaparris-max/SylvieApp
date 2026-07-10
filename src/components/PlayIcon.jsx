@@ -143,6 +143,14 @@ const icons = {
       <path d="M22 38c5 5 11 5 16 0" stroke="#fff" fill="none" />
     </>
   ),
+  memory: (
+    <>
+      <rect x="11" y="14" width="17" height="17" rx="4" />
+      <rect x="32" y="14" width="17" height="17" rx="4" />
+      <rect x="11" y="35" width="17" height="17" rx="4" />
+      <rect x="32" y="35" width="17" height="17" rx="4" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),

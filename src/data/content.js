@@ -63,6 +63,15 @@ export const homeSections = [
     parentCue: 'Name the feeling warmly, then wonder what might help.',
   },
   {
+    title: 'Memory Meadow',
+    path: '/memory-meadow',
+    icon: 'memory',
+    tone: 'mint',
+    summary: 'Flip small meadow cards and find matching pairs.',
+    why: 'Practises working memory with a small, age-appropriate matching board.',
+    parentCue: 'Let mismatches sit for a moment, then say what you both remember.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

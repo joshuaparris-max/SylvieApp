@@ -22,6 +22,7 @@ import SortingTruck from './games/SortingTruck'
 import SparkleCount from './games/SparkleCount'
 import StarDanceParty from './games/StarDanceParty'
 import GameIdeas from './pages/GameIdeas'
+import MemoryMeadow from './games/MemoryMeadow'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="things-sylvie-loves/:id" element={<FavoriteActivity />} />
             <Route path="farm-adventure" element={<FarmAdventure />} />
             <Route path="feelings-friends" element={<FeelingsFriends />} />
+            <Route path="memory-meadow" element={<MemoryMeadow />} />
             <Route path="more-or-less-meadow" element={<MoreOrLessMeadow />} />
             <Route path="pattern-parade" element={<PatternParade />} />
             <Route path="princess-dress-up" element={<PrincessDressUp />} />
