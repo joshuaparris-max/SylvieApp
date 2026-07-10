@@ -69,6 +69,10 @@ select:focus-visible {
     linear-gradient(135deg, #111827, #1e1b4b 48%, #0f172a);
 }
 
+.mode-dark header {
+  background: rgba(15, 23, 42, 0.98) !important;
+}
+
 .mode-dark header,
 .mode-dark .page-header,
 .mode-dark .hero-panel,
@@ -82,6 +86,19 @@ select:focus-visible {
   border-color: rgba(148, 163, 184, 0.32);
   background: rgba(15, 23, 42, 0.86);
   color: #f8fafc;
+}
+
+.mode-dark [class*="border-white"] {
+  border-color: rgba(148, 163, 184, 0.34) !important;
+}
+
+.mode-dark [class*="bg-white"],
+.mode-dark [class*="bg-rose-50"],
+.mode-dark [class*="bg-sky-50"],
+.mode-dark [class*="bg-amber-50"],
+.mode-dark [class*="bg-emerald-50"] {
+  background-color: rgba(30, 41, 59, 0.92) !important;
+  color: #f8fafc !important;
 }
 
 .mode-dark .shadow-soft,
@@ -116,6 +133,9 @@ select:focus-visible {
 
 .mode-dark .btn-secondary,
 .mode-dark .input-field,
+.mode-dark input,
+.mode-dark select,
+.mode-dark textarea,
 .mode-dark .toggle-row,
 .mode-dark .mode-switch button.active,
 .mode-dark .segmented button.active,
@@ -132,6 +152,14 @@ select:focus-visible {
   color: #f8fafc;
 }
 
+.mode-dark .btn-secondary:hover {
+  background: #334155;
+}
+
+.mode-dark .btn-primary {
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.32);
+}
+
 .mode-dark .mode-switch,
 .mode-dark .segmented {
   background: #111827;
@@ -144,6 +172,9 @@ select:focus-visible {
 
 .mode-dark .favorite-picture-card,
 .mode-dark .favorite-card,
+.mode-dark .favorite-feedback,
+.mode-dark .favorite-feedback.quiet,
+.mode-dark details,
 .mode-dark .mini-sequence div,
 .mode-dark .mini-story-path div,
 .mode-dark .mini-bin,
@@ -164,13 +195,56 @@ select:focus-visible {
 .mode-dark .mini-wand-spell,
 .mode-dark .mini-movement-counter,
 .mode-dark .missing-scene,
-.mode-dark .dress-preview,
-.mode-dark .sparkle-count-sky {
+.mode-dark .dress-preview {
   filter: brightness(0.86) saturate(1.05);
 }
 
-.mode-dark aside {
+.mode-dark .sparkle-count-stage {
+  border-color: rgba(251, 191, 36, 0.36);
+  background:
+    radial-gradient(circle at 14% 10%, rgba(253, 230, 138, 0.24) 0 44px, transparent 46px),
+    linear-gradient(155deg, #172033 0 22%, #312e81 22% 54%, #0f766e 54% 100%);
+}
+
+.mode-dark .sparkle-count-sky {
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.04);
+}
+
+.mode-dark .sparkle-number-button,
+.mode-dark .sparkle-mute,
+.mode-dark .sparkle-streak span,
+.mode-dark .party-message {
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #172033 !important;
+}
+
+.mode-dark .sparkle-number-button.show-correct {
+  background: #dcfce7 !important;
+}
+
+.mode-dark .page-header > a {
+  background: #f8fafc !important;
+  color: #334155 !important;
+}
+
+.mode-dark aside[class*="bg-white"],
+.mode-dark aside [class*="bg-white"],
+.mode-dark .fixed[class*="bg-white"] {
+  background: #ffffff !important;
   color: #172033;
+}
+
+.mode-dark aside .text-slate-950,
+.mode-dark aside .text-slate-900,
+.mode-dark aside .text-slate-800,
+.mode-dark aside .text-slate-700,
+.mode-dark aside .text-slate-600 {
+  color: #172033 !important;
+}
+
+.mode-dark header {
+  background: rgba(15, 23, 42, 0.98) !important;
 }
 
 .shadow-soft {
