@@ -2468,6 +2468,66 @@ button[disabled] {
   font-weight: 950;
 }
 
+.trace-trail {
+  background: linear-gradient(#dff6ff 0 45%, #dcfce7 45% 100%);
+}
+
+.trace-board {
+  display: block;
+  width: 100%;
+  max-height: min(68vh, 620px);
+  border-radius: 8px;
+  touch-action: none;
+  user-select: none;
+}
+
+.trace-sky {
+  fill: url("#unused");
+  fill: #bae6fd;
+}
+
+.trace-tolerance {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.36);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 116;
+}
+
+.trace-dots {
+  fill: none;
+  stroke: rgba(15, 23, 42, 0.34);
+  stroke-dasharray: 2 22;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 14;
+}
+
+.trace-lit {
+  fill: none;
+  stroke: #facc15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 24;
+  filter: drop-shadow(0 0 12px rgba(250, 204, 21, 0.62));
+}
+
+.trace-spark {
+  fill: #fff7ad;
+  filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.75));
+}
+
+.trace-bug circle {
+  fill: #fb7185;
+  stroke: #172033;
+  stroke-width: 4;
+}
+
+.trace-bug line {
+  stroke: #172033;
+  stroke-width: 4;
+}
+
 .star-party-sky span {
   position: absolute;
   width: 10px;

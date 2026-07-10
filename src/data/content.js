@@ -81,6 +81,15 @@ export const homeSections = [
     parentCue: 'Play along and freeze your hands together on stop.',
   },
   {
+    title: 'Trace and Trail',
+    path: '/trace-and-trail',
+    icon: 'trace',
+    tone: 'coral',
+    summary: 'Guide a ladybug along wide glowing paths.',
+    why: 'Supports visual-motor coordination and pre-writing line control without pretending to replace real fine-motor play.',
+    parentCue: 'Keep it playful, then offer paper, crayons, beads, or play-dough after.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

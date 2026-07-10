@@ -19,6 +19,7 @@ import RhymeTimeTogether from './games/RhymeTimeTogether'
 import ShapeFitForest from './games/ShapeFitForest'
 import StoryCorner from './games/StoryCorner'
 import TrampolineSwingBreak from './games/TrampolineSwingBreak'
+import TraceAndTrail from './games/TraceAndTrail'
 import SortingTruck from './games/SortingTruck'
 import SparkleCount from './games/SparkleCount'
 import StarDanceParty from './games/StarDanceParty'
@@ -48,6 +49,7 @@ function App() {
             <Route path="block-builder" element={<BlockBuilder />} />
             <Route path="sorting-truck" element={<SortingTruck />} />
             <Route path="trampoline-swing-break" element={<TrampolineSwingBreak />} />
+            <Route path="trace-and-trail" element={<TraceAndTrail />} />
             <Route path="story-corner" element={<StoryCorner />} />
             <Route path="sparkle-count" element={<SparkleCount />} />
             <Route path="star-dance-party" element={<StarDanceParty />} />

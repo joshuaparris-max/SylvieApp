@@ -158,6 +158,14 @@ const icons = {
       <path d="M18 30h8M40 24v12" stroke="#fff" />
     </>
   ),
+  trace: (
+    <>
+      <path d="M10 42c10-24 24 20 40-8" fill="none" />
+      <circle cx="15" cy="41" r="4" />
+      <circle cx="30" cy="31" r="4" />
+      <circle cx="46" cy="34" r="4" />
+    </>
+  ),
   moon: (
     <path d="M38 44c-11 3-23-5-23-17 0-8 5-15 12-18-2 10 5 20 16 21-2 6-5 10-5 14Z" />
   ),
