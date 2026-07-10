@@ -18,6 +18,15 @@ export const homeSections = [
     parentCue: 'Name the animal and the action: feed, water, harvest, help.',
   },
   {
+    title: 'Pattern Parade',
+    path: '/pattern-parade',
+    icon: 'patterns',
+    tone: 'sun',
+    summary: 'Choose the next picture in a gentle repeating pattern.',
+    why: 'Builds early patterning, algebraic thinking, and working memory through guided play.',
+    parentCue: 'Say the pattern together once, then let Sylvie choose the next picture.',
+  },
+  {
     title: 'Princess Dress-Up',
     path: '/princess-dress-up',
     icon: 'crown',

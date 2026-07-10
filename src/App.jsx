@@ -9,6 +9,7 @@ import BlockBuilder from './games/BlockBuilder'
 import ColouringRoom from './games/ColouringRoom'
 import FairyGarden from './games/FairyGarden'
 import FarmAdventure from './games/FarmAdventure'
+import PatternParade from './games/PatternParade'
 import PrincessDressUp from './games/PrincessDressUp'
 import PuzzlePlay from './games/PuzzlePlay'
 import StoryCorner from './games/StoryCorner'
@@ -28,6 +29,7 @@ function App() {
             <Route path="fairy-garden" element={<FairyGarden />} />
             <Route path="things-sylvie-loves/:id" element={<FavoriteActivity />} />
             <Route path="farm-adventure" element={<FarmAdventure />} />
+            <Route path="pattern-parade" element={<PatternParade />} />
             <Route path="princess-dress-up" element={<PrincessDressUp />} />
             <Route path="colouring-room" element={<ColouringRoom />} />
             <Route path="puzzle-play" element={<PuzzlePlay />} />
