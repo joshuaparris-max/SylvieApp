@@ -37,7 +37,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-700">{greeting}</p>
           <p className="mt-4 text-sm font-semibold text-emerald-700">
-            You’ve collected {stars} star{stars === 1 ? '' : 's'} so far.
+            You’ve saved {stars} beautiful idea{stars === 1 ? '' : 's'} so far.
           </p>
           {continuePath ? (
             <Link

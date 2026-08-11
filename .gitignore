@@ -25,3 +25,11 @@ output
 *.sw?
 .vercel
 vite_output.txt
+node_modules/
+dist/
+build/
+playwright-report/
+test-results/
+.env
+.last-run.json
+coverage/
